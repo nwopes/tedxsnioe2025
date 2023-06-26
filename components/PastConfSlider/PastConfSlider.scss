@@ -9,7 +9,7 @@
   transform-style: preserve-3d;
 }
 
-input[type="radio"] {
+.radio_pastConf {
   position: relative;
   top: 85%;
   left: 50%;
@@ -22,6 +22,8 @@ input[type="radio"] {
   cursor: pointer;
   @include respondAt(915px) {
     top: 115%;
+    width: 16px;
+    left: 60%;
   }
 }
 
