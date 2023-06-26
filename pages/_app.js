@@ -1,7 +1,7 @@
 import "../styles/root/globals.scss";
 import App from "next/app";
 import Head from "next/head";
-import DemoComponent from "../components/Demo/DemoComponent";
+import Navbar from "../components/Navbar/Navbar";
 
 function MyApp({ Component, pageProps, user }) {
     const getLayout = Component.getLayout || ((page) => page);
@@ -14,7 +14,9 @@ function MyApp({ Component, pageProps, user }) {
                     content="TEDx Shiv Nadar Insitute of Eminence Annual Conference"
                 />
             </Head>
-            <DemoComponent />
+            <Navbar />
+            <Component {...pageProps} />
+
         </>
     );
 }
