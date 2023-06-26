@@ -93,12 +93,12 @@ function Navbar({ isSmall = false }) {
                             <Link style={{color : "white"}} href="/">Home</Link>
                         </li>
                         <li
-                            className={`${pathName === "/about"
+                            className={`${pathName === "/pastConferences"
                                 ? "NavbarContainer__Menu--list-activeItem"
                                 : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
-                            <Link style={{color : "white"}} href="/">Speakers</Link>
+                            <Link style={{color : "white"}} href="/pastConferences">Past Conferences</Link>
                         </li>
                         <li
                             className={`${pathName === "/gallery"
