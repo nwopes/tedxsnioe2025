@@ -118,12 +118,12 @@ function Navbar({ isSmall = false }) {
                         </li>
 
                         <li
-                            className={`${pathName === "/gallery"
+                            className={`${pathName === "/contact"
                                 ? "NavbarContainer__Menu--list-activeItem"
                                 : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
-                            <Link style={{color : "white"}} href="/">Contact Us</Link>
+                            <Link style={{color : "white"}} href="/contact">Contact Us</Link>
                         </li>
                     </ul>
                 </div>

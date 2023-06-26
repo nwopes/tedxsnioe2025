@@ -14,3 +14,9 @@ body , html {
   padding: 0;
   box-sizing: border-box;
 }
+::-webkit-scrollbar {
+  position: absolute;
+  background: transparent;
+  width: 8px;
+  height: 8px;
+}
