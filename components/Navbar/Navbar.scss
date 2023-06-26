@@ -1,19 +1,19 @@
 .NavbarWrapper {
   position: fixed;
   z-index: 100;
-  @include box(98vw, auto);
-  padding: 0.5rem;
+  @include box(100vw, auto);
+  // padding: 0.5rem;
   @include respondAt(915px) {
-    @include box(90vw , auto);
-    padding: 1rem;
+    @include box(100vw , auto);
+    // padding: 1rem;
   }
 }
 
 .NavbarContainer {
-  background-color: rgba(0, 0, 0, 0.607);
+  background: rgba(0, 0, 0, 0.70);
   padding: 0.2rem 3rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
+  // border-radius: 20px;
   @include make-flex($dir: row, $just: space-between, $align: center);
 
   @include respondAt(915px) {

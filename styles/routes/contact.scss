@@ -1,10 +1,14 @@
 .ContactUsSection {
-  @include box(100vw, 100vh);
+  @include box(100vw, auto);
   background: url("/Images/home_bg.png"), lightgray 50%;
   background-size: cover;
   background-position: bottom;
 //   background-repeat: no-repeat;
   background-color: black;
+  @include respondAt(915px)
+  {
+    padding-bottom: 3rem;
+  }
   &__container {
     color: white;
     padding-top: 5rem;
@@ -14,8 +18,10 @@
       font-weight: 700;
       margin-left: 4.5rem;
       @include respondAt(915px) {
-        margin-left: 7rem;
+        width: 100vw;
+        text-align: center;
         font-size: 2.5rem;
+        margin-left: 0;
       }
     }
     &--details {
@@ -36,6 +42,9 @@
       }
       &__card {
         margin: 1rem 4rem 1rem 4rem;
+        @include respondAt(915px) {
+          margin: 1rem 2rem 1rem 2rem;
+        }
         &--name,
         &--designation,
         &--phone {
@@ -48,6 +57,21 @@
             font-size: 1.3rem;
           }
         }
+        // &--name {
+        //   @include respondAt(915px) {
+        //     font-size: 1.3rem;
+        //   }
+        // }
+        // &--designation {
+        //   @include respondAt(915px) {
+        //     font-size: 1.2rem;
+        //   }
+        // }
+        // &--phone {
+        //   @include respondAt(915px) {
+        //     font-size: 0.8rem;
+        //   }
+        // }
       }
     }
   }

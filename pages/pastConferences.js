@@ -6,11 +6,15 @@ function PastConferences()
 {
     return (
         <div className='PastConferencesSection'>
-            <div className='PastConferencesSection__slider'>
+            <div className='PastConferencesSection__container'>
+                <p className='PastConferencesSection__container--heading'>PAST CONFERENCES</p>
+            <div className='PastConferencesSection__container--slider'>
                 <PastConfSlider />
             </div>
-            <div className='PastConferencesSection__titles'>
+            <div className='PastConferencesSection__container--titles'>
                 <PastConfTitles />
+            </div>
+
             </div>
         </div>
     )

@@ -1,16 +1,32 @@
 .PastConferencesSection {
-  @include box(100vw, 100vh);
+  @include box(100vw, auto);
   background: url("/Images/home_bg.png"), lightgray 50%;
   background-size: cover;
   background-position: bottom;
-    background-repeat: no-repeat;
+  background-repeat: no-repeat;
   background-color: black;
-  &__slider {
-    display: flex;
-    justify-content: center;
-    padding: 6rem 6rem 1rem 6rem;
-    @include respondAt(915px) {
+  padding-top: 5rem;
+  &__container {
+    // @include box(100%, 100%);
+    height: auto;
+    margin: 0rem 2rem 0 2rem;
+    padding-top: 1.5rem;
+    background: linear-gradient(rgba(2, 0, 0, 1), rgba(21, 21, 21, 1));
+    &--heading {
+      color: #fff;
+      font-size: 5.625rem;
+      font-family: "Bebas Neue", sans-serif;
+      text-align: center;
+      margin-bottom: 0;
+      margin-top: 0;
+    }
+    &--slider {
+      display: flex;
+      justify-content: center;
+      padding: 3rem 6rem 1rem 6rem;
+      @include respondAt(915px) {
         padding: 7rem 0 4rem 0;
+      }
     }
   }
 }
