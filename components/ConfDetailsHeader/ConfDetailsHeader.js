@@ -5,7 +5,7 @@ function ConfHeader() {
     return (
         <div className='ConfHeader'>
             <div className='ConfHeader__heading'>
-                <p>MISꟻITS 2022</p>
+                <p><span>MISFITS</span> 2022</p>
             </div>
             <div className='ConfHeader__details'>
                 <div className='ConfHeader__details--slider'>

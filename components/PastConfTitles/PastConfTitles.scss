@@ -1,7 +1,7 @@
 .PastConfTitlesContainer {
   color: white;
   display: flex;
-  //   justify-content: center;
+    justify-content: center;
   justify-content: flex-start;
   align-items: center;
   &::-webkit-scrollbar {
@@ -22,23 +22,23 @@
       display: block;
       width: 0;
       height: 2px;
-      background-color: #fff;
+      background-color: #c7751e;
       transition: width 0.3s;
     }
 
     &:hover::after {
       width: 100%;
     }
-    margin: 0 4rem 0 4rem;
+    margin: 0 3rem 0 3rem;
     @include respondAt(915px) {
       margin: 0 2rem 0 2rem;
     }
     &--year {
       color: #fff;
       text-align: center;
-      font-size: 3.75rem;
+      font-size: 3.25rem;
       font-family: "Outfit", sans-serif;
-      font-weight: 700;
+      font-weight: 500;
       margin-bottom: 0;
       margin-top: 0;
       @include respondAt(915px) {
@@ -48,7 +48,7 @@
     &--title {
       color: #fff;
       text-align: center;
-      font-size: 1.75rem;
+      font-size: 1rem;
       font-family: "Outfit", sans-serif;
       font-weight: 200;
       margin-top: 0;
