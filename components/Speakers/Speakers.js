@@ -41,8 +41,8 @@ function Speakers() {
             <div className='Speakers__content'>
                 {speakerDetails.map((item) => {
                     return (
-                        <div key={item.name} className='Speakers__content--card'>
-                            <img className='Speakers__content--card__image' src={item.image} />
+                        <div onClick={(e) => e.preventDefault()} key={item.name} className='Speakers__content--card'>
+                            <img onClick={(e) => e.preventDefault()} className='Speakers__content--card__image' src={item.image} />
                             <p className='Speakers__content--card__name'>{item.name}</p>
                             <p className='Speakers__content--card__desc'>{item.desc}</p>
                         </div>
