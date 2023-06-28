@@ -3,6 +3,7 @@ import Speakers from '../Speakers/Speakers';
 import useConf from '../../hooks/useConf';
 import './ConferenceDetails.scss';
 import React from 'react';
+import Performers from '../Performers/Performers';
 
 function ConfDetails() {
     const { conference } = useConf();
@@ -22,6 +23,9 @@ function ConfDetails() {
                 </div>
                 <div className='ConfDetailsSection__conference--speakers'>
                     <Speakers />
+                </div>
+                <div className='ConfDetailsSection__conference--performers'>
+                    <Performers />
                 </div>
             </div>
             <div style={{paddingTop : "3rem"}} id='conf2'></div>

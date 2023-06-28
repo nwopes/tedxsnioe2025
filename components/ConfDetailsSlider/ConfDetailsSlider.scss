@@ -15,7 +15,7 @@
 .radio {
   position: relative;
   top: 85%;
-  left: 110%;
+  left: 24em;
   width: 18px;
   height: 18px;
   margin: 0 15px 0 0;
@@ -53,6 +53,7 @@ input[type="radio"]:checked {
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 1rem;
   transition: transform 400ms ease;
   @include respondAt(915px) {
     width: 120%;

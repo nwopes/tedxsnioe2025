@@ -1,7 +1,7 @@
-.Speakers {
+.Performers {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: flex-start;
   @include respondAt(915px) {
     align-items: center;
   }
@@ -11,23 +11,24 @@
     font-family: "Outfit", sans-serif;
     font-weight: 500;
     margin-bottom: 1rem;
-    margin-right: 2.5em;
+    // margin-right: 2.5em;
+    margin-left: 2.5em;
     margin-top: 0;
     @include respondAt(915px) {
-        width: 100vw;
-        display: grid;
-        place-items: center;
-        font-size: 2.5rem;
-        margin-right: 0;
+      width: 100vw;
+      display: grid;
+      place-items: center;
+      font-size: 2.5rem;
+      margin-right: 0;
+      margin-left: 0;
     }
   }
   &__content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    // align-items: flex-start;
     &--card {
-        margin: 1rem 2rem 1rem 2rem;
+      margin: 1rem 2rem 1rem 2rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -37,8 +38,8 @@
         height: 20rem;
         border-radius: 1rem;
         @include respondAt(915px) {
-            width: 15rem;
-            height: 12rem;
+          width: 15rem;
+          height: 12rem;
         }
       }
       &__name {
@@ -49,7 +50,7 @@
         margin-top: 0;
         margin-bottom: 0;
         @include respondAt(915px) {
-            font-size: 1.5rem;
+          font-size: 1.5rem;
         }
       }
       &__desc {
@@ -60,7 +61,7 @@
         margin-top: 0;
         margin-bottom: 0;
         @include respondAt(915px) {
-            font-size: 1rem;
+          font-size: 1rem;
         }
       }
     }

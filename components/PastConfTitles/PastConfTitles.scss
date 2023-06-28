@@ -2,12 +2,13 @@
   color: white;
   display: flex;
     justify-content: center;
-  justify-content: flex-start;
+    // width: 100vw;
+  // justify-content: flex-start;
   align-items: center;
   &::-webkit-scrollbar {
     display: none;
   }
-  overflow-x: scroll;
+  // overflow-x: scroll;
   @include respondAt(915px) {
     border-radius: 20px;
     border: 2px solid #c7751e;
@@ -15,6 +16,8 @@
     padding: 1rem;
     margin-left: 1rem;
     margin-right: 1rem;
+    overflow-x: scroll;
+    justify-content: flex-start;
   }
   &__card {
     &::after {

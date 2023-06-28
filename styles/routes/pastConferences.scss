@@ -23,6 +23,7 @@
       text-align: center;
       margin-bottom: 0;
       margin-top: 0;
+      letter-spacing: 0.18rem;
       @include respondAt(915px)
       {
         font-size: 3rem;
