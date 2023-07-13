@@ -86,47 +86,66 @@ function Navbar({ isSmall = false }) {
                     >
                         <li
                             className={`${pathName === "/"
-                                ? "NavbarContainer__Menu--list-activeItem"
-                                : "NavbarContainer__Menu--list-item"
+                                ? "NavbarContainer__Menu--list-activeItem-1"
+                                : "NavbarContainer__Menu--list-item-1"
                                 }`}
                         >
                             <Link style={{color : "white"}} href="/">Home</Link>
                         </li>
-                        <li
-                            className={`${pathName === "/pastConferences"
-                                ? "NavbarContainer__Menu--list-activeItem"
-                                : "NavbarContainer__Menu--list-item"
-                                }`}
-                        >
-                            <Link style={{color : "white"}} href="/pastConferences">Past Conferences</Link>
-                        </li>
-                        <li
-                            className={`${pathName === "/gallery"
-                                ? "NavbarContainer__Menu--list-activeItem"
-                                : "NavbarContainer__Menu--list-item"
-                                }`}
-                        >
-                            <Link style={{color : "white"}} href="/">Blogs</Link>
-                        </li>
-                        <li
+                        <li 
                             className={`${pathName === "/events"
-                                ? "NavbarContainer__Menu--list-activeItem"
-                                : "NavbarContainer__Menu--list-item"
+                                ? "NavbarContainer__Menu--list-activeItem-2"
+                                : "NavbarContainer__Menu--list-item-2"
                                 }`}
                         >
                             <Link style={{color : "white"}} href="/">About Us</Link>
                         </li>
+                        <li 
+                            className={`${pathName === "/events"
+                                ? "NavbarContainer__Menu--list-activeItem-3"
+                                : "NavbarContainer__Menu--list-item-3"
+                                }`}
+                        >
+                            <Link style={{color : "white"}} href="/">Our Speakers</Link>
+                        </li>
+                        <li
+                            className={`${pathName === "/gallery"
+                                ? "NavbarContainer__Menu--list-activeItem-4"
+                                : "NavbarContainer__Menu--list-item-4"
+                                }`}
+                        >
+                            <Link style={{color : "white"}} href="/">Sponsors</Link>
+                        </li>
+                        <li
+                            className={`${pathName === "/events"
+                                ? "NavbarContainer__Menu--list-activeItem-5"
+                                : "NavbarContainer__Menu--list-item-5"
+                                }`}
+                        >
+                            <Link style={{color : "white"}} href="/">Register</Link>
+                        </li>
 
                         <li
                             className={`${pathName === "/contact"
-                                ? "NavbarContainer__Menu--list-activeItem"
-                                : "NavbarContainer__Menu--list-item"
+                                ? "NavbarContainer__Menu--list-activeItem-6"
+                                : "NavbarContainer__Menu--list-item-6"
                                 }`}
                         >
                             <Link style={{color : "white"}} href="/contact">Contact Us</Link>
                         </li>
                     </ul>
                 </div>
+                <div className="NavbarContainer__topRightLogo">
+                    <Link href="/" aria-label="Go to Home Page">
+                        <Image
+                            src='/Images/kSmall.png'
+                            alt="kSmall Logo"
+                            width={isSmall ? 90 : 70}
+                            height={isSmall ? 40 : 60}
+                            priority
+                        />
+                    </Link>
+                    </div>
             </div>
         </nav>
     );
