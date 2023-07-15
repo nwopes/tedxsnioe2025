@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  line-height: normal;
+}
+
+:root {
+  /* fonts */
+  --font-outfit: Outfit;
+  --font-bebas-neue: "Bebas Neue";
+
+  /* font sizes */
+  --font-size-2xl: 21px;
+  --font-size-41xl: 60px;
+  --font-size-11xl: 30px;
+
+  /* Colors */
+  --color-gray: #212223;
+  --color-chocolate: #c7751e;
+  --color-white: #fff;
+  --color-black: #000;
+
+  /* Gaps */
+  --gap-3xs: 10px;
+
+  /* Paddings */
+  --padding-4xs: 9px;
+  --padding-lgi: 19px;
+
+  /* border radiuses */
+  --br-lgi: 19px;
+}

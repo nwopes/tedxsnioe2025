@@ -1,0 +1,88 @@
+.websitepattern-1-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1440px;
+  height: 1024px;
+  object-fit: cover;
+}
+.span {
+  font-weight: 300;
+  font-family: var(--font-outfit);
+}
+.p {
+  margin: 0;
+}
+.attendees1 {
+  margin: 0;
+  font-weight: 600;
+  color: #10125c;
+}
+.attendees {
+  position: absolute;
+  top: 89px;
+  left: 82px;
+  line-height: 110%;
+}
+.attendees3 {
+  margin: 0;
+  font-weight: 600;
+  color: #a51100;
+}
+.attendees2 {
+  position: absolute;
+  top: 88px;
+  left: 415px;
+  line-height: 110%;
+}
+.attendees5 {
+  margin: 0;
+  font-weight: 600;
+  color: #f2810b;
+}
+.attendees4 {
+  position: absolute;
+  top: 89px;
+  left: 748px;
+  line-height: 110%;
+}
+.attendees7 {
+  margin: 0;
+  font-weight: 600;
+  color: #2a6543;
+}
+.attendees6 {
+  position: absolute;
+  top: 88px;
+  left: 1081px;
+  line-height: 110%;
+}
+.stats-child,
+.stats-inner,
+.stats-item {
+  position: absolute;
+  top: 111px;
+  left: 386px;
+  background-color: var(--color-black);
+  width: 3px;
+  height: 80px;
+}
+.stats-inner,
+.stats-item {
+  left: 1052px;
+}
+.stats-inner {
+  top: 103px;
+  left: 719px;
+}
+.stats {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 307px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-41xl);
+  color: var(--color-black);
+  font-family: var(--font-outfit);
+}

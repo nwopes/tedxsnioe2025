@@ -1,0 +1,195 @@
+.websitepattern-1-icon1 {
+  position: absolute;
+  top: calc(50% - 512px);
+  left: calc(50% - 720px);
+  width: 1440px;
+  height: 1024px;
+  object-fit: cover;
+}
+.our-speakers,
+.sponsors {
+  position: absolute;
+  top: 728px;
+  left: 865px;
+  line-height: 130%;
+  font-weight: 600;
+}
+.sponsors {
+  left: 1100px;
+}
+.register-or-contact,
+.wanna-attend {
+  position: absolute;
+  left: 215px;
+  line-height: 130%;
+}
+.wanna-attend {
+  top: 153px;
+  font-size: 71px;
+  font-family: var(--font-bebas-neue);
+}
+.register-or-contact {
+  top: 245px;
+  font-size: 50px;
+  display: flex;
+  align-items: center;
+  width: 570px;
+  height: 59px;
+}
+.footer-child {
+  position: absolute;
+  top: 683px;
+  left: 671px;
+  width: 154px;
+  height: 181px;
+}
+.tedxshivnadarioe-black1-1-icon {
+  position: absolute;
+  top: 844px;
+  left: 549px;
+  width: 389px;
+  height: 40px;
+  object-fit: cover;
+}
+.icon,
+.instagram-icons-photography-co,
+.social-35-linkedin-outline-ico-icon {
+  position: absolute;
+  top: 920px;
+  left: 716px;
+  width: 55px;
+  height: 37px;
+  object-fit: cover;
+}
+.icon,
+.social-35-linkedin-outline-ico-icon {
+  left: 784px;
+  width: 37px;
+}
+.social-35-linkedin-outline-ico-icon {
+  left: 666px;
+}
+.about-us,
+.home {
+  position: absolute;
+  top: 728px;
+  left: 215px;
+  line-height: 130%;
+  font-weight: 600;
+}
+.about-us {
+  left: 418px;
+}
+.ellipse-div,
+.footer-child1,
+.footer-inner,
+.footer-item {
+  position: absolute;
+  top: 744px;
+  left: 350px;
+  border-radius: 50%;
+  background-color: var(--color-black);
+  width: 10px;
+  height: 10px;
+}
+.ellipse-div,
+.footer-child1,
+.footer-inner {
+  top: 746px;
+  left: 596px;
+}
+.ellipse-div,
+.footer-child1 {
+  top: 744px;
+  left: 825px;
+}
+.footer-child1 {
+  left: 1070px;
+}
+.vector-icon2,
+.view-all2 {
+  position: relative;
+  margin: 0 !important;
+}
+.view-all2 {
+  top: 24px;
+  left: 124px;
+  line-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 107px;
+  height: 26px;
+  flex-shrink: 0;
+  transform: rotate(-180deg);
+  transform-origin: 0 0;
+  z-index: 0;
+}
+.vector-icon2 {
+  top: 15px;
+  left: 35px;
+  width: 8px;
+  height: 14px;
+  display: none;
+  z-index: 1;
+}
+.rectangle-32default2 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: -100%;
+  bottom: 0;
+  left: 100%;
+  border-radius: var(--br-lgi);
+  background-color: var(--color-gray);
+  border: 2px solid var(--color-chocolate);
+  box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  padding: var(--padding-4xs) var(--padding-lgi);
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+  transform: rotate(-180deg);
+  transform-origin: 0 0;
+}
+.rectangle-32default-container,
+.rectangle-32default-wrapper {
+  position: absolute;
+  top: 393px;
+  left: 219px;
+  width: 144px;
+  height: 43px;
+  text-align: center;
+  font-size: var(--font-size-2xl);
+  color: var(--color-white);
+}
+.rectangle-32default-container {
+  left: 393px;
+  width: 162px;
+}
+.chevron-right-fill0-wght700-gr-icon,
+.chevron-right-fill0-wght700-gr-icon1 {
+  position: absolute;
+  top: 358px;
+  left: 339px;
+  width: 11px;
+  height: 21px;
+  object-fit: cover;
+}
+.chevron-right-fill0-wght700-gr-icon1 {
+  left: 537px;
+}
+.footer {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1024px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--color-black);
+  font-family: var(--font-outfit);
+}
