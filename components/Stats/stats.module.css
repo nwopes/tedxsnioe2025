@@ -1,4 +1,4 @@
-.websitepattern-1-icon {
+.websitepattern1Icon {
   position: absolute;
   top: 0;
   left: 0;
@@ -57,9 +57,9 @@
   left: 1081px;
   line-height: 110%;
 }
-.stats-child,
-.stats-inner,
-.stats-item {
+.statsChild,
+.statsInner,
+.statsItem {
   position: absolute;
   top: 111px;
   left: 386px;
@@ -67,11 +67,11 @@
   width: 3px;
   height: 80px;
 }
-.stats-inner,
-.stats-item {
+.statsInner,
+.statsItem {
   left: 1052px;
 }
-.stats-inner {
+.statsInner {
   top: 103px;
   left: 719px;
 }

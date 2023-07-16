@@ -1,4 +1,4 @@
-.websitepattern-1-icon1 {
+.websitepattern1Icon {
   position: absolute;
   top: calc(50% - 512px);
   left: calc(50% - 720px);
@@ -6,7 +6,7 @@
   height: 1024px;
   object-fit: cover;
 }
-.our-speakers,
+.ourSpeakers,
 .sponsors {
   position: absolute;
   top: 728px;
@@ -17,18 +17,18 @@
 .sponsors {
   left: 1100px;
 }
-.register-or-contact,
-.wanna-attend {
+.registerOrContact,
+.wannaAttend {
   position: absolute;
   left: 215px;
   line-height: 130%;
 }
-.wanna-attend {
+.wannaAttend {
   top: 153px;
   font-size: 71px;
   font-family: var(--font-bebas-neue);
 }
-.register-or-contact {
+.registerOrContact {
   top: 245px;
   font-size: 50px;
   display: flex;
@@ -36,14 +36,14 @@
   width: 570px;
   height: 59px;
 }
-.footer-child {
+.footerChild {
   position: absolute;
   top: 683px;
   left: 671px;
   width: 154px;
   height: 181px;
 }
-.tedxshivnadarioe-black1-1-icon {
+.tedxshivnadarioeBlack11Icon {
   position: absolute;
   top: 844px;
   left: 549px;
@@ -52,8 +52,8 @@
   object-fit: cover;
 }
 .icon,
-.instagram-icons-photography-co,
-.social-35-linkedin-outline-ico-icon {
+.instagramIconsPhotographyCo,
+.social35LinkedinOutlineIcoIcon {
   position: absolute;
   top: 920px;
   left: 716px;
@@ -62,14 +62,14 @@
   object-fit: cover;
 }
 .icon,
-.social-35-linkedin-outline-ico-icon {
+.social35LinkedinOutlineIcoIcon {
   left: 784px;
   width: 37px;
 }
-.social-35-linkedin-outline-ico-icon {
+.social35LinkedinOutlineIcoIcon {
   left: 666px;
 }
-.about-us,
+.aboutUs,
 .home {
   position: absolute;
   top: 728px;
@@ -77,13 +77,13 @@
   line-height: 130%;
   font-weight: 600;
 }
-.about-us {
+.aboutUs {
   left: 418px;
 }
-.ellipse-div,
-.footer-child1,
-.footer-inner,
-.footer-item {
+.ellipseDiv,
+.footerChild1,
+.footerInner,
+.footerItem {
   position: absolute;
   top: 744px;
   left: 350px;
@@ -92,28 +92,28 @@
   width: 10px;
   height: 10px;
 }
-.ellipse-div,
-.footer-child1,
-.footer-inner {
+.ellipseDiv,
+.footerChild1,
+.footerInner {
   top: 746px;
   left: 596px;
 }
-.ellipse-div,
-.footer-child1 {
+.ellipseDiv,
+.footerChild1 {
   top: 744px;
   left: 825px;
 }
-.footer-child1 {
+.footerChild1 {
   left: 1070px;
 }
-.vector-icon2,
-.view-all2 {
-  position: relative;
+.vectorIcon,
+.viewAll {
+  position: absolute;
   margin: 0 !important;
 }
-.view-all2 {
-  top: 24px;
-  left: 124px;
+.viewAll {
+  top: 8px;
+  left: 138px;
   line-height: 100%;
   display: flex;
   align-items: center;
@@ -125,7 +125,7 @@
   transform-origin: 0 0;
   z-index: 0;
 }
-.vector-icon2 {
+.vectorIcon {
   top: 15px;
   left: 35px;
   width: 8px;
@@ -133,7 +133,7 @@
   display: none;
   z-index: 1;
 }
-.rectangle-32default2 {
+.rectangle32default {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -155,10 +155,10 @@
   transform: rotate(-180deg);
   transform-origin: 0 0;
 }
-.rectangle-32default-container,
-.rectangle-32default-wrapper {
+.rectangle32defaultContainer,
+.rectangle32defaultWrapper {
   position: absolute;
-  top: 393px;
+  top: 334px;
   left: 219px;
   width: 144px;
   height: 43px;
@@ -166,12 +166,12 @@
   font-size: var(--font-size-2xl);
   color: var(--color-white);
 }
-.rectangle-32default-container {
+.rectangle32defaultContainer {
   left: 393px;
   width: 162px;
 }
-.chevron-right-fill0-wght700-gr-icon,
-.chevron-right-fill0-wght700-gr-icon1 {
+.chevronRightFill0Wght700GrIcon,
+.chevronRightFill0Wght700GrIcon1 {
   position: absolute;
   top: 358px;
   left: 339px;
@@ -179,7 +179,7 @@
   height: 21px;
   object-fit: cover;
 }
-.chevron-right-fill0-wght700-gr-icon1 {
+.chevronRightFill0Wght700GrIcon1 {
   left: 537px;
 }
 .footer {
