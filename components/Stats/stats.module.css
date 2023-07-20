@@ -1,3 +1,26 @@
+
+@import "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&display=swap";
+body {
+	margin: 0;
+	line-height: normal;
+}
+&:root {
+	--font-outfit: Outfit;
+	--font-bebas-neue: "Bebas Neue";
+	--font-size-41xl: 60px;
+	--font-size-2xl: 21px;
+	--font-size-11xl: 30px;
+	--color-white: #fff;
+	--color-black: #000;
+	--color-gray: #212223;
+	--color-chocolate: #c7751e;
+	--gap-3xs: 10px;
+	--padding-4xs: 9px;
+	--padding-lgi: 19px;
+	--br-lgi: 19px;
+}
+
 .websitepattern1Icon {
   position: absolute;
   top: 0;
