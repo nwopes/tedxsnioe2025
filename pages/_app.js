@@ -2,6 +2,9 @@ import "../styles/root/globals.scss";
 import App from "next/app";
 import Head from "next/head";
 import Navbar from "../components/Navbar/Navbar";
+import Spons from "../components/Spons/Spons";
+
+
 import { ConfProvider } from "../context/ConfContext";
 function MyApp({ Component, pageProps, user }) {
     const getLayout = Component.getLayout || ((page) => page);
@@ -17,6 +20,7 @@ function MyApp({ Component, pageProps, user }) {
                 </Head>
                 <Navbar />
                 <Component {...pageProps} />
+                <Spons />
             </ConfProvider>
         </>
     );
