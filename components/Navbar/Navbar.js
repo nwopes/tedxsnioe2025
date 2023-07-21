@@ -21,7 +21,7 @@ function Navbar({ isSmall = false }) {
         setNavState(false);
     }, [pathName]);
     useEffect(() => {
-        if (window.innerWidth <= 960) {
+        if (window.innerWidth <= 960) { 
             setIsSmallScreen(true);
         } else {
             setIsSmallScreen(false);
