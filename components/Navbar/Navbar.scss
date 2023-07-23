@@ -35,6 +35,13 @@
   -webkit-backdrop-filter: saturate(280%) blur(25px);
   backdrop-filter: saturate(280%) blur(25px);
 
+  &__topRightLogo{
+
+    @include respondAt(915px) {
+      display: none;
+    }
+  }
+
   &__Menu {
     &--list {
       font-family: "Inter-SemiBold", Helvetica, sans-serif;
@@ -64,10 +71,10 @@
       }
       font-family: "Outfit", sans-serif;
 
-      &-item-1 {
+      &-item{
         display: block;
         @include respondAt(915px) {
-          font-size: 2rem;
+          font-size: 25px;
         }
         &::after {
           content: "";
@@ -83,10 +90,10 @@
         }
       }
 
-      &-activeItem-1 {
+      &-activeItem{
         display: block;
         @include respondAt(915px) {
-          font-size: 2rem;
+          font-size: 25px;
         }
         color: white;
         &::after {
@@ -94,177 +101,7 @@
           display: block;
           width: 100%;
           height: 2px;
-          background-color:#ff2600;
-          transition: width 0.3s;
-        }
-      }
-      &-item-2 {
-        display: block;
-        @include respondAt(915px) {
-          font-size: 2rem;
-        }
-        &::after {
-          content: "";
-          display: block;
-          width: 0;
-          height: 2px;
-          background-color: #05822c;
-          transition: width 0.3s;
-        }
-
-        &:hover::after {
-          width: 100%;
-        }
-      }
-
-      &-activeItem-2 {
-        display: block;
-        @include respondAt(915px) {
-          font-size: 2rem;
-        }
-        color: white;
-        &::after {
-          content: "";
-          display: block;
-          width: 100%;
-          height: 2px;
-          background-color: #05822c;
-          transition: width 0.3s;
-        }
-      }
-      &-item-3 {
-        display: block;
-        @include respondAt(915px) {
-          font-size: 2rem;
-        }
-        &::after {
-          content: "";
-          display: block;
-          width: 0;
-          height: 2px;
-          background-color: #1a1d7d;
-          transition: width 0.3s;
-        }
-
-        &:hover::after {
-          width: 100%;
-        }
-      }
-
-      &-activeItem-3 {
-        display: block;
-        @include respondAt(915px) {
-          font-size: 2rem;
-        }
-        color: white;
-        &::after {
-          content: "";
-          display: block;
-          width: 100%;
-          height: 2px;
-          background-color: #1a1d7d;
-          transition: width 0.3s;
-        }
-      }
-      &-item-4 {
-        display: block;
-        @include respondAt(915px) {
-          font-size: 2rem;
-        }
-        &::after {
-          content: "";
-          display: block;
-          width: 0;
-          height: 2px;
-          background-color: #ff2600;
-          transition: width 0.3s;
-        }
-
-        &:hover::after {
-          width: 100%;
-        }
-      }
-
-      &-activeItem-4 {
-        display: block;
-        @include respondAt(915px) {
-          font-size: 2rem;
-        }
-        color: white;
-        &::after {
-          content: "";
-          display: block;
-          width: 100%;
-          height: 2px;
-          background-color: #ff2600;
-          transition: width 0.3s;
-        }
-      }
-      &-item-5 {
-        display: block;
-        @include respondAt(915px) {
-          font-size: 2rem;
-        }
-        &::after {
-          content: "";
-          display: block;
-          width: 0;
-          height: 2px;
-          background-color: #05822c;
-          transition: width 0.3s;
-        }
-
-        &:hover::after {
-          width: 100%;
-        }
-      }
-
-      &-activeItem-5 {
-        display: block;
-        @include respondAt(915px) {
-          font-size: 2rem;
-        }
-        color: white;
-        &::after {
-          content: "";
-          display: block;
-          width: 100%;
-          height: 2px;
-          background-color: #05822c;
-          transition: width 0.3s;
-        }
-      }
-      &-item-6 {
-        display: block;
-        @include respondAt(915px) {
-          font-size: 2rem;
-        }
-        &::after {
-          content: "";
-          display: block;
-          width: 0;
-          height: 2px;
-          background-color: #1a1d7d;
-          transition: width 0.3s;
-        }
-
-        &:hover::after {
-          width: 100%;
-        }
-      }
-
-      &-activeItem-6 {
-        display: block;
-        @include respondAt(915px) {
-          font-size: 2rem;
-        }
-        color: white;
-        &::after {
-          content: "";
-          display: block;
-          width: 100%;
-          height: 2px;
-          background-color: #1a1a1a;
+          background-color:white;
           transition: width 0.3s;
         }
       }
