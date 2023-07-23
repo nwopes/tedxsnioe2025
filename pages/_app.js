@@ -2,7 +2,6 @@ import "../styles/root/globals.scss";
 import App from "next/app";
 import Head from "next/head";
 import Navbar from "../components/Navbar/Navbar";
-import Spons from "../components/Spons/Spons";
 import SwiperCore, { Autoplay } from 'swiper';
 
 import { ConfProvider } from "../context/ConfContext";
