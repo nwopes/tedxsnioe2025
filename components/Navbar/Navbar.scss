@@ -54,6 +54,10 @@
       font-weight: 300;
       color: white;
 
+      p{
+        cursor: pointer;
+      }
+
       @include respondAt(1060px) {
         gap: 3rem;
       }

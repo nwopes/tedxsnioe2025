@@ -1,4 +1,4 @@
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname} from "next/navigation";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
@@ -9,18 +9,11 @@ function Navbar({ isSmall = false }) {
     const [navState, setNavState] = useState(false);
     const pathName = usePathname();
     const [isSmallScreen, setIsSmallScreen] = useState(false);
-    const [hash, setHash] = useState("");
-
-    const handleLogout = async () => {
-        await logout();
-        console.log("Logged out ", user);
-        window.location.reload();
-    };
 
     useEffect(() => {
         setNavState(false);
     }, [pathName]);
-    
+
     useEffect(() => {
         if (window.innerWidth <= 960) {
             setIsSmallScreen(true);
@@ -35,6 +28,15 @@ function Navbar({ isSmall = false }) {
             window.removeEventListener("hashchange", () => { });
         };
     });
+
+    const scrollTo = (id) => {
+        const element = document.getElementById(id);
+        element.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+            inline: "nearest",
+        });
+    };
 
     return (
         <nav
@@ -99,7 +101,9 @@ function Navbar({ isSmall = false }) {
                                 : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
-                            <Link style={{ color: "white" }} href="/">About Us</Link>
+                            <p style={{ color: "white" }}
+                                onClick={() => scrollTo("about")}
+                            >About Us</p>
                         </li>
                         <li
                             className={`${pathName === "/events"
@@ -107,7 +111,9 @@ function Navbar({ isSmall = false }) {
                                 : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
-                            <Link style={{ color: "white" }} href="/">Our Speakers</Link>
+                            <p style={{ color: "white" }}
+                                onClick={() => scrollTo("past-speakers")}
+                            >Our Speakers</p>
                         </li>
                         <li
                             className={`${pathName === "/gallery"
@@ -115,7 +121,9 @@ function Navbar({ isSmall = false }) {
                                 : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
-                            <Link style={{ color: "white" }} href="/">Sponsors</Link>
+                            <p style={{ color: "white" }}
+                                onClick={() => scrollTo("sponsors")}
+                            >Sponsors</p>
                         </li>
                         <li
                             className={`${pathName === "/events"

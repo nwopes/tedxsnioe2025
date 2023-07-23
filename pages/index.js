@@ -7,19 +7,29 @@ import '../styles/routes/home.scss'
 function Home() {
     return (
         <>
-            <section className="LandingPageSection">
+            <section
+                className="LandingPageSection"
+                id="home">
                 <LandingSection />
             </section>
-            <section className="StatsSection">
+            <section
+                id="stats"
+                className="StatsSection">
                 <Stats />
             </section>
-            <section className="AboutSection">
+            <section
+                id="about"
+                className="AboutSection">
                 <AboutUs />
             </section>
-            <section className="PastSpeakersSection">
+            <section
+                id="past-speakers"
+                className="PastSpeakersSection">
                 <PastSpeakers />
             </section>
-            <section className="SponsorsSection">
+            <section
+                id="sponsors"
+                className="SponsorsSection">
                 <Sponsors />
             </section>
         </>
