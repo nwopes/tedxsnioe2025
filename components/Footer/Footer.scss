@@ -1,0 +1,153 @@
+.Footer {
+  // padding: 7rem 7rem 0 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  &__header {
+    padding-left: 7rem;
+    padding-top: 7rem;
+    @include respondAt(915px) {
+        padding-left: 3rem;
+        padding-top: 5rem;
+    }
+    &--text {
+      color: #000;
+      font-family: "Bebas Neue", serif;
+      font-size: 4rem;
+      font-style: normal;
+      font-weight: 400;
+      margin-top: 0;
+      margin-bottom: 0;
+      @include respondAt(915px) {
+        font-size: 3rem;
+      }
+    }
+    &--desc {
+      color: #000;
+      font-family: "Outfit", sans-serif;
+      font-size: 3rem;
+      font-style: normal;
+      font-weight: 400;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      @include respondAt(915px) {
+        font-size: 2rem;
+      }
+    }
+    &--buttons {
+        display: flex;
+        @include respondAt(915px) {
+            flex-direction: column;
+        }
+      &__register {
+        border-radius: 1.1875rem;
+        border: 2px solid #c7751e;
+        background: #212223;
+        width: 9rem;
+        padding: 0.5625rem 1.1875rem;
+        color: #fff;
+        text-align: center;
+        font-family: "Outfit", sans-serif;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        margin-right: 2rem;
+        cursor: pointer;
+        @include respondAt(915px) {
+            width: 10rem;
+            margin-right: 0;
+            margin-bottom: 1rem;
+        }
+      }
+      &__contact {
+        border-radius: 1.1875rem;
+        border: 2px solid #c7751e;
+        background: #212223;
+        width: 10rem;
+        padding: 0.5625rem 1.1875rem;
+        color: #fff;
+        text-align: center;
+        font-family: "Outfit", sans-serif;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        cursor: pointer;
+      }
+    }
+  }
+  &__below {
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include respondAt(915px) {
+        align-items: flex-start;
+    }
+    &--sections {
+      margin-left: 7rem;
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      @include respondAt(915px) {
+        flex-direction: column;
+        margin-left: 3rem;
+        align-items: flex-start;
+      }
+      &__item {
+        color: #000;
+        font-family: "Outfit", sans-serif;
+        font-size: 1.3rem;
+        font-style: normal;
+        font-weight: 600;
+        margin-right: 3rem;
+        cursor: pointer;
+        @include respondAt(915px) {
+            font-size: 1.6rem;
+        }
+      }
+      &__divider {
+        width: 0.5rem;
+        margin-right: 3rem;
+        @include respondAt(915px) {
+            display: none;
+        }
+      }
+      &__logo {
+        width: 12rem;
+        cursor: pointer;
+        @include respondAt(915px) {
+            display: none;
+        
+        }
+      }
+    }
+    &--logo {
+      margin-bottom: 2rem;
+      @include respondAt(915px) {
+        margin-left: 2rem;
+      }
+
+      img {
+        width: 25rem;
+        cursor: pointer;
+        @include respondAt(915px) {
+            width: 20rem;
+        }
+      }
+    }
+    &--social {
+        @include respondAt(915px) {
+            margin-left: 3rem;
+        }
+      img {
+        width: 2rem;
+        margin-right: 1rem;
+        cursor: pointer;
+        @include respondAt(915px) {
+        
+        }
+      }
+    }
+  }
+}

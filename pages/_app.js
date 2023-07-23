@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar/Navbar";
 import SwiperCore, { Autoplay } from 'swiper';
 
 import { ConfProvider } from "../context/ConfContext";
+import Footer from "../components/Footer/Footer";
 function MyApp({ Component, pageProps, user }) {
     const getLayout = Component.getLayout || ((page) => page);
     SwiperCore.use([Autoplay])
@@ -21,6 +22,9 @@ function MyApp({ Component, pageProps, user }) {
                 <Navbar />
                 <Component {...pageProps} />
                 {/* <Spons /> */}
+                <section className="FooterSection">
+                    <Footer />
+                </section>
             </ConfProvider>
         </>
     );
