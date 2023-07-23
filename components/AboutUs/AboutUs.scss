@@ -1,76 +1,52 @@
-/* Default styles for larger screens */
 .AboutUs {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  background: url('/Images/patter-aboutus.png') no-repeat;
-  background-size: cover;
+  color: white;
+  display: grid;
+  place-items: center;
+  align-content: center;
   height: 100vh;
-}
-
-.AboutUsContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 1200px;
-  width: 100%;
-  padding: 20px;
-}
-
-.AboutUsHeading {
-  color: white;
-  font-family: Bebas Neue;
-  font-size: 68px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.AboutUsContent {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  margin-top: 20px;
-}
-
-.AboutUsContentText {
-  flex: 1;
-  padding-left: 30px;
-  color: white;
-  font-family: Outfit;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.RectangleShape {
-  width: 498px;
-  height: 364px;
-  border-radius: 40px;
-  background: #d9d9d9;
-  margin-left: 20px;
-}
-
-@media screen and (max-width: 768px) {
-  .AboutUs {
+  &__heading {
+    color: #fff;
+    text-align: center;
+    font-family: "Bebas Neue", serif;
+    font-size: 4.25rem;
+    font-style: normal;
+    font-weight: 400;
+    @include respondAt(1200px) {
+      font-size: 3rem;
+    }
+  }
+  &__content {
+    display: flex;
     align-items: center;
-  }
-
-  .AboutUsContainer {
-    padding: 10px;
-  }
-
-  .AboutUsHeading {
-    font-size: 48px;
-  }
-
-  .AboutUsContent {
-    flex-direction: column;
-  }
-
-  .RectangleShape {
-    margin-left: 0;
-    margin-top: 10px;
+    margin-top: 3rem;
+    @include respondAt(1200px) {
+      flex-direction: column-reverse;
+    }
+    &--text {
+      color: #fff;
+      font-family: "Outfit", sans-serif;
+      font-size: 1.5rem;
+      font-style: normal;
+      font-weight: 400;
+      width: 40rem;
+      margin-right: 5rem;
+      
+      @include respondAt(767px) {
+        margin: 0;
+        width: 20rem;
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 3rem;
+        margin-right: 0;
+      }
+      @include respondAt(1200px) {
+        margin: 0;
+        width: 40rem;
+        font-size: 1.3rem;
+        text-align: center;
+        margin-top: 3rem;
+        margin-right: 0;
+      }
+    }
   }
 }
