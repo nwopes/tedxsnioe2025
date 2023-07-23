@@ -64,6 +64,7 @@
 
       @include respondAt(915px) {
         display: none;
+        margin-right: 3rem;
 
         &-open {
           display: block;
@@ -97,7 +98,6 @@
 
       &-activeItem {
         display: block;
-
 
         color: white;
 
