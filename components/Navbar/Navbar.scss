@@ -77,10 +77,6 @@
       &-item {
         display: block;
 
-        @include respondAt(915px) {
-          font-size: 25px;
-        }
-
         &::after {
           content: "";
           display: block;
@@ -95,12 +91,13 @@
         }
       }
 
+      @include respondAt(915px) {
+        font-size: 18px
+      }
+
       &-activeItem {
         display: block;
 
-        @include respondAt(915px) {
-          font-size: 25px;
-        }
 
         color: white;
 
