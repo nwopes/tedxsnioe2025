@@ -11,7 +11,7 @@
     font-size: 4.25rem;
     font-style: normal;
     font-weight: 400;
-    @include respondAt(1200px) {
+    @include respondAtLarge(768px,1200px) {
       font-size: 3rem;
     }
   }
@@ -39,7 +39,7 @@
         margin-top: 3rem;
         margin-right: 0;
       }
-      @include respondAt(1200px) {
+      @include respondAtLarge(768px,1200px) {
         margin: 0;
         width: 40rem;
         font-size: 1.3rem;

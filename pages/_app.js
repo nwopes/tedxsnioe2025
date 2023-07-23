@@ -3,11 +3,12 @@ import App from "next/app";
 import Head from "next/head";
 import Navbar from "../components/Navbar/Navbar";
 import Spons from "../components/Spons/Spons";
-
+import SwiperCore, { Autoplay } from 'swiper';
 
 import { ConfProvider } from "../context/ConfContext";
 function MyApp({ Component, pageProps, user }) {
     const getLayout = Component.getLayout || ((page) => page);
+    SwiperCore.use([Autoplay])
     return (
         <>
             <ConfProvider>

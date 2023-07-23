@@ -1,5 +1,6 @@
 import AboutUs from "../components/AboutUs/AboutUs";
 import LandingSection from "../components/LandingSection/LandingSection";
+import PastSpeakers from "../components/PastSpeakers/PastSpeakers";
 import Stats from "../components/Stats/stats";
 import '../styles/routes/home.scss'
 function Home() {
@@ -13,6 +14,9 @@ function Home() {
             </section>
             <section className="AboutSection">
                 <AboutUs />
+            </section>
+            <section className="PastSpeakersSection">
+                <PastSpeakers />
             </section>
         </>
     )
