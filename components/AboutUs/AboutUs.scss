@@ -1,0 +1,76 @@
+/* Default styles for larger screens */
+.AboutUs {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: url('/Images/patter-aboutus.png') no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.AboutUsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+}
+
+.AboutUsHeading {
+  color: white;
+  font-family: Bebas Neue;
+  font-size: 68px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.AboutUsContent {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.AboutUsContentText {
+  flex: 1;
+  padding-left: 30px;
+  color: white;
+  font-family: Outfit;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.RectangleShape {
+  width: 498px;
+  height: 364px;
+  border-radius: 40px;
+  background: #d9d9d9;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .AboutUs {
+    align-items: center;
+  }
+
+  .AboutUsContainer {
+    padding: 10px;
+  }
+
+  .AboutUsHeading {
+    font-size: 48px;
+  }
+
+  .AboutUsContent {
+    flex-direction: column;
+  }
+
+  .RectangleShape {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}

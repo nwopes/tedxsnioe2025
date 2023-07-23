@@ -2,7 +2,7 @@
   position: fixed;
   z-index: 100;
   @include box(100vw, auto);
-  // padding: 0.5rem;
+  // padding: 0.5rem; 
   @include respondAt(915px) {
     @include box(100vw , auto);
     // padding: 1rem;
