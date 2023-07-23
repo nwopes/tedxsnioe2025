@@ -86,40 +86,40 @@ function Navbar({ isSmall = false }) {
                     >
                         <li
                             className={`${pathName === "/"
-                                ? "NavbarContainer__Menu--list-activeItem-1"
-                                : "NavbarContainer__Menu--list-item-1"
+                                ? "NavbarContainer__Menu--list-activeItem"
+                                : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
                             <Link style={{color : "white"}} href="/">Home</Link>
                         </li>
                         <li 
                             className={`${pathName === "/events"
-                                ? "NavbarContainer__Menu--list-activeItem-2"
-                                : "NavbarContainer__Menu--list-item-2"
+                                ? "NavbarContainer__Menu--list-activeItem"
+                                : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
                             <Link style={{color : "white"}} href="/">About Us</Link>
                         </li>
                         <li 
                             className={`${pathName === "/events"
-                                ? "NavbarContainer__Menu--list-activeItem-3"
-                                : "NavbarContainer__Menu--list-item-3"
+                                ? "NavbarContainer__Menu--list-activeItem"
+                                : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
                             <Link style={{color : "white"}} href="/">Our Speakers</Link>
                         </li>
                         <li
                             className={`${pathName === "/gallery"
-                                ? "NavbarContainer__Menu--list-activeItem-4"
-                                : "NavbarContainer__Menu--list-item-4"
+                                ? "NavbarContainer__Menu--list-activeItem"
+                                : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
                             <Link style={{color : "white"}} href="/">Sponsors</Link>
                         </li>
                         <li
                             className={`${pathName === "/events"
-                                ? "NavbarContainer__Menu--list-activeItem-5"
-                                : "NavbarContainer__Menu--list-item-5"
+                                ? "NavbarContainer__Menu--list-activeItem"
+                                : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
                             <Link style={{color : "white"}} href="/">Register</Link>
@@ -127,8 +127,8 @@ function Navbar({ isSmall = false }) {
 
                         <li
                             className={`${pathName === "/contact"
-                                ? "NavbarContainer__Menu--list-activeItem-6"
-                                : "NavbarContainer__Menu--list-item-6"
+                                ? "NavbarContainer__Menu--list-activeItem"
+                                : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
                             <Link style={{color : "white"}} href="/contact">Contact Us</Link>
