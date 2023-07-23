@@ -2,9 +2,10 @@
   position: fixed;
   z-index: 100;
   @include box(100vw, auto);
+
   // padding: 0.5rem; 
   @include respondAt(915px) {
-    @include box(100vw , auto);
+    @include box(100vw, auto);
     // padding: 1rem;
   }
 }
@@ -35,7 +36,7 @@
   -webkit-backdrop-filter: saturate(280%) blur(25px);
   backdrop-filter: saturate(280%) blur(25px);
 
-  &__topRightLogo{
+  &__topRightLogo {
 
     @include respondAt(915px) {
       display: none;
@@ -43,6 +44,7 @@
   }
 
   &__Menu {
+
     &--list {
       font-family: "Inter-SemiBold", Helvetica, sans-serif;
       @include make-flex($dir: row, $just: space-between, $align: center);
@@ -65,17 +67,20 @@
 
         &-open {
           display: block;
-          @include make-flex($dir: column, $just: flex-start, $align: center);
-          padding-left: 0;
+          @include make-flex($dir: column, $just: center ,$align: center);
         }
       }
-      font-family: "Outfit", sans-serif;
 
-      &-item{
+      font-family: "Outfit",
+      sans-serif;
+
+      &-item {
         display: block;
+
         @include respondAt(915px) {
           font-size: 25px;
         }
+
         &::after {
           content: "";
           display: block;
@@ -90,18 +95,21 @@
         }
       }
 
-      &-activeItem{
+      &-activeItem {
         display: block;
+
         @include respondAt(915px) {
           font-size: 25px;
         }
+
         color: white;
+
         &::after {
           content: "";
           display: block;
           width: 100%;
           height: 2px;
-          background-color:white;
+          background-color: white;
           transition: width 0.3s;
         }
       }

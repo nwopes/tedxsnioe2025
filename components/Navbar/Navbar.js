@@ -20,8 +20,9 @@ function Navbar({ isSmall = false }) {
     useEffect(() => {
         setNavState(false);
     }, [pathName]);
+    
     useEffect(() => {
-        if (window.innerWidth <= 960) { 
+        if (window.innerWidth <= 960) {
             setIsSmallScreen(true);
         } else {
             setIsSmallScreen(false);
@@ -90,23 +91,23 @@ function Navbar({ isSmall = false }) {
                                 : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
-                            <Link style={{color : "white"}} href="/">Home</Link>
+                            <Link style={{ color: "white" }} href="/">Home</Link>
                         </li>
-                        <li 
+                        <li
                             className={`${pathName === "/events"
                                 ? "NavbarContainer__Menu--list-activeItem"
                                 : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
-                            <Link style={{color : "white"}} href="/">About Us</Link>
+                            <Link style={{ color: "white" }} href="/">About Us</Link>
                         </li>
-                        <li 
+                        <li
                             className={`${pathName === "/events"
                                 ? "NavbarContainer__Menu--list-activeItem"
                                 : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
-                            <Link style={{color : "white"}} href="/">Our Speakers</Link>
+                            <Link style={{ color: "white" }} href="/">Our Speakers</Link>
                         </li>
                         <li
                             className={`${pathName === "/gallery"
@@ -114,7 +115,7 @@ function Navbar({ isSmall = false }) {
                                 : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
-                            <Link style={{color : "white"}} href="/">Sponsors</Link>
+                            <Link style={{ color: "white" }} href="/">Sponsors</Link>
                         </li>
                         <li
                             className={`${pathName === "/events"
@@ -122,7 +123,7 @@ function Navbar({ isSmall = false }) {
                                 : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
-                            <Link style={{color : "white"}} href="/">Register</Link>
+                            <Link style={{ color: "white" }} href="/">Register</Link>
                         </li>
 
                         <li
@@ -131,7 +132,7 @@ function Navbar({ isSmall = false }) {
                                 : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
-                            <Link style={{color : "white"}} href="/contact">Contact Us</Link>
+                            <Link style={{ color: "white" }} href="/contact">Contact Us</Link>
                         </li>
                     </ul>
                 </div>
@@ -145,7 +146,7 @@ function Navbar({ isSmall = false }) {
                             priority
                         />
                     </Link>
-                    </div>
+                </div>
             </div>
         </nav>
     );
