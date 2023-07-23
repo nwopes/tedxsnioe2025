@@ -4,5 +4,9 @@
   height: 100vh;
   background-size: cover;
   background-color: black;
-  // background-color: linear-gradient(223deg, rgba(246, 172, 95, 0.20) 0%, rgba(242, 129, 11, 0.20) 52.60%, rgba(255, 255, 255, 0.00) 100%);
+}
+.StatsSection {
+  background-image: url('/Images/Stats/stats.png');
+  background-size: cover;
+  width: 100vw;
 }
