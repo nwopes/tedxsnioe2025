@@ -20,7 +20,7 @@ function MyApp({ Component, pageProps, user }) {
                 </Head>
                 <Navbar />
                 <Component {...pageProps} />
-                <Spons />
+                {/* <Spons /> */}
             </ConfProvider>
         </>
     );

@@ -1,9 +1,9 @@
-import HomeHeader from "../components/HomeHeader/HomeHeader";
+import LandingSection from "../components/LandingSection/LandingSection";
 import '../styles/routes/home.scss'
 function Home() {
     return (
-        <section className="HomeHeaderSection">
-            <HomeHeader />
+        <section className="LandingPageSection">
+            <LandingSection />
         </section>
     )
 }
