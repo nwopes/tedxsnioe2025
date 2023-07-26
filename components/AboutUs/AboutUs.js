@@ -42,9 +42,9 @@ function AboutUs() {
             showNavs={true}
           /> */}
           <Carousel>
-            {images.map((item) => {
+            {images.map((item, index) => {
               return (
-                <img className='' src={item.url} />
+                <img key={index} src={item.url} />
               )
             })}
           </Carousel>
