@@ -8,11 +8,11 @@
     padding-left: 7rem;
     padding-top: 7rem;
     @include respondAt(915px) {
-        padding-left: 3rem;
-        padding-top: 5rem;
+      padding-left: 2rem;
+      padding-top: 3rem;
     }
     &--text {
-      color: #000;
+      color: #fff;
       font-family: "Bebas Neue", serif;
       font-size: 4rem;
       font-style: normal;
@@ -24,7 +24,7 @@
       }
     }
     &--desc {
-      color: #000;
+      color: #fff;
       font-family: "Outfit", sans-serif;
       font-size: 3rem;
       font-style: normal;
@@ -36,10 +36,10 @@
       }
     }
     &--buttons {
-        display: flex;
-        @include respondAt(915px) {
-            flex-direction: column;
-        }
+      display: flex;
+      @include respondAt(915px) {
+        flex-direction: column;
+      }
       &__register {
         border-radius: 1.1875rem;
         border: 2px solid #c7751e;
@@ -55,9 +55,9 @@
         margin-right: 2rem;
         cursor: pointer;
         @include respondAt(915px) {
-            width: 10rem;
-            margin-right: 0;
-            margin-bottom: 1rem;
+          width: 10rem;
+          margin-right: 0;
+          margin-bottom: 1rem;
         }
       }
       &__contact {
@@ -82,7 +82,7 @@
     flex-direction: column;
     align-items: center;
     @include respondAt(915px) {
-        align-items: flex-start;
+      align-items: flex-start;
     }
     &--sections {
       margin-left: 7rem;
@@ -91,11 +91,12 @@
       margin-bottom: 2rem;
       @include respondAt(915px) {
         flex-direction: column;
-        margin-left: 3rem;
+        margin-left: 2rem;
         align-items: flex-start;
+        margin-bottom: 0rem;
       }
       &__item {
-        color: #000;
+        color: #fff;
         font-family: "Outfit", sans-serif;
         font-size: 1.3rem;
         font-style: normal;
@@ -103,49 +104,49 @@
         margin-right: 3rem;
         cursor: pointer;
         @include respondAt(915px) {
-            font-size: 1.6rem;
+          font-size: 1.6rem;
+          margin-bottom: 1rem;
+          margin-top: 1rem;
         }
       }
       &__divider {
         width: 0.5rem;
         margin-right: 3rem;
         @include respondAt(915px) {
-            display: none;
+          display: none;
         }
       }
       &__logo {
         width: 12rem;
         cursor: pointer;
         @include respondAt(915px) {
-            display: none;
-        
+          display: none;
         }
       }
     }
     &--logo {
       margin-bottom: 2rem;
       @include respondAt(915px) {
-        margin-left: 2rem;
+        margin-left: 1rem;
       }
 
       img {
         width: 25rem;
         cursor: pointer;
         @include respondAt(915px) {
-            width: 20rem;
+          width: 20rem;
         }
       }
     }
     &--social {
-        @include respondAt(915px) {
-            margin-left: 3rem;
-        }
+      @include respondAt(915px) {
+        margin-left: 2rem;
+      }
       img {
         width: 2rem;
         margin-right: 1rem;
         cursor: pointer;
         @include respondAt(915px) {
-        
         }
       }
     }

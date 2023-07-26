@@ -6,7 +6,7 @@ export default function LandingSection() {
                 <img src='/Images/Assets/conf_logo.png' className='LandingPageContainer__logo--image' />
             </div>
             <div className='LandingPageContainer__desc'>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Every turn tells a different story.
             </div>
             <div className='LandingPageContainer__details'>
                 <div className='LandingPageContainer__details--date'>

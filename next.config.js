@@ -19,6 +19,6 @@ const nextConfig = {
     sassOptions: {
         additionalData: `@import "styles/root/_mixins.scss";@import "styles/root/_variables.scss";`,
     },
-};
 
+};
 module.exports = nextConfig;

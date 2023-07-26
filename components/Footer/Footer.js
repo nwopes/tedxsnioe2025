@@ -23,7 +23,7 @@ export default function Footer() {
           <p className="Footer__below--sections__item">Sponsors</p>
         </div>
         <div className="Footer__below--logo">
-          <img src="/Images/Footer/tedx.png" />
+          <img src="/Images/TedX_logo.png" />
         </div>
         <div className="Footer__below--social">
           <img src="/Images/Footer/linkedin.png" />

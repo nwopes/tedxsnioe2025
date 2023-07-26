@@ -4,7 +4,7 @@
   align-content: center;
   &__our {
     &--heading {
-      color: #fff;
+      color: black;
       font-family: "Bebas Neue", serif;
       font-size: 5rem;
       font-style: normal;
@@ -42,7 +42,7 @@
   }
   &__past {
     &--heading {
-      color: #fff;
+      color: black;
       font-family: "Bebas Neue", serif;
       font-size: 5rem;
       font-style: normal;
@@ -52,6 +52,32 @@
       text-align: center;
       @include respondAt(767px) {
         font-size: 4rem;
+      }
+    }
+    &--button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem;
+      &__content {
+        border-radius: 1.1875rem;
+        border: 2px solid #c7751e;
+        background: #212223;
+        width: 9rem;
+        padding: 0.5625rem 1.1875rem;
+        color: #fff;
+        text-align: center;
+        font-family: "Outfit", sans-serif;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        margin-right: 2rem;
+        cursor: pointer;
+        @include respondAt(915px) {
+          width: 10rem;
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
       }
     }
     &--cards {

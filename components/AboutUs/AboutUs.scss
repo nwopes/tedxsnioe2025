@@ -22,6 +22,12 @@
     @include respondAt(1200px) {
       flex-direction: column-reverse;
     }
+    &--carousel {
+      width: 30rem;
+      @include respondAt(767px)  {
+        width: 15rem;
+      }
+    }
     &--text {
       color: #fff;
       font-family: "Outfit", sans-serif;
@@ -34,9 +40,8 @@
       @include respondAt(767px) {
         margin: 0;
         width: 20rem;
-        font-size: 1rem;
+        font-size: .8rem;
         text-align: center;
-        margin-top: 3rem;
         margin-right: 0;
       }
       @include respondAtLarge(768px,1200px) {

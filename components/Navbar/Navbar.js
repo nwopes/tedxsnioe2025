@@ -105,7 +105,7 @@ function Navbar({ isSmall = false }) {
                                 onClick={() => scrollTo("about")}
                             >About Us</p>
                         </li>
-                        <li
+                        {/* <li
                             className={`${pathName === "/events"
                                 ? "NavbarContainer__Menu--list-activeItem"
                                 : "NavbarContainer__Menu--list-item"
@@ -114,7 +114,7 @@ function Navbar({ isSmall = false }) {
                             <p style={{ color: "white" }}
                                 onClick={() => scrollTo("past-speakers")}
                             >Our Speakers</p>
-                        </li>
+                        </li> */}
                         <li
                             className={`${pathName === "/gallery"
                                 ? "NavbarContainer__Menu--list-activeItem"

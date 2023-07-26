@@ -22,11 +22,11 @@ function Home() {
                 className="AboutSection">
                 <AboutUs />
             </section>
-            <section
+            {/* <section
                 id="past-speakers"
                 className="PastSpeakersSection">
                 <PastSpeakers />
-            </section>
+            </section> */}
             <section
                 id="sponsors"
                 className="SponsorsSection">

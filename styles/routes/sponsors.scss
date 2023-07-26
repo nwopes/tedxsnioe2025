@@ -1,0 +1,9 @@
+.AllSponsors {
+  @include box(100vw, 100vh);
+  background: url("/Images/Assets/overallbg.png"), lightgray 50%;
+  background-size: cover;
+  background-position: bottom;
+  //   background-repeat: no-repeat;
+  background-color: white;
+  padding-top: 10rem;
+}

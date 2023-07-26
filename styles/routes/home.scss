@@ -1,32 +1,33 @@
 .LandingPageSection {
-  background-image: url('/Images/LandingPage/landing_page.png');
+  // background-image: url('/Images/LandingPage/landing_page.png');
+  background-image: url('/Images/Assets/overallbg.png');
   width: 100vw;
   height: 100vh;
   background-size: cover;
   background-color: black;
 }
 .StatsSection {
-  background-image: url('/Images/Stats/stats.png');
+  background-image: url('/Images/Assets/overallbg.png');
   background-size: cover;
   width: 100vw;
 }
 .AboutSection {
-  background-image: url('/Images/AboutUs/about_us.png');
+  background-image: url('/Images/Assets/overallbg.png');
   width: 100vw;
   height: 100vh;
   background-size: cover;
   background-color: black;
 }
 .PastSpeakersSection {
-  background-image: url('/Images/PastSpeakers/past_speakers.png');
+  background-image: url('/Images/Assets/overallbg.png');
   width: 100vw;
   height: 100vh;
   background-size: cover;
 }
 .SponsorsSection {
-  background-image: url('/Images/AboutUs/about_us.png');
+  background-image: url('/Images/Assets/overallbg.png');
   width: 100vw;
   height: 100%;
   background-size: cover;
-  background-color: black;
+  background-color: white;
 }
