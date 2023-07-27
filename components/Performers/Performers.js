@@ -1,7 +1,4 @@
 import './Performers.scss';
-import speaker1 from "../../public/Images/2022_speakers/anurag123.jpg";
-import speaker2 from "../../public/Images/2022_speakers/Brindali.JPG";
-import speaker3 from "../../public/Images/2022_speakers/chinab.JPG";
 
 
 function Performers() {
@@ -9,17 +6,14 @@ function Performers() {
         {
             'name': 'Anurag Vashisht',
             'desc': 'Story Teller',
-            'image': speaker1.src
         },
         {
             'name': 'Brindali Patel',
             'desc': 'Story Teller',
-            'image': speaker2.src
         },
         {
             'name': 'Chinab',
             'desc': 'Story Teller',
-            'image': speaker3.src
         },
 
     ]
