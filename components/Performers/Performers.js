@@ -1,37 +1,27 @@
 import './Performers.scss';
+import speaker1 from "../../public/Images/2022_speakers/anurag.JPG";
+import speaker2 from "../../public/Images/2022_speakers/Brindali.JPG";
+import speaker3 from "../../public/Images/2022_speakers/chinab.JPG";
+
 
 function Performers() {
     const performerDetails = [
         {
-            'name': 'Vanika',
+            'name': 'Anurag Vashisht',
             'desc': 'Story Teller',
-            'image': 'https://i.pinimg.com/originals/2b/de/de/2bdede0647e3cdf75b44ea33723201d9.jpg'
+            'image': speaker1.src
         },
         {
-            'name': 'Vanika',
+            'name': 'Brindali Patel',
             'desc': 'Story Teller',
-            'image': 'https://i.pinimg.com/originals/2b/de/de/2bdede0647e3cdf75b44ea33723201d9.jpg'
+            'image': speaker2.src
         },
         {
-            'name': 'Vanika',
+            'name': 'Chinab',
             'desc': 'Story Teller',
-            'image': 'https://i.pinimg.com/originals/2b/de/de/2bdede0647e3cdf75b44ea33723201d9.jpg'
+            'image': speaker3.src
         },
-        {
-            'name': 'Vanika',
-            'desc': 'Story Teller',
-            'image': 'https://i.pinimg.com/originals/2b/de/de/2bdede0647e3cdf75b44ea33723201d9.jpg'
-        },
-        {
-            'name': 'Vanika',
-            'desc': 'Story Teller',
-            'image': 'https://i.pinimg.com/originals/2b/de/de/2bdede0647e3cdf75b44ea33723201d9.jpg'
-        },
-        {
-            'name': 'Vanika',
-            'desc': 'Story Teller',
-            'image': 'https://i.pinimg.com/originals/2b/de/de/2bdede0647e3cdf75b44ea33723201d9.jpg'
-        },
+
     ]
     return (
         <div className='Performers'>

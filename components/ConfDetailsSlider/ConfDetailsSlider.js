@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import './ConfDetailsSlider.scss'
+import ted_2022_1 from '../../public/Images/2022/IMG_0743.JPG'
+import ted_2022_2 from '../../public/Images/2022/IMG_0804.JPG'
+import ted_2022_3 from '../../public/Images/2022/IMG_0667.JPG'
+import ted_2022_4 from '../../public/Images/2022/IMG_0879.JPG'
+import ted_2022_5 from '../../public/Images/2022/IMG_0930.JPG'
 
 function ConfDetailsSlider() {
     const [checked , setChecked] = React.useState("1");
@@ -14,11 +19,11 @@ function ConfDetailsSlider() {
             <input className='radio' value="4" type="radio" name="slider" id="s42" defaultChecked={checked === "4"} onClick={() => handleClick("4")} />
             <input className='radio' value="5" type="radio" name="slider" id="s52" defaultChecked={checked === "5"} onClick={() => handleClick("5")} />
 
-            <label onClick={(e) => e.preventDefault()} for="s1" id="slide12"><img onClick={(e) => e.preventDefault()} src="https://i.pinimg.com/originals/2b/de/de/2bdede0647e3cdf75b44ea33723201d9.jpg" alt="" /></label>
-            <label onClick={(e) => e.preventDefault()} for="s2" id="slide22"><img onClick={(e) => e.preventDefault()} src="https://images6.alphacoders.com/462/thumb-1920-462371.jpg" alt="" /></label>
-            <label onClick={(e) => e.preventDefault()} for="s3" id="slide32"><img onClick={(e) => e.preventDefault()} src="https://wallpaperaccess.com/full/1154341.jpg" alt="" /></label>
-            <label onClick={(e) => e.preventDefault()} for="s4" id="slide42"><img onClick={(e) => e.preventDefault()} src="https://wallpapercave.com/wp/wp2634222.jpg" alt="" /></label>
-            <label onClick={(e) => e.preventDefault()} for="s5" id="slide52"><img onClick={(e) => e.preventDefault()} src="https://images5.alphacoders.com/343/thumb-1920-343645.jpg" alt="" /></label>
+            <label onClick={(e) => e.preventDefault()} for="s1" id="slide12"><img onClick={(e) => e.preventDefault()} src={ted_2022_1.src} alt="" /></label>
+            <label onClick={(e) => e.preventDefault()} for="s2" id="slide22"><img onClick={(e) => e.preventDefault()} src={ted_2022_2.src} alt="" /></label>
+            <label onClick={(e) => e.preventDefault()} for="s3" id="slide32"><img onClick={(e) => e.preventDefault()} src={ted_2022_3.src} alt="" /></label>
+            <label onClick={(e) => e.preventDefault()} for="s4" id="slide42"><img onClick={(e) => e.preventDefault()} src={ted_2022_4.src} alt="" /></label>
+            <label onClick={(e) => e.preventDefault()} for="s5" id="slide52"><img onClick={(e) => e.preventDefault()} src={ted_2022_5.src} alt="" /></label>
         </section>
     )
 }

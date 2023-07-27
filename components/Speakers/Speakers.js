@@ -1,36 +1,55 @@
 import './Speakers.scss';
+import speaker4 from '../../public/Images/2022_speakers/himanshu.JPG'
+import speaker5 from '../../public/Images/2022_speakers/kavitha.JPG'
+import speaker6 from '../../public/Images/2022_speakers/Nafisa.JPG'
+import speaker8 from '../../public/Images/2022_speakers/priyanshu.JPG'
+import speaker9 from '../../public/Images/2022_speakers/ritika.JPG'
+import speaker10 from '../../public/Images/2022_speakers/sanjeev.JPG'
+import speaker11 from '../../public/Images/2022_speakers/sudhir.JPG'
+import speaker12 from '../../public/Images/2022_speakers/vanika.JPG'
+
 
 function Speakers() {
     const speakerDetails = [
         {
-            'name': 'Vanika',
+            'name': 'Himanshu Rai',
             'desc': 'Story Teller',
-            'image': 'https://i.pinimg.com/originals/2b/de/de/2bdede0647e3cdf75b44ea33723201d9.jpg'
+            'image': speaker4.src
         },
         {
-            'name': 'Vanika',
+            'name': 'Kavitha Emmanual',
             'desc': 'Story Teller',
-            'image': 'https://i.pinimg.com/originals/2b/de/de/2bdede0647e3cdf75b44ea33723201d9.jpg'
+            'image': speaker5.src
         },
         {
-            'name': 'Vanika',
+            'name': 'Nafisa Rachel William',
             'desc': 'Story Teller',
-            'image': 'https://i.pinimg.com/originals/2b/de/de/2bdede0647e3cdf75b44ea33723201d9.jpg'
+            'image': speaker6.src
         },
         {
-            'name': 'Vanika',
+            'name': 'Priyanshu Grover',
             'desc': 'Story Teller',
-            'image': 'https://i.pinimg.com/originals/2b/de/de/2bdede0647e3cdf75b44ea33723201d9.jpg'
+            'image': speaker8.src
         },
         {
-            'name': 'Vanika',
+            'name': 'Ritika Khatnani',
             'desc': 'Story Teller',
-            'image': 'https://i.pinimg.com/originals/2b/de/de/2bdede0647e3cdf75b44ea33723201d9.jpg'
+            'image': speaker9.src
         },
         {
-            'name': 'Vanika',
+            'name': 'Sanjeev Bagai',
             'desc': 'Story Teller',
-            'image': 'https://i.pinimg.com/originals/2b/de/de/2bdede0647e3cdf75b44ea33723201d9.jpg'
+            'image': speaker10.src
+        },
+        {
+            'name': 'Sudhir R',
+            'desc': 'Story Teller',
+            'image': speaker11.src
+        },
+        {
+            'name': 'Vanika Sangtani',
+            'desc': 'Story Teller',
+            'image': speaker12.src
         },
     ]
     return (
