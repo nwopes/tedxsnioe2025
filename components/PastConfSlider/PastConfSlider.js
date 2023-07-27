@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
 import './PastConfSlider.scss'
-import ted1 from '../../public/Images/pastconf/2018_ted.jpg'
-import ted2 from '../../public/Images/pastconf/2019_ted.jpg'
-import ted3 from '../../public/Images/pastconf/2020_ted.jpg'
-import ted4 from '../../public/Images/pastconf/2021_ted.jpg'
-import ted5 from '../../public/Images/pastconf/2022_ted.jpg'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 

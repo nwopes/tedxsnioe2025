@@ -1,5 +1,5 @@
 import './our_speaker.css'
-import bg from '../../public/Images/WebsitePattern 1.png'
+// import bg from '../../public/Images/WebsitePattern 1.png'
 
 const OurSpeakers = () => {
 
@@ -24,7 +24,7 @@ const OurSpeakers = () => {
     return (
         <>
             <div className="speakers_section_bg">
-                <img src={bg.src} className="speakers_section_bg__img"/>
+                <img src='/Images/Assets/dummy.png' className="speakers_section_bg__img"/>
             </div>
             <div className="speakers_section_title">
                 <p>OUR SPEAKERS</p>
