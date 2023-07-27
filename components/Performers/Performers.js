@@ -1,5 +1,5 @@
 import './Performers.scss';
-import speaker1 from "../../public/Images/2022_speakers/anurag.JPG";
+import speaker1 from "../../public/Images/2022_speakers/anurag123.jpg";
 import speaker2 from "../../public/Images/2022_speakers/Brindali.JPG";
 import speaker3 from "../../public/Images/2022_speakers/chinab.JPG";
 
