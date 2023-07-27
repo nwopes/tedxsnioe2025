@@ -1,5 +1,5 @@
 .PastConfTitlesContainer {
-  color: white;
+  color: black;
   display: flex;
     justify-content: center;
     // width: 100vw;
@@ -12,7 +12,7 @@
   @include respondAt(915px) {
     border-radius: 20px;
     border: 2px solid #c7751e;
-    background: #212223;
+    // background: #212223;
     padding: 1rem;
     margin-left: 1rem;
     margin-right: 1rem;
@@ -37,7 +37,7 @@
       margin: 0 2rem 0 2rem;
     }
     &--year {
-      color: #fff;
+      color: black;
       text-align: center;
       font-size: 3.25rem;
       font-family: "Outfit", sans-serif;
@@ -49,7 +49,7 @@
       }
     }
     &--title {
-      color: #fff;
+      color: black;
       text-align: center;
       font-size: 1rem;
       font-family: "Outfit", sans-serif;

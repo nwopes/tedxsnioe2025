@@ -5,14 +5,35 @@ import ted2 from '../../public/Images/pastconf/2019_ted.jpg'
 import ted3 from '../../public/Images/pastconf/2020_ted.jpg'
 import ted4 from '../../public/Images/pastconf/2021_ted.jpg'
 import ted5 from '../../public/Images/pastconf/2022_ted.jpg'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
 function PastConfSlider() {
-    const [checked , setChecked] = React.useState("1");
+    const [checked, setChecked] = React.useState("1");
     const handleClick = (value) => {
         setChecked(value);
     }
+    const images = [
+        { url: "/Images/pastconf/2019_ted.jpg" },
+        { url: "/Images/pastconf/2020_ted.jpg" },
+        { url: "/Images/pastconf/2021_ted.jpg" },
+        { url: "/Images/pastconf/2022_ted.jpg" },
+        { url: "/Images/pastconf/2018_ted.jpg" },
+    ];
     return (
-        <section id="slider">
+        <div className='Main--carousel'>
+            <Carousel>
+                {images.map((item, index) => {
+                    return (
+                        <img key={index} src={item.url} />
+                    )
+                })}
+            </Carousel>
+        </div>
+    )
+}
+
+{/* <section id="slider">
             <input className='radio_pastConf' value="1" type="radio" name="slider" id="s1" defaultChecked={checked === "1"} onClick={() => handleClick("1")} />
             <input className='radio_pastConf' value="2" type="radio" name="slider" id="s2" defaultChecked={checked === "2"} onClick={() => handleClick("2")} />
             <input className='radio_pastConf' value="3" type="radio" name="slider" id="s3" defaultChecked={checked === "3"} onClick={() => handleClick("3")} />
@@ -24,8 +45,6 @@ function PastConfSlider() {
             <label for="s3" id="slide3"><img src={ted3.src} alt="" /></label>
             <label for="s4" id="slide4"><img src={ted4.src} alt="" /></label>
             <label for="s5" id="slide5"><img src={ted5.src} alt="" /></label>
-        </section>
-    )
-}
+        </section> */}
 
 export default PastConfSlider;

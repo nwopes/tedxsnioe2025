@@ -26,6 +26,7 @@
       width: 30rem;
       @include respondAt(767px)  {
         width: 15rem;
+        margin-bottom: 2rem;
       }
     }
     &--text {

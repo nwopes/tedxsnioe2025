@@ -15,12 +15,8 @@ function PastConferences() {
                 <div className='PastConferencesSection__container--titles'>
                     <PastConfTitles />
                 </div>
-                <div className='PastConferencesSection__container--divider'>
-                    <img className='PastConferencesSection__container--divider__image' src='/Images/underline.svg' />
-                </div>
                 <ConfDetails />
             </div>
-
         </div>
     )
 }

@@ -1,10 +1,7 @@
 import { useEffect, useState } from 'react';
 import './AboutUs.scss';
-import SimpleImageSlider from "react-simple-image-slider";
-import { Swiper, SwiperSlide } from 'swiper/react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-// import 'swiper/css';
 
 function AboutUs() {
   const [isSmall, setIsSmall] = useState(false);

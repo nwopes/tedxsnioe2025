@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "framer-motion": "^10.14.0",
     "keen-slider": "^6.8.6",
     "next": "^13.4.4",
     "next-images": "^1.8.5",

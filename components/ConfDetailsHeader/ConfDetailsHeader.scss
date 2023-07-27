@@ -41,25 +41,26 @@
         }
     }
     &--slider {
-      width: 60%;
-      margin-right: 3rem;
+      // width: 60%;
+      // margin-right: 3rem;
     }
     &--content {
-      color: white;
+      color: black;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      width: 60%;
-      padding: 0 4rem 4rem 4rem;
+      width: 50%;
+      padding: 0 4rem 4rem 0rem;
       @include respondAt(915px) {
         padding: 0;
         align-items: center;
       }
       &__title {
-        color: #fff;
+        color: black;
         font-size: 2.5rem;
         font-family: "Outfit", sans-serif;
         font-weight: 600;
+        margin-bottom: 1rem;
         @include respondAt(915px) {
             font-size: 2rem;
             margin-top: 3rem;
@@ -67,7 +68,7 @@
         }
       }
       &__desc {
-        color: #fff;
+        color: black;
         text-align: right;
         font-size: 1.5rem;
         width: 34.8125rem;

@@ -11,7 +11,7 @@ function ConfHeader({title,year,desc}) {
                 <div className='ConfHeader__details--slider'>
                     <ConfDetailsSlider />
                 </div>
-                <img className='ConfHeader__details--divider' src='/Images/divider.svg' />
+                {/* <img className='ConfHeader__details--divider' src='/Images/divider.svg' /> */}
                 <div className='ConfHeader__details--content'>
                     <p className='ConfHeader__details--content__title'>{title}</p>
                     <p className='ConfHeader__details--content__desc'>
