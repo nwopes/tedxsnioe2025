@@ -5,6 +5,7 @@ import '../styles/routes/pastConferences.scss'
 
 function PastConferences() {
     return (
+
         <div className='PastConferencesSection'>
             <div className='PastConferencesSection__container'>
                 <p className='PastConferencesSection__container--heading'>PAST CONFERENCES</p>
@@ -19,6 +20,7 @@ function PastConferences() {
                 </div>
                 <ConfDetails />
             </div>
+
         </div>
     )
 }

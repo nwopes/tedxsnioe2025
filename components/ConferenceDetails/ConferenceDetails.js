@@ -6,6 +6,27 @@ import React from 'react';
 import Performers from '../Performers/Performers';
 
 function ConfDetails() {
+
+    const details = [
+        {
+            title : "Misfits",
+            desc : "Lorem ipsum dolor amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            year : "2022"
+        },
+        {
+            title : "Rewire",
+            desc : "Lorem ipsum dolor amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            year : "2021"
+        },
+        {
+            title : "Rewire",
+            desc : "Lorem ipsum dolor amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+            year : "2021"
+        }
+    ]
+
+
+
     const { conference } = useConf();
     React.useEffect(() => {
         const element = document.getElementById(conference);
@@ -19,7 +40,7 @@ function ConfDetails() {
             <div style={{paddingTop : "3rem"}} id='conf1'></div>
             <div className='ConfDetailsSection__conference'>
                 <div className='ConfDetailsSection__conference--header'>
-                    <ConfHeader />
+                    <ConfHeader title = {details.title}  year = {details.year} desc={details.desc}/>
                 </div>
                 <div className='ConfDetailsSection__conference--speakers'>
                     <Speakers />
