@@ -5,7 +5,7 @@ function ConfHeader({title,year,desc}) {
     return (
         <div className='ConfHeader'>
             <div className='ConfHeader__heading'>
-                <p><span>{title}</span> {year}</p>
+                <p><span>{title}</span><br /> {year}</p>
             </div>
             <div className='ConfHeader__details'>
                 <div className='ConfHeader__details--slider'>
