@@ -17,67 +17,67 @@ function ConfDetails() {
                 {
                     name: 'Kavitha Emmanuel',
                     profession: 'Anti-colourism activist',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2022_speakers/kavitha.JPG'
                 },
                 {
                     name: 'Vanika Sangtani',
                     profession: 'Storyteller',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2022_speakers/vanika.JPG'
                 },
                 {
                     name: 'Chinab',
                     profession: 'Illustrator, political artist',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2022_speakers/chinab.JPG'
                 },
                 {
                     name: 'Anurag Vashisht',
                     profession: 'Singer',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2022_speakers/anurag123.JPG'
                 },
                 {
                     name: 'Prachi Thakur',
                     profession: 'Diversity strategist',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2022_speakers/prachi.JPG'
                 },
                 {
                     name: 'Ritika Khatnani',
                     profession: 'Miss Supernational Asia 2022',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2022_speakers/ritika.JPG'
                 },
                 {
                     name: 'Himanshu Rai',
                     profession: 'Author',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2022_speakers/himanshu.JPG'
                 },
                 {
                     name: 'Sudhir R',
                     profession: 'Fluteboxer',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2022_speakers/sudhir.JPG'
                 },
                 {
                     name: 'Brindali Patel',
                     profession: 'Dancer',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2022_speakers/brindali.JPG'
                 },
                 {
                     name: 'Dr. Sanjeev Bagai',
                     profession: 'Doctor, Padma Bhushan',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2022_speakers/sanjeev.JPG'
                 },
                 {
                     name: 'Priyanshu Grover',
                     profession: 'Lawyer',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2022_speakers/priyanshu.JPG'
                 },
                 {
                     name: 'Nafisa Rachel William',
                     profession: 'Celebrity designer',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2022_speakers/nafisa.JPG'
                 },
                 {
                     name: 'Vineet Panchhi',
                     profession: 'Poet and filmmaker',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2022_speakers/vineet.JPG'
                 }
             ]
         },
@@ -89,52 +89,52 @@ function ConfDetails() {
                 {
                     name: 'Ayushmaan',
                     profession: 'Drag performer, human rights lawyer',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2021_speakers/ayushmaan.JPG'
                 },
                 {
                     name: 'Samriddhi and Japnit',
                     profession: 'Founders of The Girl Code',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2021_speakers/girlcode.JPG'
                 },
                 {
                     name: 'Aakriti Kumar',
                     profession: 'Founder, differniture',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2021_speakers/akriti.JPG'
                 },
                 {
                     name: 'Shrishti Pandey',
                     profession: 'Disability rights activist',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2021_speakers/srishti.JPG'
                 },
                 {
                     name: 'Radhika Khandelwal',
                     profession: 'Chef',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2021_speakers/radhika.JPG'
                 },
                 {
                     name: 'Vatsala Mamgain',
                     profession: 'Director of Resource Mobilization at Child Rights and You, CRY',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2021_speakers/vatsala.JPG'
                 },
                 {
                     name: 'Rumi Aijaz',
                     profession: 'Senior fellow, ORF',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2021_speakers/rumi.JPG'
                 },
                 {
                     name: 'Shrutika Vats',
                     profession: 'Cofounder, QLC',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2021_speakers/shruti.JPG'
                 },
                 {
                     name: 'Autoplay',
                     profession: 'Musicians',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2021_speakers/perf_autoplay.JPG'
                 },
                 {
                     name: 'Anureet',
                     profession: 'Poet',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2021_speakers/anureet.JPG'
                 }
             ]
         },
@@ -146,67 +146,67 @@ function ConfDetails() {
                 {
                     name: 'Manit Ramaiya',
                     profession: 'Concept developer at Saint Gobain',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2019_speakers/manit.JPG'
                 },
                 {
                     name: 'Chingmak Chang',
                     profession: 'Social entrepreneur',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/assets/dummy.JPG'
                 },
                 {
                     name: 'Mahima Gujral Wadhwa',
                     profession: 'Chief Green Bee and Founder of Sui',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2019_speakers/mahima.JPG'
                 },
                 {
                     name: 'Alim Chandani',
                     profession: 'Founder and CEO, Access Mantra',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2019_speakers/alim.JPG'
                 },
                 {
                     name: 'Farheen Ahmad',
                     profession: 'Vlogger',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2019_speakers/.JPG'
                 },
                 {
                     name: 'Ishaan Chowdhary',
                     profession: 'Spoken Word Poet',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2019_speakers/manit.JPG'
                 },
                 {
                     name: 'Manisha Lath Gupta',
                     profession: 'Marketing Director at Uber, Permaculture farmer',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2019_speakers/manisha.JPG'
                 },
                 {
                     name: 'Chaizai',
                     profession: 'Band',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2019_speakers/.JPG'
                 },
                 {
                     name: 'Pradeepa Narayanaswamy',
                     profession: 'Fertility coach',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2019_speakers/pradeepa.JPG'
                 },
                 {
                     name: 'Radhika Mitthal',
                     profession: 'Founder, Super School India',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2019_speakers/radhika.JPG'
                 },
                 {
                     name: 'Sharath Jeevan',
                     profession: 'Founder and CEO, STIR Education',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2019_speakers/sharath.JPG'
                 },
                 {
-                    name: 'Maniesh Paul',
+                    name: 'Manish Paul',
                     profession: 'Television anchor',
                     image: '/Images/Assets/dummy.png'
                 },
                 {
                     name: 'Manish Gupta',
                     profession: 'Business coach',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2019_speakers/manish.png'
                 }
             ]
         },
@@ -218,22 +218,22 @@ function ConfDetails() {
                 {
                     name: 'Vasu Primlani',
                     profession: 'Standup comedian',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2018_speakers/vasu.JPG'
                 },
                 {
                     name: 'Ankur Warikoo',
                     profession: 'Cofounder, Nearby',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2018_speakers/ankur.JPG'
                 },
                 {
                     name: 'Flavia Agnes',
                     profession: 'Lawyer',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2018_speakers/flavia.jpg'
                 },
                 {
                     name: 'Harnidh Kaur',
                     profession: 'Poetess',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2018_speakers/harnidh.jpg'
                 },
                 {
                     name: 'Sanjeetha Bhatachariya',
@@ -243,27 +243,27 @@ function ConfDetails() {
                 {
                     name: 'Sohail Hashmi',
                     profession: 'Historian',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2018_speakers/sohail.jpg'
                 },
                 {
                     name: 'Karan Suri',
                     profession: 'Executive Director, Morgan Stanley',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2018_speakers/manit.JPG'
                 },
                 {
                     name: 'Varun Bhal',
                     profession: 'Fashion designer',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2018_speakers/varun.jpg'
                 },
                 {
                     name: 'Suman and Aarshi',
                     profession: 'Performers',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2018_speakers/perf.JPG'
                 },
                 {
                     name: 'Roshini Nadar',
                     profession: 'CEO, HCL',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2018_speakers/roshni.jpg'
                 },
                 {
                     name: 'Nila Mahab Panda',
@@ -310,7 +310,7 @@ function ConfDetails() {
                 {
                     name: 'Amitabh Mall',
                     profession: 'Partner at the Boston Consulting Group',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2017_speakers/amitabh.jpg'
                 },
                 {
                     name: 'Biana Ghose',
@@ -320,22 +320,22 @@ function ConfDetails() {
                 {
                     name: 'Reema Ahmed',
                     profession: 'Sexuality educator',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2017_speakers/reema.jpg'
                 },
                 {
                     name: 'Nikheel Aphale',
                     profession: 'Calligrapher',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2017_speakers/nikheel.jpg'
                 },
                 {
                     name: 'Stalin. K',
                     profession: 'Film-maker',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2017_speakers/stalin.jpg'
                 },
                 {
                     name: 'Reshma Valliappan',
                     profession: 'Artist and activist',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2017_speakers/reshma.jpg'
                 },
                 {
                     name: 'Reecha Upadyay',
@@ -345,22 +345,22 @@ function ConfDetails() {
                 {
                     name: 'Abhineet Sonkar',
                     profession: 'Design thinking strategist',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2017_speakers/abhineet.jpg'
                 },
                 {
                     name: 'Zorian',
                     profession: 'Cross-theatre artist',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2017_speakers/zorian.jpg'
                 },
                 {
                     name: 'Sriram Raghavan',
                     profession: 'Director, IBM Research',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2017_speakers/sriram.jpg'
                 },
                 {
                     name: 'Shreya Soni',
                     profession: 'Delhi Secret Supper Club',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2017_speakers/shreya.jpg'
                 },
                 {
                     name: 'Shaili Chopra',
@@ -370,7 +370,7 @@ function ConfDetails() {
                 {
                     name: 'Sanjay Seth',
                     profession: 'Social activist',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2017_speakers/sanjay.jpg'
                 },
                 {
                     name: 'Garima Agarwal',
@@ -392,62 +392,62 @@ function ConfDetails() {
                 {
                     name: 'Anahita Dhondy',
                     profession: 'Chef',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2016_speakers/anahita.jpg'
                 },
                 {
                     name: 'Amrita Mahale',
                     profession: 'Rocket scientist turned author',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2016_speakers/amrit.jpg'
                 },
                 {
                     name: 'Vaibhav Mehta',
                     profession: 'Photographer',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2016_speakers/vaibhav.jpg'
                 },
                 {
                     name: 'Karan Singh',
                     profession: 'Illusionist',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2016_speakers/karan.jpg'
                 },
                 {
                     name: 'Karuna Nundy',
                     profession: 'Advocate',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2016_speakers/karuna.jpg'
                 },
                 {
                     name: 'Pavitra Mohan',
                     profession: 'Director of AMRIT Health Initiative of the Ajeevika Bureau',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2016_speakers/pavitra.jpg'
                 },
                 {
                     name: 'Laura Quinn',
                     profession: 'Founder and Managing Director of the Creative Startup Do One Thing',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2016_speakers/laura.jpg'
                 },
                 {
                     name: 'Dr. Shivkumar Kalyanaraman',
                     profession: 'Program Director of Special Initiatives in IBM Research - India',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2016_speakers/shivkumar.jpg'
                 },
                 {
                     name: 'Dr. Isher Judge Ahluwalia',
                     profession: 'Indian Economist, Padma Bhushan',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2016_speakers/isher.jpg'
                 },
                 {
                     name: 'Ramesh Menon',
                     profession: 'Author and Award-winning Journalist',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2016_speakers/ramesh.jpg'
                 },
                 {
                     name: 'Udayan Baijal',
                     profession: 'Producer at the Jamuncollective',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2016_speakers/udyan.jpg'
                 },
                 {
                     name: 'Raul Villamarin Rodriguez',
                     profession: 'Criminal Intelligence Officer at Interpol and Mossad',
-                    image: '/Images/Assets/dummy.png'
+                    image: './Images/2016_speakers/raul.jpg'
                 },
                 {
                     name: 'Prof. Jagdeep S. Chhokar',
