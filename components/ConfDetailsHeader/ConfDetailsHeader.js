@@ -1,7 +1,7 @@
 import ConfDetailsSlider from '../ConfDetailsSlider/ConfDetailsSlider';
 import './ConfDetailsHeader.scss'
 
-function ConfHeader({title,year,desc}) {
+function ConfHeader({title,year,desc, images}) {
     return (
         <div className='ConfHeader'>
             <div className='ConfHeader__heading'>
@@ -9,7 +9,7 @@ function ConfHeader({title,year,desc}) {
             </div>
             <div className='ConfHeader__details'>
                 <div className='ConfHeader__details--slider'>
-                    <ConfDetailsSlider />
+                    <ConfDetailsSlider images={images} />
                 </div>
                 {/* <img className='ConfHeader__details--divider' src='/Images/divider.svg' /> */}
                 <div className='ConfHeader__details--content'>
