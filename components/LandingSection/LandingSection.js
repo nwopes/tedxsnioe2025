@@ -10,7 +10,7 @@ export default function LandingSection() {
             </div>
             <div className='LandingPageContainer__details'>
                 <div className='LandingPageContainer__details--date'>
-                    <p className='LandingPageContainer__details--date__text'>26</p>
+                    <p className='LandingPageContainer__details--date__text'>24</p>
                     <p className='LandingPageContainer__details--date__month'>September</p>
                     <p className='LandingPageContainer__details--date__year'>2023</p>
                 </div>
