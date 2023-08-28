@@ -25,59 +25,23 @@ export default function PastSpeakers() {
                 OUR SPEAKERS
             </div>
             <div className='PastSpeakers__cards'>
-                <Swiper
-                    autoplay={{ delay: 3000 }}
-                    className='PastSpeakers__cards--swiper'
-                    spaceBetween={isSmall ? "10rem" : "40rem"}
-                    slidesPerView={isSmall ? 1 : (isMedium ? 2 : 3)}
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log(swiper)}
-                >
-                    <SwiperSlide className='PastSpeakers__cards--swiper__slide'>
-                        <div className='PastSpeakers__cards--swiper__slide--content'>
-                            <img src='/Images/Assets/dummy.png' className='PastSpeakers__cards--swiper__slide--content__image' />
-                            <div className='PastSpeakers__cards--swiper__slide--content__details'>
-                                <p className='PastSpeakers__cards--swiper__slide--content__details--name'>Speaker</p>
-                                <p className='PastSpeakers__cards--swiper__slide--content__details--desg'>Bad Speaker</p>
-                                <p className='PastSpeakers__cards--swiper__slide--content__details--descrip'>js skk skk soos soms skmc cemce comdc ckdmc eeokcd dcdc ssmdc rpckc scksck</p>
-                            </div>
+                <div class="container">
+                    <h3 class="title">Rishab Jain</h3>
+                    <div class="content">
+                        <div>
+                            <div class="content-overlay"></div>
+                            <img class="content-image" src="/Images/CurrentSpeakers/Rishab.png" alt="" />
+                                <div class="content-details fadeIn-bottom">
+                                    <h3 class="content-title">Rishab Jain</h3>
+                                    <p class="content-text">India&apos;s most famous personal finance advisor with over 4 million YouTube subscribers. Having been an IIT-B alum and founding 2 successful startups, meet the phenomenal Rishabh Jain, the labour law advisor.</p>
+                                </div>
                         </div>
-                    </SwiperSlide>
-                    <SwiperSlide className='PastSpeakers__cards--swiper__slide'>
-                        <div className='PastSpeakers__cards--swiper__slide--content'>
-                            <img src='/Images/Assets/dummy.png' className='PastSpeakers__cards--swiper__slide--content__image' />
-                            <div className='PastSpeakers__cards--swiper__slide--content__details'>
-                                <p className='PastSpeakers__cards--swiper__slide--content__details--name'>Speaker</p>
-                                <p className='PastSpeakers__cards--swiper__slide--content__details--desg'>Bad Speaker</p>
-                                <p className='PastSpeakers__cards--swiper__slide--content__details--descrip'>js skk skk soos soms skmc cemce comdc ckdmc eeokcd dcdc ssmdc rpckc scksck</p>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className='PastSpeakers__cards--swiper__slide'>
-                        <div className='PastSpeakers__cards--swiper__slide--content'>
-                            <img src='/Images/Assets/dummy.png' className='PastSpeakers__cards--swiper__slide--content__image' />
-                            <div className='PastSpeakers__cards--swiper__slide--content__details'>
-                                <p className='PastSpeakers__cards--swiper__slide--content__details--name'>Speaker</p>
-                                <p className='PastSpeakers__cards--swiper__slide--content__details--desg'>Bad Speaker</p>
-                                <p className='PastSpeakers__cards--swiper__slide--content__details--descrip'>js skk skk soos soms skmc cemce comdc ckdmc eeokcd dcdc ssmdc rpckc scksck</p>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    <SwiperSlide className='PastSpeakers__cards--swiper__slide'>
-                        <div className='PastSpeakers__cards--swiper__slide--content'>
-                            <img src='/Images/Assets/dummy.png' className='PastSpeakers__cards--swiper__slide--content__image' />
-                            <div className='PastSpeakers__cards--swiper__slide--content__details'>
-                                <p className='PastSpeakers__cards--swiper__slide--content__details--name'>Speaker</p>
-                                <p className='PastSpeakers__cards--swiper__slide--content__details--desg'>Bad Speaker</p>
-                                <p className='PastSpeakers__cards--swiper__slide--content__details--descrip'>js skk skk soos soms skmc cemce comdc ckdmc eeokcd dcdc ssmdc rpckc scksck</p>
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                </Swiper>
+                    </div>
+                </div>
             </div>
-            <div className='PastSpeakers__button'>
+            {/* <div className='PastSpeakers__button'>
                 <p className='PastSpeakers__button--text'>View All</p>
-            </div>
+            </div> */}
         </div>
     )
 }
