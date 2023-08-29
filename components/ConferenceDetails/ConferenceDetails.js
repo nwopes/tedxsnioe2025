@@ -213,11 +213,11 @@ function ConfDetails() {
                     profession: 'Founder and CEO, STIR Education',
                     image: './Images/2019_speakers/sharath.jpg'
                 },
-                {
-                    name: 'Manish Paul',
-                    profession: 'Television anchor',
-                    image: '/Images/Assets/dummy.png'
-                },
+                // {
+                //     name: 'Manish Paul',
+                //     profession: 'Television anchor',
+                //     image: '/Images/Assets/dummy.png'
+                // },
                 {
                     name: 'Manish Gupta',
                     profession: 'Business coach',
