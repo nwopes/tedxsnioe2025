@@ -19,11 +19,11 @@ export default function Register() {
         if (snu && noOfPeople) {
             return '800';
         } else if (snu && !noOfPeople) {
-            return '1600';
+            return '1200';
         } else if (!snu && noOfPeople) {
-            return '1000';
+            return '800';
         } else {
-            return '2000';
+            return '1200';
         }
     }
     return (
