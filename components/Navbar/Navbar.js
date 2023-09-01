@@ -144,6 +144,14 @@ function Navbar({ isSmall = false }) {
                         >
                             <Link style={{ color: "white" }} href="/contact">Contact Us</Link>
                         </li>
+                        <li
+                            className={`${pathName === "/register"
+                                ? "NavbarContainer__Menu--list-activeItem"
+                                : "NavbarContainer__Menu--list-item"
+                                }`}
+                        >
+                            <Link style={{ color: "red", fontWeight: "medium" }} href="/register">Register</Link>
+                        </li>
                     </ul>
                 </div>
                 <div className="NavbarContainer__topRightLogo">
