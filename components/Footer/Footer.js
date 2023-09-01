@@ -28,7 +28,9 @@ export default function Footer() {
         <p className="Footer__header--text">WANNA ATTEND ?</p>
         <p className="Footer__header--desc">Register or contact us</p>
         <div className="Footer__header--buttons">
+        <Link href='/register'>
           <button className="Footer__header--buttons__register">Register</button>
+          </Link>
           <Link href='/contact'>
             <button className="Footer__header--buttons__contact">Contact Us</button>
           </Link>

@@ -4,7 +4,13 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  @include respondAt(915px) {
+    flex-direction: column-reverse;
+  }
   &__details {
+    @include respondAt(915px) {
+      width: 20rem;
+    }
     &--snu,
     &--people {
       p {
@@ -17,6 +23,10 @@
       }
       &__options {
         display: flex;
+        @include respondAt(915px) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
         &--red {
           color: black;
           border: 2px red solid;
@@ -24,6 +34,9 @@
           margin-right: 1rem;
           border-radius: 5px;
           cursor: pointer;
+          @include respondAt(915px) {
+            width: 10rem;
+          }
         }
         &--white {
           color: black;
@@ -32,6 +45,9 @@
           margin-right: 1rem;
           border-radius: 5px;
           cursor: pointer;
+          @include respondAt(915px) {
+            width: 10rem;
+          }
         }
       }
     }
@@ -44,6 +60,9 @@
         font-weight: 800;
         font-family: "Raleway", sans-serif;
         font-size: 1.1rem;
+      }
+      &__error {
+        
       }
       &__name,
       &__email,
@@ -59,6 +78,9 @@
           border-radius: 6px;
           width: 25rem;
           padding: 0.7rem 0rem 0.7rem 1rem;
+          @include respondAt(915px) {
+            width: 19rem;
+          }
         }
       }
     }
@@ -74,8 +96,14 @@
     }
   }
   &__amount {
+    @include respondAt(915px) {
+      margin-bottom: 3rem;
+    }
     &--image {
       width: 26rem;
+      @include respondAt(915px ){
+        width: 20rem;
+      }
     }
     &--priceDetails {
       p {

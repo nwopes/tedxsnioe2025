@@ -1,5 +1,7 @@
 import '../../styles/routes/register.scss'
 import useTicket from '../../hooks/useTicket'
+import Link from 'next/link';
+import React from 'react';
 export default function Register() {
     const { noOfPeople, setNoOfPeople, ticketPrice, setTicketPrice, snu, setSnu } = useTicket();
     const handleClick = (isSnu) => {
@@ -11,7 +13,8 @@ export default function Register() {
         }
         console.log(snu);
     }
-
+    const [email, setEmail] = React.useState('');
+    const [error, setError] = React.useState('');
     const calculatePrice = () => {
         if (snu && noOfPeople) {
             return '800';
@@ -50,6 +53,7 @@ export default function Register() {
                         <div className='RegisterSection__details--value__email'>
                             <p>Email</p>
                             <input type="email" placeholder="Email Id" required />
+                            <p className='RegisterSection__details--value__error'>{error}</p>
                         </div>
                         <div className='RegisterSection__details--value__phone'>
                             <p>Mobile Number</p>
@@ -85,8 +89,9 @@ export default function Register() {
                         </div>
                     </div>
                 }
-
-                <div className='RegisterSection__details--submit'>Submit</div>
+                <Link href='/register/payment'>
+                    <div style={{ color: 'black' }} className='RegisterSection__details--submit'>Submit</div>
+                </Link>
             </div>
             <div className='RegisterSection__amount'>
                 <img className='RegisterSection__amount--image' src='/Images/Assets/payment.png' />
