@@ -1,33 +1,41 @@
 import '../../styles/routes/payments.scss';
 import useTicket from '../../hooks/useTicket'
 import Link from 'next/link';
+import React from 'react';
+import { useRouter } from "next/router";
 
 export default function Payment() {
+    const router = useRouter();
     const calculatePrice = () => {
         if (snu && noOfPeople) {
             return '800';
         } else if (snu && !noOfPeople) {
-            return '1600';
+            return '1200';
         } else if (!snu && noOfPeople) {
-            return '1000';
+            return '800';
         } else {
-            return '2000';
+            return '1200';
         }
     }
-    const { noOfPeople, setNoOfPeople, ticketPrice, setTicketPrice, snu, setSnu } = useTicket();
+    const handleClick = (mode) => {
+        setModeOfPayment(mode);
+        if (mode === 'GPAY') {
+            router.push('/register/google_pay');
+        } else if (mode === 'PAYTM') {
+            router.push('/register/paytm');
+        } else if (mode === 'CASH') {
+            router.push('/register/cash');
+        }
+    }
+    const [mop, setMop] = React.useState('');
+    const { noOfPeople, setNoOfPeople, ticketPrice, setTicketPrice, snu, setSnu, setModeOfPayment } = useTicket();
     return (
         <div className='PaymentContainer'>
             <div className='PaymentContainer__option'>
                 <p className='PaymentContainer__option--title'>Choose your payment option</p>
-                <Link href='/register/google_pay'>
-                    <div className='PaymentContainer__option--mode'>Google Pay</div>
-                </Link>
-                <Link href='/register/paytm'>
-                    <div className='PaymentContainer__option--mode'>PayTM</div>
-                </Link>
-                <Link href='/register/cash'>
-                    <div className='PaymentContainer__option--mode'>Cash</div>
-                </Link>
+                <div onClick={() => handleClick('GPAY')} className='PaymentContainer__option--mode'>Google Pay</div>
+                <div onClick={() => handleClick('PAYTM')} className='PaymentContainer__option--mode'>PayTM</div>
+                <div onClick={() => handleClick('CASH')} className='PaymentContainer__option--mode'>Cash</div>
             </div>
             <div className='PaymentContainer__details'>
                 <img className='PaymentContainer__details--image' src='/Images/Assets/payment.png' />
