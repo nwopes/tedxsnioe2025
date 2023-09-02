@@ -15,8 +15,8 @@ export default function LandingSection() {
                     <p className='LandingPageContainer__details--date__year'>2023</p>
                 </div>
                 <div className='LandingPageContainer__details--venue'>
-                    <p className='LandingPageContainer__details--venue__location'>Venue</p>
-                    <p className='LandingPageContainer__details--venue__text'>Yet to be disclosed!</p>
+                    <p className='LandingPageContainer__details--venue__location'>G Block</p>
+                    <p className='LandingPageContainer__details--venue__text'>Shiv Nadar Institute of Eminence, Delhi NCR</p>
                 </div>
             </div>
         </div>

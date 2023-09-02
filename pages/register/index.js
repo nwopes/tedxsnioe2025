@@ -19,7 +19,6 @@ export default function Register() {
         else {
             setSnu(false);
         }
-        console.log(snu);
     }
     const [error, setError] = React.useState('');
     const [name1, setName1] = React.useState('');
@@ -30,11 +29,11 @@ export default function Register() {
     const [phone2, setPhone2] = React.useState('');
     const calculatePrice = () => {
         if (snu && noOfPeople) {
-            return '800';
+            return '750';
         } else if (snu && !noOfPeople) {
             return '1200';
         } else if (!snu && noOfPeople) {
-            return '800';
+            return '750';
         } else {
             return '1200';
         }
@@ -73,7 +72,6 @@ export default function Register() {
                     setEmailTwo(email2);
                     setNameTwo(name2);
                     setPhoneTwo(phone2);
-                    console.log(email2);
                     router.push('/register/payment')
                 } else {
                     alert('Please enter a valid SNU email ID');
@@ -99,7 +97,6 @@ export default function Register() {
                     setEmailTwo(email2);
                     setNameTwo(name2);
                     setPhoneTwo(phone2);
-                    console.log(email2);
                     router.push('/register/payment')
                 } else {
                     alert('Please enter a valid email ID');
@@ -136,7 +133,8 @@ export default function Register() {
                             <div className='RegisterSection__details--value__email'>
                                 <p>Email</p>
                                 <input onChange={(e) => setEmail1(e.target.value)} type="email" placeholder="Email Id" required />
-                                <p className='RegisterSection__details--value__error'>{error}</p>
+                                {snu ? <p className='RegisterSection__details--value__email--warn'>Please enter only snu email id</p> : <p></p>}
+
                             </div>
                             <div className='RegisterSection__details--value__phone'>
                                 <p>Mobile Number</p>
@@ -152,6 +150,7 @@ export default function Register() {
                             <div className='RegisterSection__details--value__email'>
                                 <p>Email</p>
                                 <input onChange={(e) => setEmail1(e.target.value)} type="email" placeholder="Email Id" required />
+                                {snu ? <p className='RegisterSection__details--value__email--warn'>Please enter only snu email id</p> : <p></p>}
                             </div>
                             <div className='RegisterSection__details--value__phone'>
                                 <p>Mobile Number</p>
@@ -165,6 +164,7 @@ export default function Register() {
                             <div className='RegisterSection__details--value__email'>
                                 <p>Email</p>
                                 <input onChange={(e) => setEmail2(e.target.value)} type="email" placeholder="Email Id" required />
+                                {snu ? <p className='RegisterSection__details--value__email--warn'>Please enter only snu email id</p> : <p></p>}
                             </div>
                             <div className='RegisterSection__details--value__phone'>
                                 <p>Mobile Number</p>
@@ -188,7 +188,11 @@ export default function Register() {
                         </div>
                         <div className='RegisterSection__amount--priceDetails__ticket'>
                             <p>Ticket Price (per person)</p>
-                            <p>{noOfPeople ? '800' : '600'}</p>
+                            <p>{noOfPeople ? '800' : '800'}</p>
+                        </div>
+                        <div className='RegisterSection__amount--priceDetails__ticket'>
+                            <p>Early Bird Discount</p>
+                            <p>{noOfPeople ? '-50' : '-200'}</p>
                         </div>
                         <hr />
                         <div className='RegisterSection__amount--priceDetails__total'>

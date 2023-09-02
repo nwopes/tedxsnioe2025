@@ -25,16 +25,54 @@ export default function PastSpeakers() {
                 OUR SPEAKERS
             </div>
             <div className='PastSpeakers__cards'>
+            <div class="container">
+                    <h3 class="title">Anubha Bajaj</h3>
+                    <div class="content">
+                        <div>
+                            <div class="content-overlay"></div>
+                            <img class="content-image" src="/Images/CurrentSpeakers/anubha_bajaj.jpeg" alt="" />
+                            <div class="content-details fadeIn-bottom">
+                                <h3 class="content-title">Anubha Bajaj</h3>
+                                <p class="content-text">An architect by profession, Shirish Beri, puts forth a sustainable, simple and minimalist life, revolutionizing modern architecture. His work, reflecting his philosophy of bringing man closer to nature as well as to basic human values. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* <div class="container">
+                    <h3 class="title">Shirish Beri</h3>
+                    <div class="content">
+                        <div>
+                            <div class="content-overlay"></div>
+                            <img class="content-image" src="/Images/CurrentSpeakers/Rishab.png" alt="" />
+                            <div class="content-details fadeIn-bottom">
+                                <h3 class="content-title">Shirish Beri</h3>
+                                <p class="content-text">An architect by profession, Shirish Beri, puts forth a sustainable, simple and minimalist life, revolutionizing modern architecture. His work, reflecting his philosophy of bringing man closer to nature as well as to basic human values. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div> */}
+                <div class="container">
+                    <h3 class="title">Gursakhi Lugani</h3>
+                    <div class="content">
+                        <div>
+                            <img class="content-image" src="/Images/CurrentSpeakers/gursakhi.jpg" alt="" />
+                            <div class="content-details fadeIn-bottom">
+                                <h3 class="content-title">Gursakhi Lugani</h3>
+                                <p class="content-text">Gursakhi Lugani, is the founder of NakhreWaali, a fashion brand with millions of customers. Through this, she has created a category of fashion that fuses traditional ethnic Indian textiles with modern sensibilities and sustainable practices that has acquired a widespread appeal and reverence. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="container">
                     <h3 class="title">Rishab Jain</h3>
                     <div class="content">
                         <div>
                             <div class="content-overlay"></div>
                             <img class="content-image" src="/Images/CurrentSpeakers/Rishab.png" alt="" />
-                                <div class="content-details fadeIn-bottom">
-                                    <h3 class="content-title">Rishab Jain</h3>
-                                    <p class="content-text">India&apos;s most famous personal finance advisor with over 4 million YouTube subscribers. Having been an IIT-B alum and founding 2 successful startups, meet the phenomenal Rishabh Jain, the labour law advisor.</p>
-                                </div>
+                            <div class="content-details fadeIn-bottom">
+                                <h3 class="content-title">Rishab Jain</h3>
+                                <p class="content-text">India&apos;s most famous personal finance advisor with over 4 million YouTube subscribers. Having been an IIT-B alum and founding 2 successful startups, meet the phenomenal Rishabh Jain, the labour law advisor.</p>
+                            </div>
                         </div>
                     </div>
                 </div>

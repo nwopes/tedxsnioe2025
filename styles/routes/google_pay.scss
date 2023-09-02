@@ -5,7 +5,9 @@
   padding-top: 7rem;
   padding-bottom: 7rem;
   @include respondAt(915px) {
-    flex-direction: column-reverse;
+    flex-direction: column;
+    padding-bottom: 0;
+    padding-top: 5rem;
   }
   &__qr {
     display: flex;

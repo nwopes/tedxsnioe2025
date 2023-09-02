@@ -8,11 +8,11 @@ export default function Payment() {
     const router = useRouter();
     const calculatePrice = () => {
         if (snu && noOfPeople) {
-            return '800';
+            return '750';
         } else if (snu && !noOfPeople) {
             return '1200';
         } else if (!snu && noOfPeople) {
-            return '800';
+            return '750';
         } else {
             return '1200';
         }
@@ -51,8 +51,12 @@ export default function Payment() {
                     </div>
                     <div className='PaymentContainer__details--priceDetails__ticket'>
                         <p>Ticket Price (per person)</p>
-                        <p>{snu ? '800' : '1000'}</p>
+                        <p>{snu ? '800' : '800'}</p>
                     </div>
+                    <div className='PaymentContainer__details--priceDetails__ticket'>
+                            <p>Early Bird Discount</p>
+                            <p>{noOfPeople ? '-50' : '-200'}</p>
+                        </div>
                     <hr />
                     <div className='PaymentContainer__details--priceDetails__total'>
                         <p>Total Amount</p>

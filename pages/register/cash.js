@@ -25,13 +25,11 @@ export default function Cash() {
     const handleClick = async () => {
         if (noOfPeople) {
             if (nameOne === '' || emailOne === '' || phoneOne === '' || modeOfPayment === '') {
-                console.log(nameOne, nameTwo, emailOne, emailTwo, phoneOne, phoneTwo, modeOfPayment);
                 alert('There is a problem from our side. Please refill the form without reloading the screen');
                 return;
             }
         } else {
             if (nameOne === '' || nameTwo === '' || emailOne === '' || emailTwo === '' || phoneOne === '' || phoneTwo === '' || modeOfPayment === '') {
-                console.log(nameOne, nameTwo, emailOne, emailTwo, phoneOne, phoneTwo, modeOfPayment);
                 alert('There is a problem from our side. Please refill the form without reloading the screen');
                 return;
             }
@@ -73,7 +71,8 @@ export default function Cash() {
             <div className='GooglePay'>
                 <div className='GooglePay__qr'>
                     <p className='GooglePay__qr--text'>Contact this number for further details</p>
-                    <p className='GooglePay__qr--text'>Dwiti - +91 12345 67890</p>
+                    <p className='GooglePay__qr--text'>Dwiti - +91 93162 44424</p>
+                    <p className='GooglePay__qr--text'>Aditi - +91 70084 42718</p>
                     <p onClick={() => handleClick()} className='GooglePay__qr--bottom'>Proceed</p>
                 </div>
                 <div className='GooglePay__details'>
@@ -90,7 +89,11 @@ export default function Cash() {
                         </div>
                         <div className='GooglePay__details--priceDetails__ticket'>
                             <p>Ticket Price (per person)</p>
-                            <p>{snu ? '800' : '1000'}</p>
+                            <p>{snu ? '800' : '800'}</p>
+                        </div>
+                        <div className='GooglePay__details--priceDetails__ticket'>
+                            <p>Early Bird Discount</p>
+                            <p>{noOfPeople ? '-50' : '-200'}</p>
                         </div>
                         <hr />
                         <div className='GooglePay__details--priceDetails__total'>

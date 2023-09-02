@@ -11,13 +11,13 @@ export default function PayTM() {
     const { noOfPeople, setNoOfPeople, ticketPrice, setTicketPrice, snu, setSnu, nameOne, nameTwo, emailOne, emailTwo, phoneOne, phoneTwo, modeOfPayment } = useTicket();
     const calculatePrice = () => {
         if (snu && noOfPeople) {
-            return '800';
+            return '750';
         } else if (snu && !noOfPeople) {
-            return '1600';
+            return '1200';
         } else if (!snu && noOfPeople) {
-            return '1000';
+            return '750';
         } else {
-            return '2000';
+            return '1200';
         }
     }
     const [loading, setLoading] = useState(false);
@@ -29,13 +29,11 @@ export default function PayTM() {
         } else {
             if (noOfPeople) {
                 if (nameOne === '' || emailOne === '' || phoneOne === '' || modeOfPayment === '') {
-                    console.log(nameOne, nameTwo, emailOne, emailTwo, phoneOne, phoneTwo, modeOfPayment);
                     alert('There is a problem from our side. Please refill the form without reloading the screen');
                     return;
                 }
             } else {
                 if (nameOne === '' || nameTwo === '' || emailOne === '' || emaiTwo === '' || phoneOne === '' || phoneTwo === '' || modeOfPayment === '') {
-                    console.log(nameOne, nameTwo, emailOne, emaiTwo, phoneOne, phoneTwo, modeOfPayment);
                     alert('There is a problem from our side. Please refill the form without reloading the screen');
                     return;
                 }
@@ -78,7 +76,8 @@ export default function PayTM() {
             <div className='GooglePay'>
                 <div className='GooglePay__qr'>
                     <p className='GooglePay__qr--text'>Scan the QR to Pay</p>
-                    <img className='GooglePay__qr--image' src='/Images/Assets/qr.png' />
+                    <p style={{fontSize : "1rem", marginTop:"0", marginBottom:".5rem"}} className='GooglePay__qr--text'>Dwiti Deepak Modi</p>
+                    <img className='GooglePay__qr--image' src='/Images/Assets/paytm.jpg' />
                     <div className='GooglePay__qr--TID'>
                         <input onChange={(e) => setTid(e.target.value)} type='text' placeholder='Transaction ID' required />
                     </div>
@@ -98,7 +97,11 @@ export default function PayTM() {
                         </div>
                         <div className='GooglePay__details--priceDetails__ticket'>
                             <p>Ticket Price (per person)</p>
-                            <p>{snu ? '800' : '1000'}</p>
+                            <p>{snu ? '800' : '800'}</p>
+                        </div>
+                        <div className='GooglePay__details--priceDetails__ticket'>
+                            <p>Early Bird Discount</p>
+                            <p>{noOfPeople ? '-50' : '-200'}</p>
                         </div>
                         <hr />
                         <div className='GooglePay__details--priceDetails__total'>

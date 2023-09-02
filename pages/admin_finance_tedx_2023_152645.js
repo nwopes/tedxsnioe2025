@@ -3,7 +3,6 @@ import { emailSentRoute, paymentverified } from "../operations/payment.fetch";
 import { findPayments } from "../services/paymentServer"
 import '../styles/routes/admin.scss'
 export default function Admin({ payments }) {
-    console.log(payments);
     const { filter, setFilter } = useTicket();
     const handlePayment = async (id) => {
         try {
