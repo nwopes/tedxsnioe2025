@@ -6,7 +6,7 @@ import { payment } from '../../operations/payment.fetch';
 import { useRouter } from 'next/router';
 export default function GooglePay() {
     const router = useRouter();
-    const { noOfPeople, setNoOfPeople, ticketPrice, setTicketPrice, snu, setSnu, nameOne, nameTwo, emailOne, emaiTwo, phoneOne, phoneTwo, modeOfPayment } = useTicket();
+    const { noOfPeople, setNoOfPeople, ticketPrice, setTicketPrice, snu, setSnu, nameOne, nameTwo, emailOne, emailTwo, phoneOne, phoneTwo, modeOfPayment } = useTicket();
     const calculatePrice = () => {
         if (snu && noOfPeople) {
             return '800';
@@ -31,7 +31,7 @@ export default function GooglePay() {
                     return;
                 }
             } else {
-                if (nameOne === '' || nameTwo === '' || emailOne === '' || emaiTwo === '' || phoneOne === '' || phoneTwo === '' || modeOfPayment === '') {
+                if (nameOne === '' || nameTwo === '' || emailOne === '' || emailTwo === '' || phoneOne === '' || phoneTwo === '' || modeOfPayment === '') {
                     console.log(nameOne, nameTwo, emailOne, emaiTwo, phoneOne, phoneTwo, modeOfPayment);
                     alert('There is a problem from our side. Please refill the form without reloading the screen');
                     return;
@@ -42,7 +42,7 @@ export default function GooglePay() {
                     'name1': nameOne,
                     'name2': nameTwo,
                     'email1': emailOne,
-                    'email2': emaiTwo,
+                    'email2': emailTwo,
                     'phone1': phoneOne,
                     'phone2': phoneTwo,
                     'modeOfPayment': modeOfPayment,

@@ -5,3 +5,29 @@ export async function createPayment(data) {
         data,
     })
 }
+
+export async function findPayments() {
+    return db.payment.findMany();
+}
+
+export async function verifyPayment(data) {
+    return db.payment.update({
+        where : {
+            id : data.id,
+        },
+        data : {
+            'paymentVerified' : true,
+        }
+    })
+}
+
+export async function emailSent(data) {
+    return db.payment.update({
+        where : {
+            id : data.id,
+        },
+        data : {
+            'emailSent' : true,
+        }
+    })
+}

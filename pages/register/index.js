@@ -73,6 +73,7 @@ export default function Register() {
                     setEmailTwo(email2);
                     setNameTwo(name2);
                     setPhoneTwo(phone2);
+                    console.log(email2);
                     router.push('/register/payment')
                 } else {
                     alert('Please enter a valid SNU email ID');
@@ -98,6 +99,7 @@ export default function Register() {
                     setEmailTwo(email2);
                     setNameTwo(name2);
                     setPhoneTwo(phone2);
+                    console.log(email2);
                     router.push('/register/payment')
                 } else {
                     alert('Please enter a valid email ID');
