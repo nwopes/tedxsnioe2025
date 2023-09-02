@@ -13,6 +13,7 @@ export function TicketProvider({children, ...props}) {
     const [phoneOne, setPhoneOne] = React.useState('');
     const [phoneTwo, setPhoneTwo] = React.useState('');
     const [modeOfPayment, setModeOfPayment] = React.useState('');
+    const [filter, setFilter] = React.useState('');
     const ticket = {
         noOfPeople,
         setNoOfPeople,
@@ -34,6 +35,8 @@ export function TicketProvider({children, ...props}) {
         setPhoneTwo,
         modeOfPayment,
         setModeOfPayment,
+        filter,
+        setFilter,
         ...props
     }
 

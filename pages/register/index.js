@@ -109,93 +109,95 @@ export default function Register() {
         }
     }
     return (
-        <div className='RegisterSection'>
-            <div className='RegisterSection__details'>
-                <div className='RegisterSection__details--snu'>
-                    <p>Enter Details</p>
-                    <div className='RegisterSection__details--snu__options'>
-                        <p className={snu ? 'RegisterSection__details--snu__options--red' : 'RegisterSection__details--snu__options--white'} onClick={() => handleClick('snu')}>SNU Student</p>
-                        <p className={snu ? 'RegisterSection__details--snu__options--white' : 'RegisterSection__details--snu__options--red'} onClick={() => handleClick('nosnu')}>Non - SNU Student</p>
-                    </div>
-                </div>
-                <div className='RegisterSection__details--people'>
-                    <p>No. Of People</p>
-                    <div className='RegisterSection__details--people__options'>
-                        <p className={noOfPeople ? 'RegisterSection__details--snu__options--red' : 'RegisterSection__details--snu__options--white'} onClick={() => setNoOfPeople(true)}>1</p>
-                        <p className={noOfPeople ? 'RegisterSection__details--snu__options--white' : 'RegisterSection__details--snu__options--red'} onClick={() => setNoOfPeople(false)}>2</p>
-                    </div>
-                </div>
-                {noOfPeople ?
-                    <div className='RegisterSection__details--value'>
-                        <p>Details Student 1</p>
-                        <div className='RegisterSection__details--value__name'>
-                            <p>Full Name</p>
-                            <input onChange={(e) => setName1(e.target.value)} type='text' placeholder='Full Name' required />
-                        </div>
-                        <div className='RegisterSection__details--value__email'>
-                            <p>Email</p>
-                            <input onChange={(e) => setEmail1(e.target.value)} type="email" placeholder="Email Id" required />
-                            <p className='RegisterSection__details--value__error'>{error}</p>
-                        </div>
-                        <div className='RegisterSection__details--value__phone'>
-                            <p>Mobile Number</p>
-                            <input onChange={(e) => setPhone1(e.target.value)} type="number" placeholder="Mobile Number" required />
-                        </div>
-                    </div> :
-                    <div className='RegisterSection__details--value'>
-                        <p>Details Student 1</p>
-                        <div className='RegisterSection__details--value__name'>
-                            <p>Full Name</p>
-                            <input onChange={(e) => setName1(e.target.value)} type='text' placeholder='Full Name' required />
-                        </div>
-                        <div className='RegisterSection__details--value__email'>
-                            <p>Email</p>
-                            <input onChange={(e) => setEmail1(e.target.value)} type="email" placeholder="Email Id" required />
-                        </div>
-                        <div className='RegisterSection__details--value__phone'>
-                            <p>Mobile Number</p>
-                            <input onChange={(e) => setPhone1(e.target.value)} type="number" placeholder="Mobile Number" required />
-                        </div>
-                        <p>Details Student 2</p>
-                        <div className='RegisterSection__details--value__name'>
-                            <p>Full Name</p>
-                            <input onChange={(e) => setName2(e.target.value)} type='text' placeholder='Full Name' required />
-                        </div>
-                        <div className='RegisterSection__details--value__email'>
-                            <p>Email</p>
-                            <input onChange={(e) => setEmail2(e.target.value)} type="email" placeholder="Email Id" required />
-                        </div>
-                        <div className='RegisterSection__details--value__phone'>
-                            <p>Mobile Number</p>
-                            <input onChange={(e) => setPhone2(e.target.value)} type="number" placeholder="Mobile Number" required />
+        <>
+            <div className='RegisterSection'>
+                <div className='RegisterSection__details'>
+                    <div className='RegisterSection__details--snu'>
+                        <p>Enter Details</p>
+                        <div className='RegisterSection__details--snu__options'>
+                            <p className={snu ? 'RegisterSection__details--snu__options--red' : 'RegisterSection__details--snu__options--white'} onClick={() => handleClick('snu')}>SNU Student</p>
+                            <p className={snu ? 'RegisterSection__details--snu__options--white' : 'RegisterSection__details--snu__options--red'} onClick={() => handleClick('nosnu')}>Non - SNU Student</p>
                         </div>
                     </div>
-                }
-                <div onClick={(e) => handleSubmit(e)} style={{ color: 'black' }} className='RegisterSection__details--submit'>Submit</div>
-            </div>
-            <div className='RegisterSection__amount'>
-                <img className='RegisterSection__amount--image' src='/Images/Assets/payment.png' />
-                <div className='RegisterSection__amount--priceDetails'>
-                    <p>Price Details</p>
-                    <div className='RegisterSection__amount--priceDetails__snu'>
-                        <p>Type Of Person</p>
-                        <p>{snu ? 'SNU' : 'NON-SNU'}</p>
-                    </div>
-                    <div className='RegisterSection__amount--priceDetails__people'>
+                    <div className='RegisterSection__details--people'>
                         <p>No. Of People</p>
-                        <p>{noOfPeople ? '1' : '2'}</p>
+                        <div className='RegisterSection__details--people__options'>
+                            <p className={noOfPeople ? 'RegisterSection__details--snu__options--red' : 'RegisterSection__details--snu__options--white'} onClick={() => setNoOfPeople(true)}>1</p>
+                            <p className={noOfPeople ? 'RegisterSection__details--snu__options--white' : 'RegisterSection__details--snu__options--red'} onClick={() => setNoOfPeople(false)}>2</p>
+                        </div>
                     </div>
-                    <div className='RegisterSection__amount--priceDetails__ticket'>
-                        <p>Ticket Price (per person)</p>
-                        <p>{noOfPeople ? '800' : '600'}</p>
-                    </div>
-                    <hr />
-                    <div className='RegisterSection__amount--priceDetails__total'>
-                        <p>Total Amount</p>
-                        <p>{calculatePrice()}</p>
+                    {noOfPeople ?
+                        <div className='RegisterSection__details--value'>
+                            <p>Details Student 1</p>
+                            <div className='RegisterSection__details--value__name'>
+                                <p>Full Name</p>
+                                <input onChange={(e) => setName1(e.target.value)} type='text' placeholder='Full Name' required />
+                            </div>
+                            <div className='RegisterSection__details--value__email'>
+                                <p>Email</p>
+                                <input onChange={(e) => setEmail1(e.target.value)} type="email" placeholder="Email Id" required />
+                                <p className='RegisterSection__details--value__error'>{error}</p>
+                            </div>
+                            <div className='RegisterSection__details--value__phone'>
+                                <p>Mobile Number</p>
+                                <input onChange={(e) => setPhone1(e.target.value)} type="number" placeholder="Mobile Number" required />
+                            </div>
+                        </div> :
+                        <div className='RegisterSection__details--value'>
+                            <p>Details Student 1</p>
+                            <div className='RegisterSection__details--value__name'>
+                                <p>Full Name</p>
+                                <input onChange={(e) => setName1(e.target.value)} type='text' placeholder='Full Name' required />
+                            </div>
+                            <div className='RegisterSection__details--value__email'>
+                                <p>Email</p>
+                                <input onChange={(e) => setEmail1(e.target.value)} type="email" placeholder="Email Id" required />
+                            </div>
+                            <div className='RegisterSection__details--value__phone'>
+                                <p>Mobile Number</p>
+                                <input onChange={(e) => setPhone1(e.target.value)} type="number" placeholder="Mobile Number" required />
+                            </div>
+                            <p>Details Student 2</p>
+                            <div className='RegisterSection__details--value__name'>
+                                <p>Full Name</p>
+                                <input onChange={(e) => setName2(e.target.value)} type='text' placeholder='Full Name' required />
+                            </div>
+                            <div className='RegisterSection__details--value__email'>
+                                <p>Email</p>
+                                <input onChange={(e) => setEmail2(e.target.value)} type="email" placeholder="Email Id" required />
+                            </div>
+                            <div className='RegisterSection__details--value__phone'>
+                                <p>Mobile Number</p>
+                                <input onChange={(e) => setPhone2(e.target.value)} type="number" placeholder="Mobile Number" required />
+                            </div>
+                        </div>
+                    }
+                    <div onClick={(e) => handleSubmit(e)} style={{ color: 'black' }} className='RegisterSection__details--submit'>Submit</div>
+                </div>
+                <div className='RegisterSection__amount'>
+                    <img className='RegisterSection__amount--image' src='/Images/Assets/payment.png' />
+                    <div className='RegisterSection__amount--priceDetails'>
+                        <p>Price Details</p>
+                        <div className='RegisterSection__amount--priceDetails__snu'>
+                            <p>Type Of Person</p>
+                            <p>{snu ? 'SNU' : 'NON-SNU'}</p>
+                        </div>
+                        <div className='RegisterSection__amount--priceDetails__people'>
+                            <p>No. Of People</p>
+                            <p>{noOfPeople ? '1' : '2'}</p>
+                        </div>
+                        <div className='RegisterSection__amount--priceDetails__ticket'>
+                            <p>Ticket Price (per person)</p>
+                            <p>{noOfPeople ? '800' : '600'}</p>
+                        </div>
+                        <hr />
+                        <div className='RegisterSection__amount--priceDetails__total'>
+                            <p>Total Amount</p>
+                            <p>{calculatePrice()}</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
