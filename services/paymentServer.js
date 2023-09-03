@@ -31,3 +31,15 @@ export async function emailSent(data) {
         }
     })
 }
+
+export async function fetchEmails(data) {
+    return db.payment.findMany({
+        where: {
+            'paymentVerified' : true,
+        },
+        select : {
+            'email1' : true,
+            'email2' : true,
+        }
+    })
+}
