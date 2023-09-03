@@ -33,7 +33,7 @@ export default function PastSpeakers() {
                             <img class="content-image" src="/Images/CurrentSpeakers/anubha_bajaj.jpeg" alt="" />
                             <div class="content-details fadeIn-bottom">
                                 <h3 class="content-title">Anubha Bajaj</h3>
-                                <p class="content-text">Anubha Bajaj is an Indie artist, and the enchantress behind the captivating "Lamhey". From composing melodies that transcend time to harmonizing emotions through music, Anubha's journey is a tapestry of crafted experiences</p>
+                                <p class="content-text">Anubha Bajaj is an Indie artist, and the enchantress behind the captivating &quot;Lamhey&quot;. From composing melodies that transcend time to harmonizing emotions through music, Anubha&apos;s journey is a tapestry of crafted experiences</p>
                             </div>
                         </div>
                     </div>
