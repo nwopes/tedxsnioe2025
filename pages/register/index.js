@@ -43,15 +43,15 @@ export default function Register() {
         const emailRegex = /^[\w-\.]+@snu\.edu\.in$/;
         const emailRegex2 = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (noOfPeople) {
-            if (name1 === '' || email1 === '' || phone1 === '') {
-                alert('Please fill all the fields');
-                return;
-            }
+            // if (name1 === '' || email1 === '' || phone1 === '') {
+            //     alert('Please fill all the fields');
+            //     return;
+            // }
         } else {
-            if (name1 === '' || email1 === '' || phone1 === '' || name2 === '' || email2 === '' || phone2 === '') {
-                alert('Please fill all the fields');
-                return;
-            }
+            // if (name1 === '' || email1 === '' || phone1 === '' || name2 === '' || email2 === '' || phone2 === '') {
+            //     alert('Please fill all the fields');
+            //     return;
+            // }
         }
         if (snu) {
             if (noOfPeople) {
@@ -59,6 +59,14 @@ export default function Register() {
                     setEmailOne(email1);
                     setNameOne(name1);
                     setPhoneOne(phone1);
+                    localStorage.setItem("email1", email1);
+                    localStorage.setItem("name1", name1);
+                    localStorage.setItem("phone1", phone1);
+                    localStorage.setItem("email2", '');
+                    localStorage.setItem("name2", '');
+                    localStorage.setItem("phone2", '');
+                    localStorage.setItem("snu", true);
+                    localStorage.setItem("noOfPeople", 1);
                     router.push('/register/payment')
                 } else {
                     alert('Please enter a valid SNU email ID');
@@ -72,6 +80,14 @@ export default function Register() {
                     setEmailTwo(email2);
                     setNameTwo(name2);
                     setPhoneTwo(phone2);
+                    localStorage.setItem("email1", email1);
+                    localStorage.setItem("name1", name1);
+                    localStorage.setItem("phone1", phone1);
+                    localStorage.setItem("email2", email2);
+                    localStorage.setItem("name2", name2);
+                    localStorage.setItem("phone2", phone2);
+                    localStorage.setItem("snu", true);
+                    localStorage.setItem("noOfPeople", 2);
                     router.push('/register/payment')
                 } else {
                     alert('Please enter a valid SNU email ID');
@@ -84,6 +100,14 @@ export default function Register() {
                     setEmailOne(email1);
                     setNameOne(name1);
                     setPhoneOne(phone1);
+                    localStorage.setItem("email1", email1);
+                    localStorage.setItem("name1", name1);
+                    localStorage.setItem("phone1", phone1);
+                    localStorage.setItem("email2", '');
+                    localStorage.setItem("name2", '');
+                    localStorage.setItem("phone2", '');
+                    localStorage.setItem("snu", false);
+                    localStorage.setItem("noOfPeople", 1);
                     router.push('/register/payment')
                 } else {
                     alert('Please enter a valid email ID');
@@ -97,6 +121,14 @@ export default function Register() {
                     setEmailTwo(email2);
                     setNameTwo(name2);
                     setPhoneTwo(phone2);
+                    localStorage.setItem("email1", email1);
+                    localStorage.setItem("name1", name1);
+                    localStorage.setItem("phone1", phone1);
+                    localStorage.setItem("email2", email2);
+                    localStorage.setItem("name2", name2);
+                    localStorage.setItem("phone2", phone2);
+                    localStorage.setItem("snu", false);
+                    localStorage.setItem("noOfPeople", 2);
                     router.push('/register/payment')
                 } else {
                     alert('Please enter a valid email ID');

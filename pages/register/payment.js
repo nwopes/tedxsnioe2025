@@ -20,10 +20,13 @@ export default function Payment() {
     const handleClick = (mode) => {
         setModeOfPayment(mode);
         if (mode === 'GPAY') {
+            localStorage.setItem("modeOfPayment", 'GPAY');
             router.push('/register/google_pay');
         } else if (mode === 'PAYTM') {
+            localStorage.setItem("modeOfPayment", 'PAYTM');
             router.push('/register/paytm');
         } else if (mode === 'CASH') {
+            localStorage.setItem("modeOfPayment", 'CASH');
             router.push('/register/cash');
         }
     }

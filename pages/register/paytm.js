@@ -28,35 +28,36 @@ export default function PayTM() {
             return;
         } else {
             if (noOfPeople) {
-                if (nameOne === '' || emailOne === '' || phoneOne === '' || modeOfPayment === '') {
-                    alert('There is a problem from our side. Please refill the form without reloading the screen');
-                    return;
-                }
+                // if (nameOne === '' || emailOne === '' || phoneOne === '' || modeOfPayment === '') {
+                //     alert('There is a problem from our side. Please refill the form without reloading the screen');
+                //     return;
+                // }
             } else {
-                if (nameOne === '' || nameTwo === '' || emailOne === '' || emailTwo === '' || phoneOne === '' || phoneTwo === '' || modeOfPayment === '') {
-                    alert('There is a problem from our side. Please refill the form without reloading the screen');
-                    return;
-                }
+                // if (nameOne === '' || nameTwo === '' || emailOne === '' || emailTwo === '' || phoneOne === '' || phoneTwo === '' || modeOfPayment === '') {
+                //     alert('There is a problem from our side. Please refill the form without reloading the screen');
+                //     return;
+                // }
             }
             setLoading(true);
             try {
                 const data = {
-                    'name1': nameOne,
-                    'name2': nameTwo,
-                    'email1': emailOne,
-                    'email2': emailTwo,
-                    'phone1': phoneOne,
-                    'phone2': phoneTwo,
-                    'modeOfPayment': modeOfPayment,
-                    'noOfPeople': noOfPeople ? 1 : 2,
-                    'amountPaid': noOfPeople ? 750 : 1200,
-                    'snu': snu,
+                    'name1': localStorage.getItem('name1'),
+                    'name2': localStorage.getItem('name2'),
+                    'email1': localStorage.getItem('email1'),
+                    'email2': localStorage.getItem('email2'),
+                    'phone1': localStorage.getItem('phone1'),
+                    'phone2': localStorage.getItem('phone2'),
+                    'modeOfPayment': localStorage.getItem('modeOfPayment'),
+                    'noOfPeople': parseInt(localStorage.getItem('noOfPeople')),
+                    'amountPaid': localStorage.getItem('noOfPeople') == '1' ? 750 : 1200,
+                    'snu': localStorage.getItem('snu') === 'true' ? true : false,
                     'tid': tid,
                     'paymentVerified': false,
                     'emailSent': false,
                 }
                 const response = await payment(data);
                 if (response.status === 200) {
+                    localStorage.clear();
                     router.push('/register/confirm');
                 } else {
                     alert('INTERNAL SERVER ERROR');
@@ -76,7 +77,7 @@ export default function PayTM() {
             <div className='GooglePay'>
                 <div className='GooglePay__qr'>
                     <p className='GooglePay__qr--text'>Scan the QR to Pay</p>
-                    <p style={{fontSize : "1rem", marginTop:"0", marginBottom:".5rem"}} className='GooglePay__qr--text'>Dwiti Deepak Modi</p>
+                    <p style={{ fontSize: "1rem", marginTop: "0", marginBottom: ".5rem" }} className='GooglePay__qr--text'>Dwiti Dipak Modi</p>
                     <img className='GooglePay__qr--image' src='/Images/Assets/paytm.jpg' />
                     <div className='GooglePay__qr--TID'>
                         <input onChange={(e) => setTid(e.target.value)} type='text' placeholder='Transaction ID' required />
