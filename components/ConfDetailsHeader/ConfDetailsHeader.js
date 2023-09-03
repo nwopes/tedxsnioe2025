@@ -1,7 +1,8 @@
 import ConfDetailsSlider from '../ConfDetailsSlider/ConfDetailsSlider';
 import './ConfDetailsHeader.scss'
+import Link from "next/link";
 
-function ConfHeader({title,year,desc, images}) {
+function ConfHeader({title,year,desc, images, url}) {
     return (
         <div className='ConfHeader'>
             <div className='ConfHeader__heading'>
@@ -17,7 +18,13 @@ function ConfHeader({title,year,desc, images}) {
                     <p className='ConfHeader__details--content__desc'>
                         {desc}
                     </p>
-                    <p className='ConfHeader__details--content__aftermovie'>Watch AfterMovie</p>
+                    {url && ( // Render the link only if 'url' is truthy
+                        <p className='ConfHeader__details--content__aftermovie'>
+                            <Link style={{ color: "white" }} href={`${url}`}>
+                                Watch AfterMovie
+                            </Link>
+                        </p>
+                    )}
                 </div>
             </div>
         </div>
