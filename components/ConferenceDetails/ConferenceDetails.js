@@ -13,6 +13,7 @@ function ConfDetails() {
             title: "Misfits",
             desc: "Misfits are people whose ideas and initiatives set them apart from the crowd, and they have the courage to do something different and make a difference. For the 2022 conference, TedxShivNadarUniversity brought together 13 people who embody this definition.",
             year: "2022",
+            url: "placeholder insert yt link",
             speakers: [
                 {
                     name: 'Kavitha Emmanuel',
@@ -157,6 +158,7 @@ function ConfDetails() {
             title: "BlindSpots",
             desc: "11 speakers and 3 performers took the stage and shed light on the topics that are often ignored by many and gave the audience an insight into fields that are relatively unexplored",
             year: "2019",
+            url: "https://youtu.be/0R82X_0_pt8?feature=shared",
             speakers: [
                 {
                     name: 'Manit Ramaiya',
@@ -237,6 +239,7 @@ function ConfDetails() {
             title: "Conference",
             desc: "This conference consisted of a star-studded speaker lineup with speakers like the legendary cricketer Kapil Dev, famous entrepreneur and mentor Ankur Warikoo, renowned Business woman Roshni Nadar and so many more renowned names from diverse fields. The conference was an experience of a lifetime for all those who witnessed it.",
             year: "2018",
+            url: 'https://youtu.be/vt5byYQlvr0?feature=shared',
             speakers: [
                 {
                     name: 'Vasu Primlani',
@@ -519,7 +522,7 @@ function ConfDetails() {
                                 key={index}
                             >
                                 <div className='ConfDetailsSection__conference--header'>
-                                    <ConfHeader images={item.images} title={item.title} year={item.year} desc={item.desc} />
+                                    <ConfHeader images={item.images} title={item.title} year={item.year} desc={item.desc} url={item.url} />
                                 </div>
                             </motion.div>
                             <div className='ConfDetailsSection__conference--speakers'>
