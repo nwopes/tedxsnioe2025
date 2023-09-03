@@ -105,7 +105,9 @@ function Navbar({ isSmall = false }) {
                                 : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
-                            <Link style={{ color: "white" }} href="/">Home</Link>
+                            <p style={{ color: "white" }}>
+                                <Link style={{ color: "white" }} href="/">Home</Link>
+                            </p>
                         </li>
                         <li
                             className={`${pathName === "/events"
@@ -133,7 +135,9 @@ function Navbar({ isSmall = false }) {
                                 : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
+                            <p style={{ color: "white" }}>
                             <Link style={{ color: "white" }} href="/pastConferences">Past Conferences</Link>
+                            </p>
                         </li>
 
                         <li
@@ -142,7 +146,9 @@ function Navbar({ isSmall = false }) {
                                 : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
+                            <p style={{ color: "white" }}>
                             <Link style={{ color: "white" }} href="/contact">Contact Us</Link>
+                            </p>
                         </li>
                         <li
                             className={`${pathName === "/register"
@@ -150,7 +156,9 @@ function Navbar({ isSmall = false }) {
                                 : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
+                            <p style={{ color: "white" }}>
                             <Link style={{ color: "red", fontWeight: "medium" }} href="/register">Register</Link>
+                            </p>
                         </li>
                     </ul>
                 </div>
