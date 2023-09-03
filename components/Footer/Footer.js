@@ -52,9 +52,15 @@ export default function Footer() {
           <img src="/Images/tedx_black.png" />
         </div>
         <div className="Footer__below--social">
-          <img src="/Images/Footer/linkedin.png" />
-          <img src="/Images/Footer/insta.png" />
-          <img src="/Images/Footer/fb.png" />
+            <a href={"https://www.linkedin.com/company/tedx-snioe/"}>
+                <img src="/Images/Footer/linkedin.png" />
+            </a>
+            <a href={"https://www.instagram.com/tedxshivnadarioe/"}>
+                <img src="/Images/Footer/insta.png" />
+            </a>
+            <a href={"https://facebook.com/tedxshivnadaruniversity"}>
+                <img src="/Images/Footer/fb.png" />
+            </a>
         </div>
       </div>
     </div>
