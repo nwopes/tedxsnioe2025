@@ -25,19 +25,6 @@ export default function PastSpeakers() {
                 OUR SPEAKERS
             </div>
             <div className='PastSpeakers__cards'>
-            <div class="container">
-                    <h3 class="title">Anubha Bajaj</h3>
-                    <div class="content">
-                        <div>
-                            <div class="content-overlay"></div>
-                            <img class="content-image" src="/Images/CurrentSpeakers/anubha_bajaj.jpeg" alt="" />
-                            <div class="content-details fadeIn-bottom">
-                                <h3 class="content-title">Anubha Bajaj</h3>
-                                <p class="content-text">Anubha Bajaj is an Indie artist, and the enchantress behind the captivating &quot;Lamhey&quot;. From composing melodies that transcend time to harmonizing emotions through music, Anubha&apos;s journey is a tapestry of crafted experiences</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="container">
                     <h3 class="title">Shirish Beri</h3>
                     <div class="content">
@@ -80,6 +67,29 @@ export default function PastSpeakers() {
             {/* <div className='PastSpeakers__button'>
                 <p className='PastSpeakers__button--text'>View All</p>
             </div> */}
+
+            <div className='PastSpeakers__heading'>
+                OUR PERFORMERS
+            </div>
+            <div className='PastSpeakers__cards'>
+                <div class="container">
+                    <h3 class="title">Anubha Bajaj</h3>
+                    <div class="content">
+                        <div>
+                            <div class="content-overlay"></div>
+                            <img class="content-image" src="/Images/CurrentSpeakers/anubha_bajaj.jpeg" alt="" />
+                            <div class="content-details fadeIn-bottom">
+                                <h3 class="content-title">Anubha Bajaj</h3>
+                                <p class="content-text">Anubha Bajaj is an Indie artist, and the enchantress behind the captivating &quot;Lamhey&quot;. From composing melodies that transcend time to harmonizing emotions through music, Anubha&apos;s journey is a tapestry of crafted experiences</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* <div className='PastSpeakers__button'>
+                <p className='PastSpeakers__button--text'>View All</p>
+            </div> */}
         </div>
+
     )
 }
