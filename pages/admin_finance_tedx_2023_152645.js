@@ -4,6 +4,7 @@ import { findPayments } from "../services/paymentServer"
 import '../styles/routes/admin.scss'
 export default function Admin({ payments }) {
     const { filter, setFilter } = useTicket();
+    let srNo = 1;
     const handlePayment = async (id) => {
         try {
             const data = {
@@ -57,6 +58,7 @@ export default function Admin({ payments }) {
             <table className="bordered-table">
                 <thead>
                     <tr>
+                        <th>SR NO</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone Number</th>
@@ -75,6 +77,7 @@ export default function Admin({ payments }) {
                                 return (
                                     payment['noOfPeople'] == 1 ?
                                         <tr key={index} className="AdminMainContainer__details">
+                                            <td>{srNo++}</td>
                                             <td>{payment["name1"]}</td>
                                             <td>{payment["email1"]}</td>
                                             <td>{payment["phone1"]}</td>
@@ -109,6 +112,7 @@ export default function Admin({ payments }) {
             <table className="bordered-table">
                 <thead>
                     <tr>
+                        <th>SR NO</th>
                         <th>Name 1</th>
                         <th>Email 1</th>
                         <th>Phone Number 1</th>
@@ -132,6 +136,7 @@ export default function Admin({ payments }) {
                                         <tr key={index}></tr>
                                         :
                                         <tr key={index}>
+                                            <td>{srNo++}</td>
                                             <td>{payment["name1"]}</td>
                                             <td>{payment["email1"]}</td>
                                             <td>{payment["phone1"]}</td>
