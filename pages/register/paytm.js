@@ -33,7 +33,7 @@ export default function PayTM() {
                     return;
                 }
             } else {
-                if (nameOne === '' || nameTwo === '' || emailOne === '' || emaiTwo === '' || phoneOne === '' || phoneTwo === '' || modeOfPayment === '') {
+                if (nameOne === '' || nameTwo === '' || emailOne === '' || emailTwo === '' || phoneOne === '' || phoneTwo === '' || modeOfPayment === '') {
                     alert('There is a problem from our side. Please refill the form without reloading the screen');
                     return;
                 }
