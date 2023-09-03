@@ -49,7 +49,7 @@ export default function PayTM() {
                     'phone2': phoneTwo,
                     'modeOfPayment': modeOfPayment,
                     'noOfPeople': noOfPeople ? 1 : 2,
-                    'amountPaid': noOfPeople ? 800 : 1200,
+                    'amountPaid': noOfPeople ? 750 : 1200,
                     'snu': snu,
                     'tid': tid,
                     'paymentVerified': false,
