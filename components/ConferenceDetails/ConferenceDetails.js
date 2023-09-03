@@ -510,7 +510,7 @@ function ConfDetails() {
             {details.map((item, index) => {
                 return (
                     <div key={index}>
-                        <div style={{ paddingTop: "3rem" }} id='conf1'></div>
+                        <div style={{ paddingTop: "3rem" }} id={'conf'+(index+1)}></div>
                         <div className='ConfDetailsSection__conference'>
                             <motion.div
                                 initial={{ opacity: 0 }}
