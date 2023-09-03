@@ -33,24 +33,24 @@ export default function PastSpeakers() {
                             <img class="content-image" src="/Images/CurrentSpeakers/anubha_bajaj.jpeg" alt="" />
                             <div class="content-details fadeIn-bottom">
                                 <h3 class="content-title">Anubha Bajaj</h3>
-                                <p class="content-text">An architect by profession, Shirish Beri, puts forth a sustainable, simple and minimalist life, revolutionizing modern architecture. His work, reflecting his philosophy of bringing man closer to nature as well as to basic human values. </p>
+                                <p class="content-text">Anubha Bajaj is an Indie artist, and the enchantress behind the captivating "Lamhey". From composing melodies that transcend time to harmonizing emotions through music, Anubha's journey is a tapestry of crafted experiences</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                {/* <div class="container">
+                <div class="container">
                     <h3 class="title">Shirish Beri</h3>
                     <div class="content">
                         <div>
                             <div class="content-overlay"></div>
-                            <img class="content-image" src="/Images/CurrentSpeakers/Rishab.png" alt="" />
+                            <img class="content-image" src="/Images/CurrentSpeakers/shirish.jpg" alt="" />
                             <div class="content-details fadeIn-bottom">
                                 <h3 class="content-title">Shirish Beri</h3>
                                 <p class="content-text">An architect by profession, Shirish Beri, puts forth a sustainable, simple and minimalist life, revolutionizing modern architecture. His work, reflecting his philosophy of bringing man closer to nature as well as to basic human values. </p>
                             </div>
                         </div>
                     </div>
-                </div> */}
+                </div>
                 <div class="container">
                     <h3 class="title">Gursakhi Lugani</h3>
                     <div class="content">
