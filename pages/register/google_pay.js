@@ -50,7 +50,7 @@ export default function GooglePay() {
                     'modeOfPayment': localStorage.getItem('modeOfPayment'),
                     'noOfPeople': parseInt(localStorage.getItem('noOfPeople')),
                     'amountPaid': localStorage.getItem('noOfPeople') == '1' ? 750 : 1200,
-                'snu': localStorage.getItem('snu') === 'true' ? true : false,
+                    'snu': localStorage.getItem('snu') === 'true' ? true : false,
                     'tid': tid,
                     'paymentVerified': false,
                     'emailSent': false,
@@ -77,7 +77,7 @@ export default function GooglePay() {
             <div className='GooglePay'>
                 <div className='GooglePay__qr'>
                     <p className='GooglePay__qr--text'>Scan the QR to Pay</p>
-                    <p style={{fontSize : "1rem", marginTop:"0", marginBottom:".5rem"}} className='GooglePay__qr--text'>Aditi Mohapatra</p>
+                    <p style={{ fontSize: "1rem", marginTop: "0", marginBottom: ".5rem" }} className='GooglePay__qr--text'>Aditi Mohapatra</p>
                     <img className='GooglePay__qr--image' src='/Images/Assets/google_pay.png' />
                     <div className='GooglePay__qr--TID'>
                         <input onChange={(e) => setTid(e.target.value)} type='text' placeholder='Transaction ID' required />

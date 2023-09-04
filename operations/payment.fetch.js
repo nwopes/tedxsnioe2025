@@ -8,6 +8,18 @@ export async function payment(formData) {
     });
 }
 
+export async function sendEmail(formData) {
+    return await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+    }).then((res) => {
+        return res.json();
+    });
+}
+
 export async function paymentverified(formData) {
     return fetch("/api/verifyPayment", {
         method: "POST",
