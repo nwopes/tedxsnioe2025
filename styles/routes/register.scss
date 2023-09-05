@@ -145,3 +145,18 @@
     }
   }
 }
+
+.OpeningSoon {
+  width: 100vw;
+  height: 100vh;
+  // padding-top: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 3rem;
+  font-family: 'Poppins', sans-serif;
+  @include respondAt(915px) {
+    font-size: 2rem;
+  }
+}

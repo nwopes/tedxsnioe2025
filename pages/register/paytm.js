@@ -74,7 +74,7 @@ export default function PayTM() {
     return (
         <>
             {loading ? <BlurredSpinner /> : <></>}
-            <div className='GooglePay'>
+            {/* <div className='GooglePay'>
                 <div className='GooglePay__qr'>
                     <p className='GooglePay__qr--text'>Scan the QR to Pay</p>
                     <p style={{ fontSize: "1rem", marginTop: "0", marginBottom: ".5rem" }} className='GooglePay__qr--text'>Dwiti Dipak Modi</p>
@@ -111,6 +111,10 @@ export default function PayTM() {
                         </div>
                     </div>
                 </div>
+            </div> */}
+            <div className='OpeningSoon'>
+                Registrations will open soon again!!<br />
+                Stay Tuned!!
             </div>
         </>
     )

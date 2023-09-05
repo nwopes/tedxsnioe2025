@@ -68,7 +68,7 @@ export default function Cash() {
     }
     return (
         <>
-            {loading ? <BlurredSpinner /> : <></>}
+            {/* {loading ? <BlurredSpinner /> : <></>}
             <div className='GooglePay'>
                 <div className='GooglePay__qr'>
                     <p className='GooglePay__qr--text'>Contact this number for further details</p>
@@ -103,6 +103,10 @@ export default function Cash() {
                         </div>
                     </div>
                 </div>
+            </div> */}
+            <div className='OpeningSoon'>
+                Registrations will open soon again!!<br />
+                Stay Tuned!!
             </div>
         </>
     )

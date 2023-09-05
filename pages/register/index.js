@@ -139,7 +139,7 @@ export default function Register() {
     }
     return (
         <>
-            <div className='RegisterSection'>
+            {/* <div className='RegisterSection'>
                 <div className='RegisterSection__details'>
                     <div className='RegisterSection__details--snu'>
                         <p>Enter Details</p>
@@ -233,6 +233,10 @@ export default function Register() {
                         </div>
                     </div>
                 </div>
+            </div> */}
+            <div className='OpeningSoon'>
+                Registrations will open soon again!!<br/>
+                Stay Tuned!!
             </div>
         </>
     )
