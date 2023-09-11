@@ -85,7 +85,7 @@ export default function PastSpeakers() {
                                 <img className="content-image" src="/Images/CurrentSpeakers/deb.jpg" alt="" />
                                 <div className="content-details fadeIn-bottom">
                                     <h3 className="content-title">Debojyoti Chakraborty</h3>
-                                    <p className="content-text">Debojyoti Chakraborty is a principal scientist at the Institute of Genomics and Integrative Biology. From inventing the world's first paper strip COVID-19 test, to working on an accessible cure for sickle celled anemia, Dr. Debjyoti definitely has done the unimaginable and brought a new perspective to all things science.</p>
+                                    <p className="content-text">Debojyoti Chakraborty is a principal scientist at the Institute of Genomics and Integrative Biology. From inventing the world&apos;s first paper strip COVID-19 test, to working on an accessible cure for sickle celled anemia, Dr. Debjyoti definitely has done the unimaginable and brought a new perspective to all things science.</p>
                                 </div>
                             </div>
                         </div>
