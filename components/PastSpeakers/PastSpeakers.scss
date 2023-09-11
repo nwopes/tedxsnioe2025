@@ -1,6 +1,6 @@
 .PastSpeakers {
-  padding-top: 3rem;
-  padding-bottom: 7rem;
+  padding-top: 0rem;
+  padding-bottom: 2rem;
   &__heading {
     color: #000;
     font-family: "Bebas Neue", serif;
@@ -10,7 +10,7 @@
     // line-height: 2.5rem; /* 58.824% */
     letter-spacing: 0.1275rem;
     text-align: center;
-    padding-top: 5rem;
+    padding-top: 2rem;
   }
   &__cards {
     display: flex;
