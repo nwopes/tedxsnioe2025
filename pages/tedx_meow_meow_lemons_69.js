@@ -8,6 +8,7 @@ export default function Admin({ payments }) {
     const { filter, setFilter } = useTicket();
     const [loading, setLoading] = useState(false);
     let srNo = 1;
+    let dSrNo = 1;
     const handlePayment = async (id, payment) => {
         setLoading(true);
         try {
@@ -56,6 +57,9 @@ export default function Admin({ payments }) {
 
     // Calculate the total amount for displayed rows
     const totalAmount = filteredPayments.reduce((total, payment) => total + payment['amountPaid'], 0);
+    const totalAmountVerified = filteredPayments
+        .filter(payment => payment["paymentVerified"])
+        .reduce((total, payment) => total + payment["amountPaid"], 0);
 
     return (
         <>
@@ -153,7 +157,7 @@ export default function Admin({ payments }) {
                                             <tr key={index}></tr>
                                             :
                                             <tr key={index}>
-                                                <td>{srNo++}</td>
+                                                <td>{dSrNo++}</td>
                                                 <td>{payment["name1"]}</td>
                                                 <td>{payment["email1"]}</td>
                                                 <td>{payment["phone1"]}</td>
@@ -173,6 +177,8 @@ export default function Admin({ payments }) {
                         })}
                     </tbody>
                 </table>
+                <p className="AdminMainContainer__end">Total Amount Verified: {totalAmountVerified}</p>
+                <p className="AdminMainContainer__end">Total Amount Not verified: {totalAmount - totalAmountVerified}</p>
                 <p className="AdminMainContainer__end">Total Amount: {totalAmount}</p>
             </div>
         </>
