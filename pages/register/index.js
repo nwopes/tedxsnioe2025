@@ -31,11 +31,11 @@ export default function Register() {
         if (snu && noOfPeople) {
             return '750';
         } else if (snu && !noOfPeople) {
-            return '1200';
+            return '1300';
         } else if (!snu && noOfPeople) {
             return '750';
         } else {
-            return '1200';
+            return '1300';
         }
     }
     const handleSubmit = (e) => {
@@ -139,7 +139,7 @@ export default function Register() {
     }
     return (
         <>
-            {/* <div className='RegisterSection'>
+            <div className='RegisterSection'>
                 <div className='RegisterSection__details'>
                     <div className='RegisterSection__details--snu'>
                         <p>Enter Details</p>
@@ -220,11 +220,7 @@ export default function Register() {
                         </div>
                         <div className='RegisterSection__amount--priceDetails__ticket'>
                             <p>Ticket Price (per person)</p>
-                            <p>{noOfPeople ? '800' : '800'}</p>
-                        </div>
-                        <div className='RegisterSection__amount--priceDetails__ticket'>
-                            <p>Early Bird Discount</p>
-                            <p>{noOfPeople ? '-50' : '-200'}</p>
+                            <p>{noOfPeople ? '750' : '650'}</p>
                         </div>
                         <hr />
                         <div className='RegisterSection__amount--priceDetails__total'>
@@ -233,10 +229,6 @@ export default function Register() {
                         </div>
                     </div>
                 </div>
-            </div> */}
-            <div className='OpeningSoon'>
-                Registrations will open soon again!!<br/>
-                Stay Tuned!!
             </div>
         </>
     )

@@ -12,28 +12,17 @@ export default function Cash() {
     const { noOfPeople, setNoOfPeople, ticketPrice, setTicketPrice, snu, setSnu, nameOne, nameTwo, emailOne, emailTwo, phoneOne, phoneTwo, modeOfPayment } = useTicket();
     const calculatePrice = () => {
         if (snu && noOfPeople) {
-            return '800';
+            return '750';
         } else if (snu && !noOfPeople) {
-            return '1600';
+            return '1300';
         } else if (!snu && noOfPeople) {
-            return '1000';
+            return '750';
         } else {
-            return '2000';
+            return '1300';
         }
     }
     const [tid, setTid] = useState('');
     const handleClick = async () => {
-        if (noOfPeople) {
-            // if (nameOne === '' || emailOne === '' || phoneOne === '' || modeOfPayment === '') {
-            //     alert('There is a problem from our side. Please refill the form without reloading the screen');
-            //     return;
-            // }
-        } else {
-            // if (nameOne === '' || nameTwo === '' || emailOne === '' || emailTwo === '' || phoneOne === '' || phoneTwo === '' || modeOfPayment === '') {
-            //     alert('There is a problem from our side. Please refill the form without reloading the screen');
-            //     return;
-            // }
-        }
         setLoading(true)
         try {
             const data = {
@@ -45,7 +34,7 @@ export default function Cash() {
                 'phone2': localStorage.getItem('phone2'),
                 'modeOfPayment': localStorage.getItem('modeOfPayment'),
                 'noOfPeople': parseInt(localStorage.getItem('noOfPeople')),
-                'amountPaid': localStorage.getItem('noOfPeople') == '1' ? 750 : 1200,
+                'amountPaid': localStorage.getItem('noOfPeople') == '1' ? 750 : 1300,
                 'snu': localStorage.getItem('snu') === 'true' ? true : false,
                 'tid': tid,
                 'paymentVerified': false,
@@ -68,7 +57,7 @@ export default function Cash() {
     }
     return (
         <>
-            {/* {loading ? <BlurredSpinner /> : <></>}
+            {loading ? <BlurredSpinner /> : <></>}
             <div className='GooglePay'>
                 <div className='GooglePay__qr'>
                     <p className='GooglePay__qr--text'>Contact this number for further details</p>
@@ -90,11 +79,7 @@ export default function Cash() {
                         </div>
                         <div className='GooglePay__details--priceDetails__ticket'>
                             <p>Ticket Price (per person)</p>
-                            <p>{snu ? '800' : '800'}</p>
-                        </div>
-                        <div className='GooglePay__details--priceDetails__ticket'>
-                            <p>Early Bird Discount</p>
-                            <p>{noOfPeople ? '-50' : '-200'}</p>
+                            <p>{noOfPeople ? '750' : '1300'}</p>
                         </div>
                         <hr />
                         <div className='GooglePay__details--priceDetails__total'>
@@ -103,10 +88,6 @@ export default function Cash() {
                         </div>
                     </div>
                 </div>
-            </div> */}
-            <div className='OpeningSoon'>
-                Registrations will open soon again!!<br />
-                Stay Tuned!!
             </div>
         </>
     )

@@ -11,11 +11,11 @@ export default function Payment() {
         if (snu && noOfPeople) {
             return '750';
         } else if (snu && !noOfPeople) {
-            return '1200';
+            return '1300';
         } else if (!snu && noOfPeople) {
             return '750';
         } else {
-            return '1200';
+            return '1300';
         }
     }
     const handleClick = (mode) => {
@@ -34,44 +34,36 @@ export default function Payment() {
     const [mop, setMop] = React.useState('');
     const { noOfPeople, setNoOfPeople, ticketPrice, setTicketPrice, snu, setSnu, setModeOfPayment, emailTwo } = useTicket();
     return (
-        // <div className='PaymentContainer'>
-        //     <div className='PaymentContainer__option'>
-        //         <p className='PaymentContainer__option--title'>Choose your payment option</p>
-        //         <div onClick={() => handleClick('GPAY')} className='PaymentContainer__option--mode'>Google Pay</div>
-        //         <div onClick={() => handleClick('PAYTM')} className='PaymentContainer__option--mode'>PayTM</div>
-        //         <div onClick={() => handleClick('CASH')} className='PaymentContainer__option--mode'>Cash</div>
-        //     </div>
-        //     <div className='PaymentContainer__details'>
-        //         <img className='PaymentContainer__details--image' src='/Images/Assets/payment.png' />
-        //         <div className='PaymentContainer__details--priceDetails'>
-        //             <p>Price Details</p>
-        //             <div className='PaymentContainer__details--priceDetails__snu'>
-        //                 <p>Type Of Person</p>
-        //                 <p>{snu ? 'SNU' : 'NON-SNU'}</p>
-        //             </div>
-        //             <div className='PaymentContainer__details--priceDetails__people'>
-        //                 <p>No. Of People</p>
-        //                 <p>{noOfPeople ? '1' : '2'}</p>
-        //             </div>
-        //             <div className='PaymentContainer__details--priceDetails__ticket'>
-        //                 <p>Ticket Price (per person)</p>
-        //                 <p>{snu ? '800' : '800'}</p>
-        //             </div>
-        //             <div className='PaymentContainer__details--priceDetails__ticket'>
-        //                     <p>Early Bird Discount</p>
-        //                     <p>{noOfPeople ? '-50' : '-200'}</p>
-        //                 </div>
-        //             <hr />
-        //             <div className='PaymentContainer__details--priceDetails__total'>
-        //                 <p>Total Amount</p>
-        //                 <p>{calculatePrice()}</p>
-        //             </div>
-        //         </div>
-        //     </div>
-        // </div>
-        <div className='OpeningSoon'>
-            Registrations will open soon again!!<br />
-            Stay Tuned!!
+        <div className='PaymentContainer'>
+            <div className='PaymentContainer__option'>
+                <p className='PaymentContainer__option--title'>Choose your payment option</p>
+                <div onClick={() => handleClick('GPAY')} className='PaymentContainer__option--mode'>Google Pay</div>
+                <div onClick={() => handleClick('PAYTM')} className='PaymentContainer__option--mode'>PayTM</div>
+                <div onClick={() => handleClick('CASH')} className='PaymentContainer__option--mode'>Cash</div>
+            </div>
+            <div className='PaymentContainer__details'>
+                <img className='PaymentContainer__details--image' src='/Images/Assets/payment.png' />
+                <div className='PaymentContainer__details--priceDetails'>
+                    <p>Price Details</p>
+                    <div className='PaymentContainer__details--priceDetails__snu'>
+                        <p>Type Of Person</p>
+                        <p>{snu ? 'SNU' : 'NON-SNU'}</p>
+                    </div>
+                    <div className='PaymentContainer__details--priceDetails__people'>
+                        <p>No. Of People</p>
+                        <p>{noOfPeople ? '1' : '2'}</p>
+                    </div>
+                    <div className='PaymentContainer__details--priceDetails__ticket'>
+                        <p>Ticket Price (per person)</p>
+                        <p>{noOfPeople ? '750' : '1300'}</p>
+                    </div>
+                    <hr />
+                    <div className='PaymentContainer__details--priceDetails__total'>
+                        <p>Total Amount</p>
+                        <p>{calculatePrice()}</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
     )

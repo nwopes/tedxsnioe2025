@@ -14,11 +14,11 @@ export default function GooglePay() {
         if (snu && noOfPeople) {
             return '750';
         } else if (snu && !noOfPeople) {
-            return '1200';
+            return '1300';
         } else if (!snu && noOfPeople) {
             return '750';
         } else {
-            return '1200';
+            return '1300';
         }
     }
     const [tid, setTid] = useState('');
@@ -27,17 +27,6 @@ export default function GooglePay() {
             alert('Please enter a vaid transaction id');
             return;
         } else {
-            if (noOfPeople) {
-                // if (nameOne === '' || emailOne === '' || phoneOne === '' || modeOfPayment === '') {
-                //     alert('There is a problem from our side. Please refill the form without reloading the screen');
-                //     return;
-                // }
-            } else {
-                // if (nameOne === '' || nameTwo === '' || emailOne === '' || emailTwo === '' || phoneOne === '' || phoneTwo === '' || modeOfPayment === '') {
-                //     alert('There is a problem from our side. Please refill the form without reloading the screen');
-                //     return;
-                // }
-            }
             setLoading(true);
             try {
                 const data = {
@@ -49,7 +38,7 @@ export default function GooglePay() {
                     'phone2': localStorage.getItem('phone2'),
                     'modeOfPayment': localStorage.getItem('modeOfPayment'),
                     'noOfPeople': parseInt(localStorage.getItem('noOfPeople')),
-                    'amountPaid': localStorage.getItem('noOfPeople') == '1' ? 750 : 1200,
+                    'amountPaid': localStorage.getItem('noOfPeople') == '1' ? 750 : 1300,
                     'snu': localStorage.getItem('snu') === 'true' ? true : false,
                     'tid': tid,
                     'paymentVerified': false,
@@ -74,7 +63,7 @@ export default function GooglePay() {
     return (
         <>
             {loading ? <BlurredSpinner /> : <></>}
-            {/* <div className='GooglePay'>
+            <div className='GooglePay'>
                 <div className='GooglePay__qr'>
                     <p className='GooglePay__qr--text'>Scan the QR to Pay</p>
                     <p style={{ fontSize: "1rem", marginTop: "0", marginBottom: ".5rem" }} className='GooglePay__qr--text'>Aditi Mohapatra</p>
@@ -98,11 +87,7 @@ export default function GooglePay() {
                         </div>
                         <div className='GooglePay__details--priceDetails__ticket'>
                             <p>Ticket Price (per person)</p>
-                            <p>{snu ? '800' : '1000'}</p>
-                        </div>
-                        <div className='GooglePay__details--priceDetails__ticket'>
-                            <p>Early Bird Discount</p>
-                            <p>{noOfPeople ? '-50' : '-200'}</p>
+                            <p>{noOfPeople ? '750' : '650'}</p>
                         </div>
                         <hr />
                         <div className='GooglePay__details--priceDetails__total'>
@@ -111,10 +96,6 @@ export default function GooglePay() {
                         </div>
                     </div>
                 </div>
-            </div> */}
-            <div className='OpeningSoon'>
-                Registrations will open soon again!!<br />
-                Stay Tuned!!
             </div>
         </>
     )
