@@ -39,3 +39,13 @@ export async function emailSentRoute(formData) {
         body: JSON.stringify(formData),
     });
 }
+
+export async function deletePayment(formData) {
+    return fetch("/api/delete", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+    });
+}

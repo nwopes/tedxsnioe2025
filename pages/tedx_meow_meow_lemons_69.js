@@ -1,5 +1,5 @@
 import useTicket from "../hooks/useTicket";
-import { emailSentRoute, paymentverified, sendEmail } from "../operations/payment.fetch";
+import { deletePayment, emailSentRoute, paymentverified, sendEmail } from "../operations/payment.fetch";
 import { findPayments } from "../services/paymentServer"
 import '../styles/routes/admin.scss'
 import BlurredSpinner from "../components/BlurredSpinner/BlurredSpinner";
@@ -25,6 +25,25 @@ export default function Admin({ payments }) {
             }
         } catch (e) {
             console.error("Error", e)
+        }
+        setLoading(false);
+    }
+    const handleDelete = async (id) => {
+        setLoading(true);
+        try {
+            const data = {
+                id: id,
+            }
+            const res = await deletePayment(data);
+            if (res.status === 200) {
+                setLoading(false);
+                window.location.reload();
+            }
+            else {
+                alert('INTERNAL SERVER ERROR, CONTACT SETHIA - 7738180710')
+            }
+        } catch (e) {
+            console.log(e);
         }
         setLoading(false);
     }
@@ -89,6 +108,7 @@ export default function Admin({ payments }) {
                             <th>SNU/Non-SNU</th>
                             <th>Payment Verified</th>
                             <th>Email Sent</th>
+                            <th>Delete Entry</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -120,6 +140,8 @@ export default function Admin({ payments }) {
                                                         <button onClick={() => handleEmail(payment["id"], payment["email1"], payment["email2"])}>Mark as Email Sent</button>
                                                     )}
                                                 </td>
+                                                <td>{payment["paymentVerified"] ? <button disabled>Cannot Delete</button> : <button onClick={() => handleDelete(payment["id"])}>Delete</button>}</td>
+
                                             </tr>
                                             :
                                             <tr key={index}></tr>
@@ -146,6 +168,7 @@ export default function Admin({ payments }) {
                             <th>SNU/Non-SNU</th>
                             <th>Payment Verified</th>
                             <th>Email Sent</th>
+                            <th>Delete Entry</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -170,6 +193,7 @@ export default function Admin({ payments }) {
                                                 <td>{payment["snu"] ? <p>SNU Student</p> : <p>Non Snu Student</p>}</td>
                                                 <td>{payment["paymentVerified"] ? <button disabled>Payment Verified</button> : <button onClick={() => handlePayment(payment["id"])}>Mark As Verified</button>}</td>
                                                 <td>{payment["emailSent"] ? <button disabled>Email Sent</button> : <button onClick={() => handleEmail(payment["id"], payment["email1"], payment["email2"])}>Mark as email sent</button>}</td>
+                                                <td>{payment["paymentVerified"] ? <button disabled>Cannot Delete</button> : <button onClick={() => handleDelete(payment["id"])}>Delete</button>}</td>
                                             </tr>
                                     )
                                 }

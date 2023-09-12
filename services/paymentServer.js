@@ -32,6 +32,14 @@ export async function emailSent(data) {
     })
 }
 
+export async function deleteEntry(data) {
+    return db.payment.delete({
+        where : {
+            id : data.id,
+        },
+    })
+}
+
 export async function fetchEmails(data) {
     return db.payment.findMany({
         where: {
