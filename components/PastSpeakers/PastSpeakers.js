@@ -90,6 +90,19 @@ export default function PastSpeakers() {
                             </div>
                         </div>
                     </div>
+                    <div className="container">
+                        <h3 className="title">Aastha Khanna</h3>
+                        <div className="content">
+                            <div>
+                                <div className="content-overlay"></div>
+                                <img className="content-image" src="/Images/CurrentSpeakers/aastha.jpg" alt="" />
+                                <div className="content-details fadeIn-bottom">
+                                    <h3 className="content-title">Aastha Khanna</h3>
+                                    <p className="content-text">Aastha Khanna is the FIRST Intimacy Coordinator in India, and a visionary force in the Indian film industry. With credits in iconic projects like Andhadhun, Penthouse, and Cobalt Blue, she isn’t just shaping intimate scenes on screen, she’s transforming narratives in real life.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className='PastSpeakers'>

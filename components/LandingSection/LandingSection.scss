@@ -4,10 +4,25 @@
   place-items: center;
   align-content: center;
   height: 100%;
+  &__countdown {
+    font-family: "Inter", sans-serif;
+    padding-top: 2rem;
+    font-size: 2rem;
+    background: linear-gradient(to right, #e78e36, #d0caca);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    @include respondAt(915px)
+    {
+      font-size: 1.5rem;
+      text-align: center;
+      width: 13rem;
+    }
+  }
   &__logo {
     margin-top: 2.3rem;
     img {
-      width: 22rem;
+      width: 20rem;
       @include respondAt(767px) {
         width: 15rem;
       }
@@ -28,7 +43,7 @@
     }
   }
   &__details {
-    margin-top: 2rem;
+    margin-top: 1rem;
     border: 3px solid #d9d9d9;
     display: flex;
     align-items: center;
@@ -39,7 +54,7 @@
       padding-right: 2rem;
       border-right: 1px solid white;
       margin-top: 1.3rem;
-      margin-bottom: 1.3rem;
+      margin-bottom: 1rem;
       &__text {
         color: #fff;
         text-align: center;
