@@ -6,6 +6,12 @@ export async function createPayment(data) {
     })
 }
 
+export async function createGuess(data) {
+    return db.guess.create({
+        data,
+    })
+}
+
 export async function findPayments() {
     return db.payment.findMany();
 }

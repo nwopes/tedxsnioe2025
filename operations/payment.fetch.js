@@ -49,3 +49,13 @@ export async function deletePayment(formData) {
         body: JSON.stringify(formData),
     });
 }
+
+export async function createGuessOp(formData) {
+    return fetch("/api/sendGuesses", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+    });
+}
