@@ -5,7 +5,7 @@ import '../styles/routes/admin.scss'
 import BlurredSpinner from "../components/BlurredSpinner/BlurredSpinner";
 import { useState } from "react";
 export default function Admin({ payments }) {
-    const { filter, setFilter } = useTicket();
+    const { filter, setFilter, showUnverified, setUnverified } = useTicket();
     const [loading, setLoading] = useState(false);
     let srNo = 1;
     let dSrNo = 1;
@@ -94,6 +94,12 @@ export default function Admin({ payments }) {
                         <p className={filter === '' ? 'AdminMainContainer__filter--options__red' : 'AdminMainContainer__filter--options__white'} onClick={() => setFilter('')}>ALL</p>
                     </div>
                 </div>
+                <div className="AdminMainContainer__filter">
+                    <p className="AdminMainContainer__filter--title">Unverified Payments</p>
+                    <div className="AdminMainContainer__filter--options">
+                        <p className={showUnverified ? 'AdminMainContainer__filter--options__red' : 'AdminMainContainer__filter--options__white'} onClick={() => setUnverified(!showUnverified)}>SHOW UNVERIFIED PAYMENTS</p>
+                    </div>
+                </div>
                 <p>Single Ticket Purches</p>
                 <table className="bordered-table">
                     <thead>
@@ -115,37 +121,73 @@ export default function Admin({ payments }) {
                         {payments.map((payment, index) => {
                             {
                                 if (filter === '' || payment['modeOfPayment'] === filter) {
-                                    return (
-                                        payment['noOfPeople'] == 1 ?
-                                            <tr key={index} className="AdminMainContainer__details">
-                                                <td>{srNo++}</td>
-                                                <td>{payment["name1"]}</td>
-                                                <td>{payment["email1"]}</td>
-                                                <td>{payment["phone1"]}</td>
-                                                <td>{payment["amountPaid"]}</td>
-                                                <td>{payment["modeOfPayment"]}</td>
-                                                <td>{payment["tid"]}</td>
-                                                <td>{payment["snu"] ? <p>SNU Student</p> : <p>Non SNU Student</p>}</td>
-                                                <td>
-                                                    {payment["paymentVerified"] ? (
-                                                        <button disabled>Payment Verified</button>
-                                                    ) : (
-                                                        <button onClick={() => handlePayment(payment["id"])}>Mark As Verified</button>
-                                                    )}
-                                                </td>
-                                                <td>
-                                                    {payment["emailSent"] ? (
-                                                        <button disabled>Email Sent</button>
-                                                    ) : (
-                                                        <button onClick={() => handleEmail(payment["id"], payment["email1"], payment["email2"])}>Mark as Email Sent</button>
-                                                    )}
-                                                </td>
-                                                <td>{payment["paymentVerified"] ? <button disabled>Cannot Delete</button> : <button onClick={() => handleDelete(payment["id"])}>Delete</button>}</td>
+                                    if (showUnverified) {
+                                        return (
+                                            payment['noOfPeople'] == 1 && payment['paymentVerified'] == false ?
+                                                <tr key={index} className="AdminMainContainer__details">
+                                                    <td>{srNo++}</td>
+                                                    <td>{payment["name1"]}</td>
+                                                    <td>{payment["email1"]}</td>
+                                                    <td>{payment["phone1"]}</td>
+                                                    <td>{payment["amountPaid"]}</td>
+                                                    <td>{payment["modeOfPayment"]}</td>
+                                                    <td>{payment["tid"]}</td>
+                                                    <td>{payment["snu"] ? <p>SNU Student</p> : <p>Non SNU Student</p>}</td>
+                                                    <td>
+                                                        {payment["paymentVerified"] ? (
+                                                            <button disabled>Payment Verified</button>
+                                                        ) : (
+                                                            <button onClick={() => handlePayment(payment["id"])}>Mark As Verified</button>
+                                                        )}
+                                                    </td>
+                                                    <td>
+                                                        {payment["emailSent"] ? (
+                                                            <button disabled>Email Sent</button>
+                                                        ) : (
+                                                            <button onClick={() => handleEmail(payment["id"], payment["email1"], payment["email2"])}>Mark as Email Sent</button>
+                                                        )}
+                                                    </td>
+                                                    <td>{payment["paymentVerified"] ? <button disabled>Cannot Delete</button> : <button onClick={() => handleDelete(payment["id"])}>Delete</button>}</td>
 
-                                            </tr>
-                                            :
-                                            <tr key={index}></tr>
-                                    )
+                                                </tr>
+                                                :
+                                                <tr key={index}></tr>
+                                        )
+                                    }
+                                    else {
+                                        return (
+                                            payment['noOfPeople'] == 1 ?
+                                                <tr key={index} className="AdminMainContainer__details">
+                                                    <td>{srNo++}</td>
+                                                    <td>{payment["name1"]}</td>
+                                                    <td>{payment["email1"]}</td>
+                                                    <td>{payment["phone1"]}</td>
+                                                    <td>{payment["amountPaid"]}</td>
+                                                    <td>{payment["modeOfPayment"]}</td>
+                                                    <td>{payment["tid"]}</td>
+                                                    <td>{payment["snu"] ? <p>SNU Student</p> : <p>Non SNU Student</p>}</td>
+                                                    <td>
+                                                        {payment["paymentVerified"] ? (
+                                                            <button disabled>Payment Verified</button>
+                                                        ) : (
+                                                            <button onClick={() => handlePayment(payment["id"])}>Mark As Verified</button>
+                                                        )}
+                                                    </td>
+                                                    <td>
+                                                        {payment["emailSent"] ? (
+                                                            <button disabled>Email Sent</button>
+                                                        ) : (
+                                                            <button onClick={() => handleEmail(payment["id"], payment["email1"], payment["email2"])}>Mark as Email Sent</button>
+                                                        )}
+                                                    </td>
+                                                    <td>{payment["paymentVerified"] ? <button disabled>Cannot Delete</button> : <button onClick={() => handleDelete(payment["id"])}>Delete</button>}</td>
+
+                                                </tr>
+                                                :
+                                                <tr key={index}></tr>
+                                        )
+                                    }
+
                                 }
                             }
                         })}
@@ -175,27 +217,54 @@ export default function Admin({ payments }) {
                         {payments.map((payment, index) => {
                             if (filter === '' || payment['modeOfPayment'] === filter) {
                                 {
-                                    return (
-                                        payment['noOfPeople'] == 1 ?
-                                            <tr key={index}></tr>
-                                            :
-                                            <tr key={index}>
-                                                <td>{dSrNo++}</td>
-                                                <td>{payment["name1"]}</td>
-                                                <td>{payment["email1"]}</td>
-                                                <td>{payment["phone1"]}</td>
-                                                <td>{payment["name2"]}</td>
-                                                <td>{payment["email2"]}</td>
-                                                <td>{payment["phone2"]}</td>
-                                                <td>{payment["amountPaid"]}</td>
-                                                <td>{payment["modeOfPayment"]}</td>
-                                                <td>{payment["tid"]}</td>
-                                                <td>{payment["snu"] ? <p>SNU Student</p> : <p>Non Snu Student</p>}</td>
-                                                <td>{payment["paymentVerified"] ? <button disabled>Payment Verified</button> : <button onClick={() => handlePayment(payment["id"])}>Mark As Verified</button>}</td>
-                                                <td>{payment["emailSent"] ? <button disabled>Email Sent</button> : <button onClick={() => handleEmail(payment["id"], payment["email1"], payment["email2"])}>Mark as email sent</button>}</td>
-                                                <td>{payment["paymentVerified"] ? <button disabled>Cannot Delete</button> : <button onClick={() => handleDelete(payment["id"])}>Delete</button>}</td>
-                                            </tr>
-                                    )
+                                    if (showUnverified) {
+                                        console.log(payment['paymentVerified'])
+                                        return (
+                                            payment['noOfPeople'] == 2 && payment['paymentVerified'] == false ?
+
+                                                <tr key={index}>
+                                                    <td>{dSrNo++}</td>
+                                                    <td>{payment["name1"]}</td>
+                                                    <td>{payment["email1"]}</td>
+                                                    <td>{payment["phone1"]}</td>
+                                                    <td>{payment["name2"]}</td>
+                                                    <td>{payment["email2"]}</td>
+                                                    <td>{payment["phone2"]}</td>
+                                                    <td>{payment["amountPaid"]}</td>
+                                                    <td>{payment["modeOfPayment"]}</td>
+                                                    <td>{payment["tid"]}</td>
+                                                    <td>{payment["snu"] ? <p>SNU Student</p> : <p>Non Snu Student</p>}</td>
+                                                    <td>{payment["paymentVerified"] ? <button disabled>Payment Verified</button> : <button onClick={() => handlePayment(payment["id"])}>Mark As Verified</button>}</td>
+                                                    <td>{payment["emailSent"] ? <button disabled>Email Sent</button> : <button onClick={() => handleEmail(payment["id"], payment["email1"], payment["email2"])}>Mark as email sent</button>}</td>
+                                                    <td>{payment["paymentVerified"] ? <button disabled>Cannot Delete</button> : <button onClick={() => handleDelete(payment["id"])}>Delete</button>}</td>
+                                                </tr> :
+                                                <tr key={index}></tr>
+
+                                        )
+                                    }
+                                    else {
+                                        return (
+                                            payment['noOfPeople'] == 1 ?
+                                                <tr key={index}></tr>
+                                                :
+                                                <tr key={index}>
+                                                    <td>{dSrNo++}</td>
+                                                    <td>{payment["name1"]}</td>
+                                                    <td>{payment["email1"]}</td>
+                                                    <td>{payment["phone1"]}</td>
+                                                    <td>{payment["name2"]}</td>
+                                                    <td>{payment["email2"]}</td>
+                                                    <td>{payment["phone2"]}</td>
+                                                    <td>{payment["amountPaid"]}</td>
+                                                    <td>{payment["modeOfPayment"]}</td>
+                                                    <td>{payment["tid"]}</td>
+                                                    <td>{payment["snu"] ? <p>SNU Student</p> : <p>Non Snu Student</p>}</td>
+                                                    <td>{payment["paymentVerified"] ? <button disabled>Payment Verified</button> : <button onClick={() => handlePayment(payment["id"])}>Mark As Verified</button>}</td>
+                                                    <td>{payment["emailSent"] ? <button disabled>Email Sent</button> : <button onClick={() => handleEmail(payment["id"], payment["email1"], payment["email2"])}>Mark as email sent</button>}</td>
+                                                    <td>{payment["paymentVerified"] ? <button disabled>Cannot Delete</button> : <button onClick={() => handleDelete(payment["id"])}>Delete</button>}</td>
+                                                </tr>
+                                        )
+                                    }
                                 }
                             }
                         })}
