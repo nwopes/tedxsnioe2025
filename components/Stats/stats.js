@@ -9,7 +9,7 @@ export default function Stats() {
     >
       <div className='StatsContainer'>
         <div className='StatsContainer__card'>
-          <p className='StatsContainer__card--number'>10+</p>
+          <p className='StatsContainer__card--number'>8+</p>
           <p style={{ color: "#10125C" }} className='StatsContainer__card--text'>Speakers &<br/>Performers</p>
         </div>
         <div className='StatsContainer__card'>
