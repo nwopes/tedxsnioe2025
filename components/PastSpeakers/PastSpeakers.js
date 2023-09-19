@@ -103,6 +103,19 @@ export default function PastSpeakers() {
                             </div>
                         </div>
                     </div>
+                    <div className="container">
+                        <h3 className="title">Anurita Jha</h3>
+                        <div className="content">
+                            <div>
+                                <div className="content-overlay"></div>
+                                <img className="content-image" src="/Images/CurrentSpeakers/Anuritta.jpg" alt="" />
+                                <div className="content-details fadeIn-bottom">
+                                    <h3 className="content-title">Anurita Jha</h3>
+                                    <p className="content-text">Anurita Jha is a self-made actress with a career spanning more than a decade, with films like Gangs of Wasseypur as well as shows such as Ashram and Asur to her credit.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div className='PastSpeakers'>
