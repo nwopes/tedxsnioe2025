@@ -145,7 +145,7 @@ export default function Register() {
                         <p>Enter Details</p>
                         <div className='RegisterSection__details--snu__options'>
                             <p className={snu ? 'RegisterSection__details--snu__options--red' : 'RegisterSection__details--snu__options--white'} onClick={() => handleClick('snu')}>SNU Student</p>
-                            <p className={snu ? 'RegisterSection__details--snu__options--white' : 'RegisterSection__details--snu__options--red'} onClick={() => handleClick('nosnu')}>Non - SNU Student</p>
+                            <p className={snu ? 'RegisterSection__details--snu__options--white' : 'RegisterSection__details--snu__options--red'} onClick={() => handleClick('nosnu')}>Non - SNU Student / Faculty</p>
                         </div>
                     </div>
                     <div className='RegisterSection__details--people'>
