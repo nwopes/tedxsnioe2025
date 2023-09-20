@@ -115,6 +115,7 @@ export default function Admin({ payments }) {
                             <th>Payment Verified</th>
                             <th>Email Sent</th>
                             <th>Delete Entry</th>
+                            <th>Ticket Email</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -148,7 +149,7 @@ export default function Admin({ payments }) {
                                                         )}
                                                     </td>
                                                     <td>{payment["paymentVerified"] ? <button disabled>Cannot Delete</button> : <button onClick={() => handleDelete(payment["id"])}>Delete</button>}</td>
-
+                                                    <td>{payment["ticketEmail"] ? <button disabled>Ticket Sent</button> : <button onClick={() => alert('LOL KUCH NAHI HOGA')}>Send Email</button>}</td>
                                                 </tr>
                                                 :
                                                 <tr key={index}></tr>
@@ -181,6 +182,7 @@ export default function Admin({ payments }) {
                                                         )}
                                                     </td>
                                                     <td>{payment["paymentVerified"] ? <button disabled>Cannot Delete</button> : <button onClick={() => handleDelete(payment["id"])}>Delete</button>}</td>
+                                                    <td>{payment["ticketEmail"] ? <button disabled>Ticket Sent</button> : <button onClick={() => alert('LOL KUCH NAHI HOGA')}>Send Email</button>}</td>
 
                                                 </tr>
                                                 :
@@ -211,6 +213,7 @@ export default function Admin({ payments }) {
                             <th>Payment Verified</th>
                             <th>Email Sent</th>
                             <th>Delete Entry</th>
+                            <th>Ticket Email</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -237,9 +240,10 @@ export default function Admin({ payments }) {
                                                     <td>{payment["paymentVerified"] ? <button disabled>Payment Verified</button> : <button onClick={() => handlePayment(payment["id"])}>Mark As Verified</button>}</td>
                                                     <td>{payment["emailSent"] ? <button disabled>Email Sent</button> : <button onClick={() => handleEmail(payment["id"], payment["email1"], payment["email2"])}>Mark as email sent</button>}</td>
                                                     <td>{payment["paymentVerified"] ? <button disabled>Cannot Delete</button> : <button onClick={() => handleDelete(payment["id"])}>Delete</button>}</td>
+                                                    <td>{payment["ticketEmail"] ? <button disabled>Ticket Sent</button> : <button onClick={() => alert('LOL KUCH NAHI HOGA')}>Send Email</button>}</td>
                                                 </tr> :
                                                 <tr key={index}></tr>
-
+                                                
                                         )
                                     }
                                     else {
@@ -262,6 +266,7 @@ export default function Admin({ payments }) {
                                                     <td>{payment["paymentVerified"] ? <button disabled>Payment Verified</button> : <button onClick={() => handlePayment(payment["id"])}>Mark As Verified</button>}</td>
                                                     <td>{payment["emailSent"] ? <button disabled>Email Sent</button> : <button onClick={() => handleEmail(payment["id"], payment["email1"], payment["email2"])}>Mark as email sent</button>}</td>
                                                     <td>{payment["paymentVerified"] ? <button disabled>Cannot Delete</button> : <button onClick={() => handleDelete(payment["id"])}>Delete</button>}</td>
+                                                    <td>{payment["ticketEmail"] ? <button disabled>Ticket Sent</button> : <button onClick={() => alert('LOL KUCH NAHI HOGA')}>Send Email</button>}</td>
                                                 </tr>
                                         )
                                     }

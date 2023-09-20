@@ -24,6 +24,7 @@ model Payment {
     tid             String  @default("") @db.VarChar(100)
     paymentVerified Boolean
     emailSent       Boolean
+    ticketEmail     Boolean @default(false)
 }
 
 model Guess {
