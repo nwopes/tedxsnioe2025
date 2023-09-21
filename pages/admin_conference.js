@@ -1,10 +1,33 @@
+import { delegateKitAssigned } from "../operations/payment.fetch";
 import { findPayments } from "../services/paymentServer"
 import '../styles/routes/admin.scss'
-
+import { useState } from "react";
+import BlurredSpinner from "../components/BlurredSpinner/BlurredSpinner";
 export default function AdminConference({ payments }) {
     let srNo = 1;
+    const [loading, setLoading] = useState(false);
+    const handleClick = async (id) => {
+        setLoading(true);
+        try {
+            const data = {
+                id: id,
+            }
+            const response = await delegateKitAssigned(data);
+
+            if (response.status === 200) {
+                setLoading(false);
+                window.location.reload();
+            } else {
+                alert('INTERNAL SERVER ERROR');
+            }
+        } catch (e) {
+            console.log("ERROR", e)
+        }
+        setLoading(false);
+    }
     return (
         <>
+            {loading ? <BlurredSpinner /> : <></>}
             <div className="AdminMainContainer">
                 <p className="AdminMainContainer__title">Conference Single Ticket</p>
                 <table className="bordered-table">
@@ -14,7 +37,7 @@ export default function AdminConference({ payments }) {
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone Number</th>
-                            <th>Delegate Kit Assigned</th>
+                            <th>Registration</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,9 +51,8 @@ export default function AdminConference({ payments }) {
                                             <td>{payment["email1"]}</td>
                                             <td>{payment["phone1"]}</td>
                                             <td>
-                                                <button>Delegate Kit Assigned</button>
+                                                {payment["delegateKit"] ? <button disabled>Registered</button> : <button onClick={() => handleClick(payment["id"])}>Register</button>}
                                             </td>
-
                                         </tr>
                                         :
                                         <tr key={index}></tr>
@@ -50,7 +72,7 @@ export default function AdminConference({ payments }) {
                             <th>Name 2</th>
                             <th>Email 2</th>
                             <th>Phone Number 2</th>
-                            <th>Delegate Kit Assigned</th>
+                            <th>Registration</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -67,7 +89,7 @@ export default function AdminConference({ payments }) {
                                             <td>{payment["email2"]}</td>
                                             <td>{payment["phone2"]}</td>
                                             <td>
-                                                <button>Delegate Kit Assigned</button>
+                                                {payment["delegateKit"] ? <button disabled>Registered</button> : <button onClick={() => handleClick(payment["id"])}>Register</button>}
                                             </td>
 
                                         </tr>
@@ -85,7 +107,6 @@ export default function AdminConference({ payments }) {
 
 export async function getServerSideProps(context) {
     const response = await findPayments();
-    console.log(response)
     return {
         props: {
             payments: response,

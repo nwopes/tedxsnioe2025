@@ -25,6 +25,7 @@ model Payment {
     paymentVerified Boolean
     emailSent       Boolean
     ticketEmail     Boolean @default(false)
+    delegateKit     Boolean @default(false)
 }
 
 model Guess {

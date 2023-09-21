@@ -20,6 +20,18 @@ export async function sendEmail(formData) {
     });
 }
 
+export async function sendTicket(formData) {
+    return await fetch("/api/sendTicket", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+    }).then((res) => {
+        return res.json();
+    })
+}
+
 export async function paymentverified(formData) {
     return fetch("/api/verifyPayment", {
         method: "POST",
@@ -40,6 +52,16 @@ export async function emailSentRoute(formData) {
     });
 }
 
+export async function ticketSentRoute(formData) {
+    return fetch("/api/ticket", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+    });
+}
+
 export async function deletePayment(formData) {
     return fetch("/api/delete", {
         method: "POST",
@@ -48,6 +70,16 @@ export async function deletePayment(formData) {
         },
         body: JSON.stringify(formData),
     });
+}
+
+export async function delegateKitAssigned(formData) {
+    return fetch("/api/delegate", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+    })
 }
 
 export async function createGuessOp(formData) {

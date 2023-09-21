@@ -1,9 +1,8 @@
 import nodemailer from "nodemailer";
-import { TicketTemplate } from "../../public/Templates/TicketTemplate";
-async function SendEmail(req, res) {
+import { FinalTicketTemplate } from "../../public/Templates/FinalTicket";
+async function SendFinalTicket(req, res) {
     const body = await req.body;
     let emailList = [];
-    console.log(body);
     if (body.email1 !== '') {
         emailList.push(body.email1);
     }
@@ -13,9 +12,9 @@ async function SendEmail(req, res) {
     try {
         await sendConfirmationMail(emailList)
         res.send({ status: 200, message: "Emails sent successfully" });
-    } catch (e){
+    } catch (e) {
         console.log(e);
-        res.send({ status: 500, message: "Emails not sent" });
+        res.send({ status: 500, message: "Emails sent successfully" });
     }
 }
 
@@ -23,8 +22,13 @@ async function sendConfirmationMail(email) {
     var mailOptions = {
         to: email,
         from: 'TEDxShivNadarIoE <tedx.club@snu.edu.in>',
-        subject: `Ticket Confirmation`,
-        html: TicketTemplate(),
+        subject: `TEDx Conference Ticket`,
+        html: FinalTicketTemplate(),
+        attachments: [{
+            filename: 'tedx_ticket.png',
+            path: '/Users/aryansethia/Desktop/tedxsnioe2023/public/Images/tedx_ticket.png',
+            cid: 'tedx@unique'
+        }]
     };
     let transporter = nodemailer.createTransport({
         port: 465,
@@ -44,4 +48,4 @@ async function sendConfirmationMail(email) {
     });
 }
 
-export default SendEmail;
+export default SendFinalTicket;

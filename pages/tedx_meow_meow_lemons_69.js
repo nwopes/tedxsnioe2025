@@ -1,5 +1,5 @@
 import useTicket from "../hooks/useTicket";
-import { deletePayment, emailSentRoute, paymentverified, sendEmail } from "../operations/payment.fetch";
+import { deletePayment, emailSentRoute, paymentverified, sendEmail, sendTicket, ticketSentRoute } from "../operations/payment.fetch";
 import { findPayments } from "../services/paymentServer"
 import '../styles/routes/admin.scss'
 import BlurredSpinner from "../components/BlurredSpinner/BlurredSpinner";
@@ -69,6 +69,28 @@ export default function Admin({ payments }) {
             console.error("Error", e)
         }
         setLoading(false);
+    }
+    const sendTicketEmail = async (id, email1, email2) => {
+        setLoading(true);
+        try {
+            const data = {
+                id: id,
+            }
+            const response = await ticketSentRoute(data);
+            const response2 = await sendTicket({
+                'email1': email1,
+                'email2': email2,
+            })
+            if (response.status === 200 && response2.status === 200) {
+                setLoading(false);
+                window.location.reload();
+            } else {
+                alert('INTERNAL SERVER ERROR, CONTACT SETHIA - 7738180710')
+            }
+        } catch (error) {
+            console.error("Error", e)
+        }
+        setLoading(false)
     }
     const filteredPayments = payments.filter(
         (payment) => filter === '' || payment['modeOfPayment'] === filter
@@ -149,7 +171,7 @@ export default function Admin({ payments }) {
                                                         )}
                                                     </td>
                                                     <td>{payment["paymentVerified"] ? <button disabled>Cannot Delete</button> : <button onClick={() => handleDelete(payment["id"])}>Delete</button>}</td>
-                                                    <td>{payment["ticketEmail"] ? <button disabled>Ticket Sent</button> : <button onClick={() => alert('LOL KUCH NAHI HOGA')}>Send Email</button>}</td>
+                                                    <td>{payment["ticketEmail"] ? <button disabled>Ticket Sent</button> : <button onClick={() => sendTicketEmail(payment["id"], payment["email1"], payment["email2"])}>Send Email</button>}</td>
                                                 </tr>
                                                 :
                                                 <tr key={index}></tr>
@@ -182,7 +204,7 @@ export default function Admin({ payments }) {
                                                         )}
                                                     </td>
                                                     <td>{payment["paymentVerified"] ? <button disabled>Cannot Delete</button> : <button onClick={() => handleDelete(payment["id"])}>Delete</button>}</td>
-                                                    <td>{payment["ticketEmail"] ? <button disabled>Ticket Sent</button> : <button onClick={() => alert('LOL KUCH NAHI HOGA')}>Send Email</button>}</td>
+                                                    <td>{payment["ticketEmail"] ? <button disabled>Ticket Sent</button> : <button onClick={() => sendTicketEmail(payment["id"], payment["email1"], payment["email2"])}>Send Email</button>}</td>
 
                                                 </tr>
                                                 :
@@ -240,10 +262,10 @@ export default function Admin({ payments }) {
                                                     <td>{payment["paymentVerified"] ? <button disabled>Payment Verified</button> : <button onClick={() => handlePayment(payment["id"])}>Mark As Verified</button>}</td>
                                                     <td>{payment["emailSent"] ? <button disabled>Email Sent</button> : <button onClick={() => handleEmail(payment["id"], payment["email1"], payment["email2"])}>Mark as email sent</button>}</td>
                                                     <td>{payment["paymentVerified"] ? <button disabled>Cannot Delete</button> : <button onClick={() => handleDelete(payment["id"])}>Delete</button>}</td>
-                                                    <td>{payment["ticketEmail"] ? <button disabled>Ticket Sent</button> : <button onClick={() => alert('LOL KUCH NAHI HOGA')}>Send Email</button>}</td>
+                                                    <td>{payment["ticketEmail"] ? <button disabled>Ticket Sent</button> : <button onClick={() => sendTicketEmail(payment["id"], payment["email1"], payment["email2"])}>Send Email</button>}</td>
                                                 </tr> :
                                                 <tr key={index}></tr>
-                                                
+
                                         )
                                     }
                                     else {
@@ -266,7 +288,7 @@ export default function Admin({ payments }) {
                                                     <td>{payment["paymentVerified"] ? <button disabled>Payment Verified</button> : <button onClick={() => handlePayment(payment["id"])}>Mark As Verified</button>}</td>
                                                     <td>{payment["emailSent"] ? <button disabled>Email Sent</button> : <button onClick={() => handleEmail(payment["id"], payment["email1"], payment["email2"])}>Mark as email sent</button>}</td>
                                                     <td>{payment["paymentVerified"] ? <button disabled>Cannot Delete</button> : <button onClick={() => handleDelete(payment["id"])}>Delete</button>}</td>
-                                                    <td>{payment["ticketEmail"] ? <button disabled>Ticket Sent</button> : <button onClick={() => alert('LOL KUCH NAHI HOGA')}>Send Email</button>}</td>
+                                                    <td>{payment["ticketEmail"] ? <button disabled>Ticket Sent</button> : <button onClick={() => sendTicketEmail(payment["id"], payment["email1"], payment["email2"])}>Send Email</button>}</td>
                                                 </tr>
                                         )
                                     }
