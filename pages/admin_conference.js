@@ -1,4 +1,4 @@
-import { delegateKitAssigned } from "../operations/payment.fetch";
+import { delegateKitAssigned, delegateKitAssigned2 } from "../operations/payment.fetch";
 import { findPayments } from "../services/paymentServer"
 import '../styles/routes/admin.scss'
 import { useState } from "react";
@@ -13,6 +13,25 @@ export default function AdminConference({ payments }) {
                 id: id,
             }
             const response = await delegateKitAssigned(data);
+
+            if (response.status === 200) {
+                setLoading(false);
+                window.location.reload();
+            } else {
+                alert('INTERNAL SERVER ERROR');
+            }
+        } catch (e) {
+            console.log("ERROR", e)
+        }
+        setLoading(false);
+    }
+    const handleClick2 = async (id) => {
+        setLoading(true);
+        try {
+            const data = {
+                id: id,
+            }
+            const response = await delegateKitAssigned2(data);
 
             if (response.status === 200) {
                 setLoading(false);
@@ -69,10 +88,11 @@ export default function AdminConference({ payments }) {
                             <th>Name 1</th>
                             <th>Email 1</th>
                             <th>Phone Number 1</th>
+                            <th>Registration 1</th>
                             <th>Name 2</th>
                             <th>Email 2</th>
                             <th>Phone Number 2</th>
-                            <th>Registration</th>
+                            <th>Registration 2</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -85,11 +105,14 @@ export default function AdminConference({ payments }) {
                                             <td>{payment["name1"]}</td>
                                             <td>{payment["email1"]}</td>
                                             <td>{payment["phone1"]}</td>
+                                            <td>
+                                                {payment["delegateKit"] ? <button disabled>Registered</button> : <button onClick={() => handleClick(payment["id"])}>Register</button>}
+                                            </td>
                                             <td>{payment["name2"]}</td>
                                             <td>{payment["email2"]}</td>
                                             <td>{payment["phone2"]}</td>
                                             <td>
-                                                {payment["delegateKit"] ? <button disabled>Registered</button> : <button onClick={() => handleClick(payment["id"])}>Register</button>}
+                                                {payment["delegateKit2"] ? <button disabled>Registered</button> : <button onClick={() => handleClick2(payment["id"])}>Register</button>}
                                             </td>
 
                                         </tr>

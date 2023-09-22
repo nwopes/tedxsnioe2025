@@ -82,6 +82,16 @@ export async function delegateKitAssigned(formData) {
     })
 }
 
+export async function delegateKitAssigned2(formData) {
+    return fetch("/api/delegate2", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+    })
+}
+
 export async function createGuessOp(formData) {
     return fetch("/api/sendGuesses", {
         method: "POST",

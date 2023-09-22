@@ -79,3 +79,14 @@ export async function updateDelegate(data) {
         }
     })
 }
+
+export async function updateDelegate2(data) {
+    return db.payment.update({
+        where: {
+            'id': data.id,
+        },
+        data: {
+            'delegateKit2': true,
+        }
+    })
+}

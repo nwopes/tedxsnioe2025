@@ -1,16 +1,23 @@
 import nodemailer from "nodemailer";
 import { FinalTicketTemplate } from "../../public/Templates/FinalTicket";
+
 async function SendFinalTicket(req, res) {
     const body = await req.body;
     let emailList = [];
+    let nameList = [];
+
     if (body.email1 !== '') {
         emailList.push(body.email1);
+        nameList.push(body.name1); // Add the corresponding name
     }
+
     if (body.email2 !== '') {
         emailList.push(body.email2);
+        nameList.push(body.name2); // Add the corresponding name
     }
+
     try {
-        await sendConfirmationMail(emailList)
+        await sendConfirmationMails(emailList, nameList); // Pass both email and name lists
         res.send({ status: 200, message: "Emails sent successfully" });
     } catch (e) {
         console.log(e);
@@ -18,25 +25,8 @@ async function SendFinalTicket(req, res) {
     }
 }
 
-async function sendConfirmationMail(email) {
-    var mailOptions = {
-        to: email,
-        from: 'TEDxShivNadarIoE <tedx.club@snu.edu.in>',
-        subject: `TEDxShivNadarUniversity | Tickets Inside | Attendee Itinerary`,
-        html: FinalTicketTemplate(),
-        attachments: [
-            {
-                filename: 'tedx_ticket.png',
-                path: '/Users/aryansethia/Desktop/tedxsnioe2023/public/Images/tedx_ticket.png',
-                cid: 'tedx@unique'
-            },
-            {
-                filename: 'tedx_it.png',
-                path: '/Users/aryansethia/Desktop/tedxsnioe2023/public/Images/tedx_it.png',
-                cid:'tedx@uniqueIt'
-            }
-        ]
-    };
+async function sendConfirmationMails(emailList, nameList) {
+    // Create a transporter instance outside the loop
     let transporter = nodemailer.createTransport({
         port: 465,
         host: "smtp.gmail.com",
@@ -48,11 +38,31 @@ async function sendConfirmationMail(email) {
         secure: true,
     });
 
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.log(error);
-        }
-    });
+    // Iterate through the emailList and send personalized emails
+    for (let i = 0; i < emailList.length; i++) {
+        const email = emailList[i];
+        const name = nameList[i];
+        console.log(email, name);
+        var mailOptions = {
+            to: email,
+            from: 'TEDxShivNadarIoE <tedx.club@snu.edu.in>',
+            subject: `TEDxShivNadarUniversity | Tickets Inside | Attendee Itinerary`,
+            html: FinalTicketTemplate(name), // Pass the name as a parameter to your template function
+            attachments: [
+                {
+                    filename: 'tedx_ticket.png',
+                    path: '/Users/aryansethia/Desktop/tedxsnioe2023/public/Images/tedx_ticket.png',
+                    cid: 'tedx@unique'
+                },
+            ]
+        };
+
+        transporter.sendMail(mailOptions, (error, info) => {
+            if (error) {
+                console.log(error);
+            }
+        });
+    }
 }
 
 export default SendFinalTicket;
