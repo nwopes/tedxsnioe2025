@@ -22,13 +22,20 @@ async function sendConfirmationMail(email) {
     var mailOptions = {
         to: email,
         from: 'TEDxShivNadarIoE <tedx.club@snu.edu.in>',
-        subject: `TEDx Conference Ticket`,
+        subject: `TEDxShivNadarUniversity | Tickets Inside | Attendee Itinerary`,
         html: FinalTicketTemplate(),
-        attachments: [{
-            filename: 'tedx_ticket.png',
-            path: '/Users/aryansethia/Desktop/tedxsnioe2023/public/Images/tedx_ticket.png',
-            cid: 'tedx@unique'
-        }]
+        attachments: [
+            {
+                filename: 'tedx_ticket.png',
+                path: '/Users/aryansethia/Desktop/tedxsnioe2023/public/Images/tedx_ticket.png',
+                cid: 'tedx@unique'
+            },
+            {
+                filename: 'tedx_it.png',
+                path: '/Users/aryansethia/Desktop/tedxsnioe2023/public/Images/tedx_it.png',
+                cid:'tedx@uniqueIt'
+            }
+        ]
     };
     let transporter = nodemailer.createTransport({
         port: 465,
