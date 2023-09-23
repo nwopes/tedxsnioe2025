@@ -51,12 +51,12 @@ async function sendConfirmationMails(emailList, nameList) {
             attachments: [
                 {
                     filename: 'tedx_ticket.png',
-                    path: 'https://photos.app.goo.gl/hLVyY3hRiysDGvMz9',
+                    path: 'https://ibb.co/8svJJCf',
                     cid: 'tedx@unique'
                 },
                 {
                     filename: 'tedx.png',
-                    path: 'https://photos.app.goo.gl/tiFYnnftThrsAchQ9',
+                    path: 'https://ibb.co/4ghGGXn',
                     cid: 'tedx@uniqueIt'
                 },
             ]
