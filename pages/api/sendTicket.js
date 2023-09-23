@@ -46,7 +46,7 @@ async function sendConfirmationMails(emailList, nameList) {
         var mailOptions = {
             to: email,
             from: 'TEDxShivNadarIoE <tedx.club@snu.edu.in>',
-            subject: `TEDxShivNadarUniversity | Tickets Inside | Attendee Itinerary`,
+            subject: `TEDxSNU | Ticket Confirmation | Conference’23 Attendee Itinerary`,
             html: FinalTicketTemplate(name), // Pass the name as a parameter to your template function
             attachments: [
                 {

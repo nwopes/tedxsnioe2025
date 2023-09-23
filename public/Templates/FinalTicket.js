@@ -12,7 +12,7 @@ export const FinalTicketTemplate = (name) => {
     <body>
         <div>
             <p>Dear ${name},<br/><br /></p>
-            <p>You’re officially a part of the 7th edition of TEDxShivNadarUniversity. We cannot wait for you to experience the riveting talks, the mesmerising performances, the finger-licking delicacies, and so much more we have to offer!<br/></p>
+            <p>You’re officially a part of the 7th edition of TEDxShivNadarUniversity annual conference. We cannot wait for you to experience the riveting talks, the mesmerising performances, the finger-licking delicacies, and so much more we have to offer!<br/></p>
             <img src="cid:tedx@unique" alt="tedx_ticket" style="display: block; width: 400px;">
             <p><b>Please note: It is mandatory for you to carry a soft copy of the E-ticket for your entry.</b><br /><br/></p>
             <p>Here are the details - <br/></p>
@@ -26,7 +26,7 @@ export const FinalTicketTemplate = (name) => {
             <p>Attached below is the itinerary for the day.</p>
             <br />
             <img src="cid:tedx@uniqueIt" alt="tedx_itinerary" style="display: block; width: 600px;" />
-            <p>We are so excited to see you!<p>
+            <p>We’re so excited for you to experience this with us :)<p>
         </div>
     </body>
 
