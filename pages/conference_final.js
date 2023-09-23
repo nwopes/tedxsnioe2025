@@ -11,9 +11,7 @@ export default function PME({ payments }) {
             <table className="bordered-table">
                 <thead>
                     <tr>
-                        <th>SR NO</th>
                         <th>Name</th>
-                        <th>Email</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -22,9 +20,7 @@ export default function PME({ payments }) {
                             return (
                                 payment['noOfPeople'] == 1 ?
                                     <tr key={index} className="AdminMainContainer__details">
-                                        <td>{srNo++}</td>
                                         <td>{payment["name1"]}</td>
-                                        <td>{payment["email1"]}</td>
 
                                     </tr>
                                     :
@@ -38,11 +34,8 @@ export default function PME({ payments }) {
             <table className="bordered-table">
                 <thead>
                     <tr>
-                        <th>SR NO</th>
                         <th>Name 1</th>
-                        <th>Email 1</th>
                         <th>Name 2</th>
-                        <th>Email 2</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,11 +45,8 @@ export default function PME({ payments }) {
                                 <tr key={index}></tr>
                                 :
                                 <tr key={index}>
-                                    <td>{dSrNo++}</td>
                                     <td>{payment["name1"]}</td>
-                                    <td>{payment["email1"]}</td>
                                     <td>{payment["name2"]}</td>
-                                    <td>{payment["email2"]}</td>
                                 </tr>
                         )
                     })}
