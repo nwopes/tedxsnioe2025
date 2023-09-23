@@ -54,6 +54,11 @@ async function sendConfirmationMails(emailList, nameList) {
                     path: '/Users/aryansethia/Desktop/tedxsnioe2023/public/Images/tedx_ticket.png',
                     cid: 'tedx@unique'
                 },
+                {
+                    filename: 'tedx.png',
+                    path: '/Users/aryansethia/Desktop/tedxsnioe2023/public/Images/tedx.png',
+                    cid: 'tedx@uniqueIt'
+                },
             ]
         };
 

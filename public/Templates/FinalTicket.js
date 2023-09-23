@@ -21,6 +21,11 @@ export const FinalTicketTemplate = (name) => {
             <p><b>Venue - </b>G Block Auditorium</p>
             <p><b>Dress Code - </b>Business Formals</p>
             <br/>
+            <p>Please note registrations for attendees close at 10AM. The food coupons will be issued to all attendees at registration, without which the attendees will not be able to avail their meals for the day.<br/>Please make it a point to register when you arrive!</p>
+            <br/>
+            <p>Attached below is the itinerary for the day.</p>
+            <br />
+            <img src="cid:tedx@uniqueIt" alt="tedx_itinerary" style="display: block; width: 600px;" />
             <p>We are so excited to see you!<p>
         </div>
     </body>
