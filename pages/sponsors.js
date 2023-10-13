@@ -59,10 +59,11 @@ export default function Sponsors() {
         { url: "/Images/Sponsors/s55.png" },
         { url: "/Images/Sponsors/s56.png" },
         { url: "/Images/Sponsors/s57.png" },
-        { url: "/Images/Sponsors/s58.png" },
+        { url: "/Imajllges/Sponsors/s58.png" },
         { url: "/Images/Sponsors/s59.png" },
         { url: "/Images/Sponsors/s60.png" },
-        { url: "/Images/Sponsors/s62.png" }
+        { url: "/Images/Sponsors/s62.png" },
+        { url: "/Images/Sponsors/s63.png" }
     ]
     return (
 
