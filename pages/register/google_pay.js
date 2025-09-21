@@ -153,18 +153,15 @@ export default function GooglePay() {
             // Clear localStorage
             localStorage.removeItem('paymentData');
             
-            alert(`✅ Payment Submitted Successfully!
-
-Receipt Number: TXR${paymentRecord.id.slice(-8)}
-Transaction ID: ${tid}
-Amount: ₹${paymentData.total_amount}
-Status: Pending Admin Review
-
-You will receive email confirmation once approved.
-Thank you for registering!`);
+            // Redirect to success page with payment details
+            const queryParams = new URLSearchParams({
+                receiptNumber: `TXR${paymentRecord.id.slice(-8)}`,
+                transactionId: tid,
+                amount: paymentData.total_amount,
+                participants: paymentData.participants.length
+            });
             
-            // Redirect to home page
-            router.push('/');
+            router.push(`/register/success?${queryParams.toString()}`);
             
         } catch (error) {
             console.error('Error submitting payment:', error);
