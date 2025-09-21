@@ -53,16 +53,16 @@ export default function PastSpeakers() {
                         </div>
                     </div>
                     <div className="container">
-                        <h3 className="title">Rishab Jain</h3>
-                        <div className="content">
-                            <div>
-                                <div className="content-overlay"></div>
-                                <img className="content-image" src="/Images/CurrentSpeakers/Rishab.png" alt="" />
+                        <h3 className="title">Rishabh Jain</h3>
+                           <div className="content">
+                              <div>
+                                 <div className="content-overlay"></div>
+                                <img className="content-image" src="/Images/CurrentSpeakers/rishab.png" alt="Rishabh Jain" />
                                 <div className="content-details fadeIn-bottom">
-                                    <h3 className="content-title">Rishab Jain</h3>
-                                    <p className="content-text">India&apos;s most famous personal finance advisor with over 4 million YouTube subscribers. Having been an IIT-B alum and founding 2 successful startups, meet the phenomenal Rishabh Jain, the labour law advisor.</p>
+                                    <h3 className="content-title">Rishabh Jain</h3>
+                                     <p className="content-text">India&apos;s most famous personal finance advisor with over 4 million YouTube subscribers. Having been an IIT-B alum and founding 2 successful startups, meet the phenomenal Rishabh Jain, the labour law advisor.</p>
                                 </div>
-                            </div>
+                             </div>
                         </div>
                     </div>
                 </div>
