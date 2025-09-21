@@ -238,3 +238,14 @@ const styles = {
         lineHeight: '1.4'
     }
 };
+
+// filepath: d:\TEDx G-Drive\tedxsnioe2025\pages\register\success.js
+
+// Add this at the bottom of the file
+export async function getServerSideProps(context) {
+    return {
+        props: {
+            query: context.query
+        }
+    }
+}

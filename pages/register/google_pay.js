@@ -161,8 +161,9 @@ export default function GooglePay() {
                 participants: paymentData.participants.length
             });
             
-            router.push(`/register/success?${queryParams.toString()}`);
-            
+            const redirectUrl = `/register/success?${queryParams.toString()}`;
+            await router.push(redirectUrl);
+
         } catch (error) {
             console.error('Error submitting payment:', error);
             alert(`Error: ${error.message}`);
