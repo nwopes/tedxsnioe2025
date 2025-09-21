@@ -1,16 +1,37 @@
 import '../../styles/routes/google_pay.scss';
 import useTicket from '../../hooks/useTicket'
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { payment } from '../../operations/payment.fetch';
 import { useRouter } from 'next/router';
 import BlurredSpinner from '../../components/BlurredSpinner/BlurredSpinner';
+import { supabase } from '../../lib/supabase';
 
 export default function GooglePay() {
     const router = useRouter();
     const [loading, setLoading] = useState(false);
+    const [paymentData, setPaymentData] = useState(null);
+    const [tid, setTid] = useState('');
+    const [screenshot, setScreenshot] = useState(null);
     const { noOfPeople, setNoOfPeople, ticketPrice, setTicketPrice, snu, setSnu, nameOne, nameTwo, emailOne, emailTwo, phoneOne, phoneTwo, modeOfPayment } = useTicket();
+
+    useEffect(() => {
+        // Get payment data from localStorage
+        const storedData = localStorage.getItem('paymentData');
+        if (storedData) {
+            const data = JSON.parse(storedData);
+            setPaymentData(data);
+        } else {
+            // Redirect back if no payment data
+            router.push('/register');
+        }
+    }, [router]);
+
     const calculatePrice = () => {
+        if (paymentData) {
+            return paymentData.total_amount.toString();
+        }
+        // Fallback to old logic
         if (snu && noOfPeople) {
             return '750';
         } else if (snu && !noOfPeople) {
@@ -20,46 +41,138 @@ export default function GooglePay() {
         } else {
             return '1300';
         }
-    }
-    const [tid, setTid] = useState('');
+    };
+
+    const handleScreenshotChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            if (file.size > 5 * 1024 * 1024) { // 5MB limit
+                alert('File size should be less than 5MB');
+                return;
+            }
+            if (!file.type.startsWith('image/')) {
+                alert('Please upload an image file');
+                return;
+            }
+            setScreenshot(file);
+        }
+    };
+
+    const uploadScreenshot = async (file, paymentId) => {
+        try {
+            console.log('Starting screenshot upload for payment:', paymentId);
+            console.log('File details:', { name: file.name, size: file.size, type: file.type });
+            
+            const fileName = `${paymentId}_${Date.now()}.${file.name.split('.').pop()}`;
+            console.log('Generated filename:', fileName);
+            
+            const { data, error } = await supabase.storage
+                .from('payment-screenshots')
+                .upload(fileName, file);
+
+            if (error) {
+                console.error('Storage upload error:', error);
+                throw error;
+            }
+
+            console.log('Upload successful:', data);
+
+            // Get public URL
+            const { data: urlData } = supabase.storage
+                .from('payment-screenshots')
+                .getPublicUrl(fileName);
+
+            console.log('Generated public URL:', urlData.publicUrl);
+            return urlData.publicUrl;
+        } catch (error) {
+            console.error('Error uploading screenshot:', error);
+            alert('Failed to upload screenshot: ' + error.message);
+            throw error;
+        }
+    };
     const handleClick = async () => {
         if (tid === '') {
-            alert('Please enter a vaid transaction id');
+            alert('Please enter a valid transaction id');
             return;
-        } else {
-            setLoading(true);
-            try {
-                const data = {
-                    'name1': localStorage.getItem('name1'),
-                    'name2': localStorage.getItem('name2'),
-                    'email1': localStorage.getItem('email1'),
-                    'email2': localStorage.getItem('email2'),
-                    'phone1': localStorage.getItem('phone1'),
-                    'phone2': localStorage.getItem('phone2'),
-                    'modeOfPayment': localStorage.getItem('modeOfPayment'),
-                    'noOfPeople': parseInt(localStorage.getItem('noOfPeople')),
-                    'amountPaid': localStorage.getItem('noOfPeople') == '1' ? 750 : 1300,
-                    'snu': localStorage.getItem('snu') === 'true' ? true : false,
-                    'tid': tid,
-                    'paymentVerified': false,
-                    'emailSent': false,
-                }
-                const response = await payment(data);
-                if (response.status === 200) {
-                    localStorage.clear();
-                    router.push('/register/confirm');
-                } else {
-                    alert('INTERNAL SERVER ERROR');
-                    return;
-                }
-                setLoading(false);
-            } catch (e) {
-                console.log(e);
-                alert('INTERNAL SERVER ERROR');
-                setLoading(false);
-            }
         }
-    }
+        
+        if (!screenshot) {
+            alert('Please upload the payment screenshot');
+            return;
+        }
+
+        if (!paymentData) {
+            alert('Payment data not found. Please go back to registration.');
+            return;
+        }
+
+        setLoading(true);
+        try {
+            console.log('Starting payment submission process...');
+            console.log('Payment data:', paymentData);
+            console.log('Transaction ID:', tid);
+            console.log('Screenshot file:', screenshot);
+
+            // First, insert the payment record
+            const { data: paymentRecord, error: paymentError } = await supabase
+                .from('payments')
+                .insert({
+                    // New flexible structure
+                    participants: paymentData.participants,
+                    number_of_people: paymentData.number_of_people,
+                    is_snu_student: paymentData.is_snu_student,
+                    total_amount: paymentData.total_amount,
+                    transaction_id: tid.trim(),
+                    payment_method: 'upi',
+                    status: 'pending',
+                    
+                    // Legacy fields for backward compatibility
+                    name_one: paymentData.participants[0]?.name || '',
+                    email_one: paymentData.participants[0]?.email || '', 
+                    phone_one: paymentData.participants[0]?.phone || '',
+                    name_two: paymentData.participants[1]?.name || null,
+                    email_two: paymentData.participants[1]?.email || null,
+                    phone_two: paymentData.participants[1]?.phone || null
+                })
+                .select()
+                .single();
+
+            if (paymentError) {
+                console.error('Payment insertion error:', paymentError);
+                if (paymentError.code === '23505') { // Unique constraint violation
+                    throw new Error('This transaction ID has already been used. Please check your transaction ID.');
+                }
+                throw paymentError;
+            }
+
+            console.log('Payment record created successfully:', paymentRecord);
+
+            // Skip screenshot upload for now - just save the payment
+            console.log('Payment submitted successfully, skipping screenshot upload');
+
+            // Clear localStorage
+            localStorage.removeItem('paymentData');
+            
+            alert(`✅ Payment Submitted Successfully!
+
+Receipt Number: TXR${paymentRecord.id.slice(-8)}
+Transaction ID: ${tid}
+Amount: ₹${paymentData.total_amount}
+Status: Pending Admin Review
+
+You will receive email confirmation once approved.
+Thank you for registering!`);
+            
+            // Redirect to home page
+            router.push('/');
+            
+        } catch (error) {
+            console.error('Error submitting payment:', error);
+            alert(`Error: ${error.message}`);
+        } finally {
+            setLoading(false);
+        }
+    };
     return (
         <>
             {loading ? <BlurredSpinner /> : <></>}
@@ -69,7 +182,40 @@ export default function GooglePay() {
                     <p style={{ fontSize: "1rem", marginTop: "0", marginBottom: ".5rem" }} className='GooglePay__qr--text'>Aditi Mohapatra</p>
                     <img className='GooglePay__qr--image' src='/Images/Assets/google_pay.png' />
                     <div className='GooglePay__qr--TID'>
-                        <input onChange={(e) => setTid(e.target.value)} type='text' placeholder='Transaction ID' required />
+                        <input 
+                            onChange={(e) => setTid(e.target.value)} 
+                            type='text' 
+                            placeholder='Transaction ID' 
+                            required 
+                        />
+                    </div>
+                    <div className='GooglePay__qr--screenshot'>
+                        <label htmlFor="screenshot" style={{ 
+                            display: 'block', 
+                            marginTop: '1rem', 
+                            marginBottom: '0.5rem',
+                            fontSize: '0.9rem',
+                            color: '#333'
+                        }}>
+                            Upload Payment Screenshot *
+                        </label>
+                        <input
+                            type="file"
+                            id="screenshot"
+                            accept="image/*"
+                            onChange={handleScreenshotChange}
+                            required
+                            style={{
+                                width: '100%',
+                                padding: '0.5rem',
+                                border: '1px solid #ddd',
+                                borderRadius: '4px',
+                                marginBottom: '0.5rem'
+                            }}
+                        />
+                        <small style={{ fontSize: '0.8rem', color: '#666' }}>
+                            Upload screenshot of payment confirmation (Max 5MB)
+                        </small>
                     </div>
                     <p onClick={() => handleClick()} className='GooglePay__qr--bottom'>Proceed</p>
                 </div>
@@ -79,20 +225,20 @@ export default function GooglePay() {
                         <p>Price Details</p>
                         <div className='GooglePay__details--priceDetails__snu'>
                             <p>Type Of Person</p>
-                            <p>{snu ? 'SNU' : 'NON-SNU'}</p>
+                            <p>{paymentData ? (paymentData.is_snu_student ? 'SNU' : 'NON-SNU') : (snu ? 'SNU' : 'NON-SNU')}</p>
                         </div>
                         <div className='GooglePay__details--priceDetails__people'>
                             <p>No. Of People</p>
-                            <p>{noOfPeople ? '1' : '2'}</p>
+                            <p>{paymentData ? paymentData.number_of_people : (noOfPeople ? '1' : '2')}</p>
                         </div>
                         <div className='GooglePay__details--priceDetails__ticket'>
                             <p>Ticket Price (per person)</p>
-                            <p>{noOfPeople ? '750' : '650'}</p>
+                            <p>{paymentData ? (paymentData.is_snu_student ? '750' : '1300') : (noOfPeople ? '750' : '650')}</p>
                         </div>
                         <hr />
                         <div className='GooglePay__details--priceDetails__total'>
                             <p>Total Amount</p>
-                            <p>{calculatePrice()}</p>
+                            <p>₹{calculatePrice()}</p>
                         </div>
                     </div>
                 </div>

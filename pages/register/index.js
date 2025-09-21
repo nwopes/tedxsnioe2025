@@ -31,50 +31,74 @@ export default function Register() {
   const [email2, setEmail2] = React.useState("");
   const [phone1, setPhone1] = React.useState("");
   const [phone2, setPhone2] = React.useState("");
-  const calculatePrice = () => {
-    if (snu && noOfPeople) {
-      return "750";
-    } else if (snu && !noOfPeople) {
-      return "1300";
-    } else if (!snu && noOfPeople) {
-      return "750";
-    } else {
-      return "1300";
+  
+  // Calculate participants based on current form state
+  const participants = React.useMemo(() => {
+    const participantList = [];
+    if (name1 && email1 && phone1) {
+      participantList.push({ name: name1, email: email1, phone: phone1 });
     }
+    if (!noOfPeople && name2 && email2 && phone2) {
+      participantList.push({ name: name2, email: email2, phone: phone2 });
+    }
+    return participantList;
+  }, [name1, email1, phone1, name2, email2, phone2, noOfPeople]);
+
+  const calculatePrice = (numberOfPeople = participants.length, isSnuStudent = snu) => {
+    // Pricing structure based on your requirements
+    const pricingRules = [
+      { min: 1, max: 2, snu: 375, nonSnu: 650 },
+      { min: 3, max: 4, snu: 350, nonSnu: 600 },
+      { min: 5, max: 20, snu: 325, nonSnu: 550 }
+    ];
+
+    // Find the appropriate pricing rule
+    const rule = pricingRules.find(rule => 
+      numberOfPeople >= rule.min && numberOfPeople <= rule.max
+    );
+
+    if (!rule) {
+      // Default to the last rule for large groups
+      const defaultRule = pricingRules[pricingRules.length - 1];
+      return (isSnuStudent ? defaultRule.snu : defaultRule.nonSnu) * numberOfPeople;
+    }
+
+    const pricePerPerson = isSnuStudent ? rule.snu : rule.nonSnu;
+    return pricePerPerson * numberOfPeople;
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     const emailRegex = /^[\w-\.]+@snu\.edu\.in$/;
     const emailRegex2 = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const phoneRegex = /^(?:\d{10}|\+\d{1,3}\s?\d{10})$/;
+    
+    // Validate required fields
     if (noOfPeople) {
-      // if (name1 === '' || email1 === '' || phone1 === '') {
-      //     alert('Please fill all the fields');
-      //     return;
-      // }
+      if (name1 === '' || email1 === '' || phone1 === '') {
+        alert('Please fill all the fields');
+        return;
+      }
     } else {
-      // if (name1 === '' || email1 === '' || phone1 === '' || name2 === '' || email2 === '' || phone2 === '') {
-      //     alert('Please fill all the fields');
-      //     return;
-      // }
+      if (name1 === '' || email1 === '' || phone1 === '' || name2 === '' || email2 === '' || phone2 === '') {
+        alert('Please fill all the fields');
+        return;
+      }
     }
+    
     if (snu) {
       if (noOfPeople) {
         if (emailRegex.test(email1) && phoneRegex.test(phone1)) {
-          setEmailOne(email1);
-          setNameOne(name1);
-          setPhoneOne(phone1);
-          localStorage.setItem("email1", email1);
-          localStorage.setItem("name1", name1);
-          localStorage.setItem("phone1", phone1);
-          localStorage.setItem("email2", "");
-          localStorage.setItem("name2", "");
-          localStorage.setItem("phone2", "");
-          localStorage.setItem("snu", true);
-          localStorage.setItem("noOfPeople", 1);
-          router.push("/register/payment");
+          const participants = [{ name: name1, email: email1, phone: phone1 }];
+          const paymentData = {
+            participants,
+            number_of_people: participants.length,
+            is_snu_student: true,
+            total_amount: calculatePrice(participants.length, true)
+          };
+          localStorage.setItem("paymentData", JSON.stringify(paymentData));
+          router.push("/register/google_pay");
         } else {
-          alert("Please enter a valid SNU email ID");
+          alert("Please enter a valid SNU email ID and phone number");
           return;
         }
       } else {
@@ -84,64 +108,57 @@ export default function Register() {
           phoneRegex.test(phone1) &&
           phoneRegex.test(phone2)
         ) {
-          setEmailOne(email1);
-          setNameOne(name1);
-          setPhoneOne(phone1);
-          setEmailTwo(email2);
-          setNameTwo(name2);
-          setPhoneTwo(phone2);
-          localStorage.setItem("email1", email1);
-          localStorage.setItem("name1", name1);
-          localStorage.setItem("phone1", phone1);
-          localStorage.setItem("email2", email2);
-          localStorage.setItem("name2", name2);
-          localStorage.setItem("phone2", phone2);
-          localStorage.setItem("snu", true);
-          localStorage.setItem("noOfPeople", 2);
-          router.push("/register/payment");
+          const participants = [
+            { name: name1, email: email1, phone: phone1 },
+            { name: name2, email: email2, phone: phone2 }
+          ];
+          const paymentData = {
+            participants,
+            number_of_people: 2,
+            is_snu_student: true,
+            total_amount: calculatePrice(2, true),
+            price_per_person: calculatePrice(2, true) / 2,
+            offer_type: 'regular'
+          };
+          localStorage.setItem("paymentData", JSON.stringify(paymentData));
+          router.push("/register/google_pay");
         } else {
-          alert("Please enter a valid SNU email ID");
+          alert("Please enter valid SNU email IDs and phone numbers");
           return;
         }
       }
     } else {
       if (noOfPeople) {
-        if (emailRegex2.test(email1)) {
-          setEmailOne(email1);
-          setNameOne(name1);
-          setPhoneOne(phone1);
-          localStorage.setItem("email1", email1);
-          localStorage.setItem("name1", name1);
-          localStorage.setItem("phone1", phone1);
-          localStorage.setItem("email2", "");
-          localStorage.setItem("name2", "");
-          localStorage.setItem("phone2", "");
-          localStorage.setItem("snu", false);
-          localStorage.setItem("noOfPeople", 1);
-          router.push("/register/payment");
+        if (emailRegex2.test(email1) && phoneRegex.test(phone1)) {
+          const participants = [{ name: name1, email: email1, phone: phone1 }];
+          const paymentData = {
+            participants,
+            number_of_people: participants.length,
+            is_snu_student: false,
+            total_amount: calculatePrice(participants.length, false)
+          };
+          localStorage.setItem("paymentData", JSON.stringify(paymentData));
+          router.push("/register/google_pay");
         } else {
-          alert("Please enter a valid email ID");
+          alert("Please enter a valid email ID and phone number");
           return;
         }
       } else {
-        if (emailRegex2.test(email1) && emailRegex2.test(email2)) {
-          setEmailOne(email1);
-          setNameOne(name1);
-          setPhoneOne(phone1);
-          setEmailTwo(email2);
-          setNameTwo(name2);
-          setPhoneTwo(phone2);
-          localStorage.setItem("email1", email1);
-          localStorage.setItem("name1", name1);
-          localStorage.setItem("phone1", phone1);
-          localStorage.setItem("email2", email2);
-          localStorage.setItem("name2", name2);
-          localStorage.setItem("phone2", phone2);
-          localStorage.setItem("snu", false);
-          localStorage.setItem("noOfPeople", 2);
-          router.push("/register/payment");
+        if (emailRegex2.test(email1) && emailRegex2.test(email2) && phoneRegex.test(phone1) && phoneRegex.test(phone2)) {
+          const participants = [
+            { name: name1, email: email1, phone: phone1 },
+            { name: name2, email: email2, phone: phone2 }
+          ];
+          const paymentData = {
+            participants,
+            number_of_people: participants.length,
+            is_snu_student: false,
+            total_amount: calculatePrice(participants.length, false)
+          };
+          localStorage.setItem("paymentData", JSON.stringify(paymentData));
+          router.push("/register/google_pay");
         } else {
-          alert("Please enter a valid email ID");
+          alert("Please enter valid email IDs and phone numbers");
           return;
         }
       }
@@ -334,16 +351,16 @@ export default function Register() {
             </div>
             <div className="RegisterSection__amount--priceDetails__people">
               <p>No. Of People</p>
-              <p>{noOfPeople ? "1" : "2"}</p>
+              <p>{participants.length || (noOfPeople ? 1 : 2)}</p>
             </div>
             <div className="RegisterSection__amount--priceDetails__ticket">
               <p>Ticket Price (per person)</p>
-              <p>{noOfPeople ? "750" : "650"}</p>
+              <p>₹{participants.length > 0 ? Math.round(calculatePrice() / participants.length) : (snu ? 375 : 650)}</p>
             </div>
             <hr />
             <div className="RegisterSection__amount--priceDetails__total">
               <p>Total Amount</p>
-              <p>{calculatePrice()}</p>
+              <p>₹{participants.length > 0 ? calculatePrice() : (noOfPeople ? (snu ? 375 : 650) : (snu ? 750 : 1300))}</p>
             </div>
           </div>
         </div>

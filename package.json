@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@prisma/client": "^5.2.0",
+    "@supabase/supabase-js": "^2.57.4",
     "framer-motion": "^10.14.0",
     "keen-slider": "^6.8.6",
     "next": "^13.4.4",
