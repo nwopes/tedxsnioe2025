@@ -3,7 +3,6 @@ const path = require("path");
 
 const nextConfig = {
     reactStrictMode: true,
-    swcMinify: true,
     webpack(config) {
         config.module.rules.forEach((rule) => {
             const { oneOf } = rule;
