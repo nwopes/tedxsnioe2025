@@ -36,6 +36,8 @@
       &__image {
         width: 20rem;
         height: 20rem;
+        object-fit: cover;
+        object-position: center 10%;
         border-radius: 1rem;
         @include respondAt(915px) {
           width: 15rem;
