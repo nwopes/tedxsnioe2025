@@ -4,6 +4,13 @@
   @include respondAt(915px) {
     width: 25rem;
   }
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center 10%;
+    border-radius: 0.5rem;
+  }
 }
 
 // #slider {
