@@ -27,14 +27,14 @@ export default function PastSpeakers() {
                 </div>
                 <div className='PastSpeakers__cards'>
                     <div className="container">
-                        <h3 className="title">Shirish Beri</h3>
+                        <h3 className="title">Debojyoti Chakraborty</h3>
                         <div className="content">
                             <div>
                                 <div className="content-overlay"></div>
-                                <img className="content-image" src="/Images/CurrentSpeakers/shirish.jpg" alt="" />
+                                <img className="content-image" src="/Images/CurrentSpeakers/deb.jpg" alt="" />
                                 <div className="content-details fadeIn-bottom">
-                                    <h3 className="content-title">Shirish Beri</h3>
-                                    <p className="content-text">An architect by profession, Shirish Beri, puts forth a sustainable, simple and minimalist life, revolutionizing modern architecture. His work, reflecting his philosophy of bringing man closer to nature as well as to basic human values. </p>
+                                    <h3 className="content-title">Debojyoti Chakraborty</h3>
+                                    <p className="content-text">Debojyoti Chakraborty is a principal scientist at the Institute of Genomics and Integrative Biology. From inventing the world&apos;s first paper strip COVID-19 test, to working on an accessible cure for sickle celled anemia, Dr. Debjyoti definitely has done the unimaginable and brought a new perspective to all things science.</p>
                                 </div>
                             </div>
                         </div>
@@ -43,6 +43,7 @@ export default function PastSpeakers() {
                         <h3 className="title">Gursakhi Lugani</h3>
                         <div className="content">
                             <div>
+                                <div className="content-overlay"></div>
                                 <img className="content-image" src="/Images/CurrentSpeakers/gursakhi.jpg" alt="" />
                                 <div className="content-details fadeIn-bottom">
                                     <h3 className="content-title">Gursakhi Lugani</h3>
@@ -60,58 +61,6 @@ export default function PastSpeakers() {
                                 <div className="content-details fadeIn-bottom">
                                     <h3 className="content-title">Rishab Jain</h3>
                                     <p className="content-text">India&apos;s most famous personal finance advisor with over 4 million YouTube subscribers. Having been an IIT-B alum and founding 2 successful startups, meet the phenomenal Rishabh Jain, the labour law advisor.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="container">
-                        <h3 className="title">Bhanupriya Rao</h3>
-                        <div className="content">
-                            <div>
-                                <div className="content-overlay"></div>
-                                <img className="content-image" src="/Images/CurrentSpeakers/bhanu.jpg" alt="" />
-                                <div className="content-details fadeIn-bottom">
-                                    <h3 className="content-title">Bhanupriya Rao</h3>
-                                    <p className="content-text">Bhanupriya Rao is an independent journalist and founder of a digital media platform called BehanBox, a space that puts voices of the unheard out in the world, while tackling questions of gender and intersectionality through journalism, advocacy, and research.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="container">
-                        <h3 className="title">Debojyoti Chakraborty</h3>
-                        <div className="content">
-                            <div>
-                                <div className="content-overlay"></div>
-                                <img className="content-image" src="/Images/CurrentSpeakers/deb.jpg" alt="" />
-                                <div className="content-details fadeIn-bottom">
-                                    <h3 className="content-title">Debojyoti Chakraborty</h3>
-                                    <p className="content-text">Debojyoti Chakraborty is a principal scientist at the Institute of Genomics and Integrative Biology. From inventing the world&apos;s first paper strip COVID-19 test, to working on an accessible cure for sickle celled anemia, Dr. Debjyoti definitely has done the unimaginable and brought a new perspective to all things science.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="container">
-                        <h3 className="title">Aastha Khanna</h3>
-                        <div className="content">
-                            <div>
-                                <div className="content-overlay"></div>
-                                <img className="content-image" src="/Images/CurrentSpeakers/aastha.jpg" alt="" />
-                                <div className="content-details fadeIn-bottom">
-                                    <h3 className="content-title">Aastha Khanna</h3>
-                                    <p className="content-text">Aastha Khanna is the FIRST Intimacy Coordinator in India, and a visionary force in the Indian film industry. With credits in iconic projects like Andhadhun, Penthouse, and Cobalt Blue, she isn&apos;t just shaping intimate scenes on screen, she&apos;s transforming narratives in real life.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="container">
-                        <h3 className="title">Anurita Jha</h3>
-                        <div className="content">
-                            <div>
-                                <div className="content-overlay"></div>
-                                <img className="content-image" src="/Images/CurrentSpeakers/Anuritta.jpg" alt="" />
-                                <div className="content-details fadeIn-bottom">
-                                    <h3 className="content-title">Anurita Jha</h3>
-                                    <p className="content-text">Anurita Jha is a self-made actress with a career spanning more than a decade, with films like Gangs of Wasseypur as well as shows such as Ashram and Asur to her credit.</p>
                                 </div>
                             </div>
                         </div>
@@ -144,7 +93,7 @@ export default function PastSpeakers() {
                                 <img className="content-image" src="/Images/CurrentSpeakers/aashima.jpg" alt="" />
                                 <div className="content-details fadeIn-bottom">
                                     <h3 className="content-title">Aashima Mahajan</h3>
-                                    <p className="content-text">Aashima Mahajan has proven herself in various musical vocal genres, including Opera, folk, Bollywood and contemporary music. She also plays the lead antagonist role as an actor/singer in the one and only Broadway musical pride of India “Mughal E Azam” with over 275 shows worldwide.</p>
+                                    <p className="content-text">Aashima Mahajan has proven herself in various musical vocal genres, including Opera, folk, Bollywood and contemporary music. She also plays the lead antagonist role as an actor/singer in the one and only Broadway musical pride of India "Mughal E Azam" with over 275 shows worldwide.</p>
                                 </div>
                             </div>
                         </div>
