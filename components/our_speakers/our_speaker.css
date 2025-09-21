@@ -42,6 +42,13 @@
     height: 20rem;
 }
 
+.speakers_section_cards__image img {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+    object-position: center 10%;
+}
+
 .speakers_section-card2{
     align-self: center;
     position: relative;
