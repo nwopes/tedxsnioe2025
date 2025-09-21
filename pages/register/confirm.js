@@ -1,14 +1,13 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import '../../styles/routes/confirm.scss';
 
 export default function Confirm() {
 
-    const router = useRouter();import { useEffect, useState } from 'react';import { useEffect, useState } from 'react';
+    const router = useRouter();
 
     const [receiptData, setReceiptData] = useState(null);
-
-import '../../styles/routes/confirm.scss'import '../../styles/routes/confirm.scss'
 
     useEffect(() => {
 

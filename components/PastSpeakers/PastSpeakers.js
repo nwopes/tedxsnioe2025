@@ -93,7 +93,7 @@ export default function PastSpeakers() {
                                 <img className="content-image" src="/Images/CurrentSpeakers/aashima.jpg" alt="" />
                                 <div className="content-details fadeIn-bottom">
                                     <h3 className="content-title">Aashima Mahajan</h3>
-                                    <p className="content-text">Aashima Mahajan has proven herself in various musical vocal genres, including Opera, folk, Bollywood and contemporary music. She also plays the lead antagonist role as an actor/singer in the one and only Broadway musical pride of India "Mughal E Azam" with over 275 shows worldwide.</p>
+                                    <p className="content-text">Aashima Mahajan has proven herself in various musical vocal genres, including Opera, folk, Bollywood and contemporary music. She also plays the lead antagonist role as an actor/singer in the one and only Broadway musical pride of India &quot;Mughal E Azam&quot; with over 275 shows worldwide.</p>
                                 </div>
                             </div>
                         </div>
