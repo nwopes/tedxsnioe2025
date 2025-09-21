@@ -8,6 +8,7 @@ import Footer from "../components/Footer/Footer";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { TicketProvider } from "../context/TicketContext";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 function MyApp({ Component, pageProps, user }) {
     const getLayout = Component.getLayout || ((page) => page);
@@ -46,6 +47,7 @@ function MyApp({ Component, pageProps, user }) {
                     </section>
                 </TicketProvider>
             </ConfProvider>
+            <SpeedInsights />
         </>
     );
 }
