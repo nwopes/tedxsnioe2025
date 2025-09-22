@@ -9,45 +9,52 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { TicketProvider } from "../context/TicketContext";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { useEffect, useState } from 'react';
 
 function MyApp({ Component, pageProps, user }) {
     const getLayout = Component.getLayout || ((page) => page);
-    SwiperCore.use([Autoplay])
     const router = useRouter();
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        // Initialize Swiper on client-side only
+        SwiperCore.use([Autoplay]);
+        setIsMounted(true);
+    }, []);
+
     return (
         <>
             <ConfProvider>
                 <TicketProvider>
                     <Head>
-                        <title>TEDx ShivNadarIOE</title>
+                        <title>TEDxShivNadarUniversity</title>
                         <meta
                             name="description"
                             content="TEDx Shiv Nadar Insitute of Eminence Annual Conference"
                         />
                     </Head>
                     <Navbar />
-                    {
-                        getLayout
-                            (
-                                <AnimatePresence>
-                                    <motion.div
-                                        key={router.route}
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                    >
-                                        <Component {...pageProps} />
-                                    </motion.div>
-                                </AnimatePresence>
-                            )
-                    }
-                    {/* <Spons /> */}
+                    {isMounted ? (
+                        <AnimatePresence mode="wait">
+                            <motion.div
+                                key={router.route}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                exit={{ opacity: 0 }}
+                                transition={{ duration: 0.3 }}
+                            >
+                                {getLayout(<Component {...pageProps} />)}
+                            </motion.div>
+                        </AnimatePresence>
+                    ) : (
+                        getLayout(<Component {...pageProps} />)
+                    )}
                     <section className="FooterSection">
                         <Footer />
                     </section>
                 </TicketProvider>
             </ConfProvider>
-            <SpeedInsights />
+            {isMounted && <SpeedInsights />}
         </>
     );
 }

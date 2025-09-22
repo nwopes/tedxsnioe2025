@@ -22,7 +22,7 @@ async function SendEmail(req, res) {
 async function sendConfirmationMail(email) {
     var mailOptions = {
         to: email,
-        from: 'TEDxShivNadarIoE <tedx.club@snu.edu.in>',
+        from: 'TEDxShivNadarUniversity <tedx.club@snu.edu.in>',
         subject: `Ticket Confirmation`,
         html: TicketTemplate(),
     };

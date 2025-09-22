@@ -49,13 +49,13 @@ export default function Footer() {
           <p onClick={() => scrollTo("sponsors")} className="Footer__below--sections__item">Sponsors</p>
         </div>
         <div className="Footer__below--logo">
-          <img src="/Images/tedx_black.png" />
+          <img src="/Images/TEDx logo - Black.png" />
         </div>
         <div className="Footer__below--social">
             <a href={"https://www.linkedin.com/company/tedx-snioe/"}>
                 <img src="/Images/Footer/linkedin.png" />
             </a>
-            <a href={"https://www.instagram.com/tedxshivnadarioe/"}>
+            <a href={"https://www.instagram.com/tedxshivnadaruniversity/"}>
                 <img src="/Images/Footer/insta.png" />
             </a>
             <a href={"https://facebook.com/tedxshivnadaruniversity"}>

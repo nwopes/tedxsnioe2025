@@ -59,7 +59,7 @@ function Navbar({ isSmall = false }) {
                     <div className="NavbarContainer__Logo">
                         <Link href="/" aria-label="Go to Home Page">
                             <Image
-                                src='/Images/TedX_logo.png'
+                                src='/Images/TEDx logo - White.png'
                                 alt="TedX Logo"
                                 width={isSmall ? 50 : 250}
                                 height={isSmall ? 40 : 40}

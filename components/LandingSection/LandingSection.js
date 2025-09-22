@@ -1,7 +1,7 @@
 import React from 'react';
 import './LandingSection.scss'
 export default function LandingSection() {
-    const targetDate = new Date('2023-09-24T00:00:00'); // September 24, 2023
+    const targetDate = new Date('2025-11-16T00:00:00'); // November 16, 2025
 
     // Calculate the initial time remaining
     const calculateTimeRemaining = () => {
@@ -41,9 +41,9 @@ export default function LandingSection() {
             </div>
             <div className='LandingPageContainer__details'>
                 <div className='LandingPageContainer__details--date'>
-                    <p className='LandingPageContainer__details--date__text'>24</p>
-                    <p className='LandingPageContainer__details--date__month'>September</p>
-                    <p className='LandingPageContainer__details--date__year'>2023</p>
+                    <p className='LandingPageContainer__details--date__text'>16</p>
+                    <p className='LandingPageContainer__details--date__month'>November</p>
+                    <p className='LandingPageContainer__details--date__year'>2025</p>
                 </div>
                 <div className='LandingPageContainer__details--venue'>
                     <p className='LandingPageContainer__details--venue__location'>G Block</p>
