@@ -18,6 +18,18 @@ const nextConfig = {
     sassOptions: {
         additionalData: `@import "styles/root/_mixins.scss";@import "styles/root/_variables.scss";`,
     },
-
+    images: {
+        deviceSizes: [640, 750, 828, 1080, 1200, 1920],
+        imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+        domains: ['localhost'],
+        path: '/_next/image',
+        loader: 'default',
+        unoptimized: process.env.NODE_ENV === 'development'
+    },
+    // Add this to prevent hydration issues
+    compiler: {
+        styledComponents: true,
+    }
 };
+
 module.exports = nextConfig;

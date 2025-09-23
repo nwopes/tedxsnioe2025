@@ -1,4 +1,5 @@
 import './Performers.scss';
+import Image from 'next/image';
 
 
 function Performers() {
@@ -26,7 +27,7 @@ function Performers() {
                 {performerDetails.map((item) => {
                     return (
                         <div key={item.name} className='Performers__content--card'>
-                            <img className='Performers__content--card__image' src={item.image} />
+                            <Image className='Performers__content--card__image' src={item.image} />
                             <p className='Performers__content--card__name'>{item.name}</p>
                             <p className='Performers__content--card__desc'>{item.desc}</p>
                         </div>

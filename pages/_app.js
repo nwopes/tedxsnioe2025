@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar/Navbar";
 import SwiperCore, { Autoplay } from 'swiper';
 import { ConfProvider } from "../context/ConfContext";
 import Footer from "../components/Footer/Footer";
+import HydrationWrapper from '../components/HydrationWrapper/HydrationWrapper';
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { TicketProvider } from "../context/TicketContext";
@@ -24,36 +25,38 @@ function MyApp({ Component, pageProps, user }) {
 
     return (
         <>
-            <ConfProvider>
-                <TicketProvider>
-                    <Head>
-                        <title>TEDxShivNadarUniversity</title>
-                        <meta
-                            name="description"
-                            content="TEDx Shiv Nadar Insitute of Eminence Annual Conference"
-                        />
-                    </Head>
-                    <Navbar />
-                    {isMounted ? (
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={router.route}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                transition={{ duration: 0.3 }}
-                            >
-                                {getLayout(<Component {...pageProps} />)}
-                            </motion.div>
-                        </AnimatePresence>
-                    ) : (
-                        getLayout(<Component {...pageProps} />)
-                    )}
-                    <section className="FooterSection">
-                        <Footer />
-                    </section>
-                </TicketProvider>
-            </ConfProvider>
+            <HydrationWrapper>
+                <ConfProvider>
+                    <TicketProvider>
+                        <Head>
+                            <title>TEDxShivNadarUniversity</title>
+                            <meta
+                                name="description"
+                                content="TEDx Shiv Nadar Insitute of Eminence Annual Conference"
+                            />
+                        </Head>
+                        <Navbar />
+                        {isMounted ? (
+                            <AnimatePresence mode="wait">
+                                <motion.div
+                                    key={router.route}
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    {getLayout(<Component {...pageProps} />)}
+                                </motion.div>
+                            </AnimatePresence>
+                        ) : (
+                            getLayout(<Component {...pageProps} />)
+                        )}
+                        <section className="FooterSection">
+                            <Footer />
+                        </section>
+                    </TicketProvider>
+                </ConfProvider>
+            </HydrationWrapper>
             {isMounted && <SpeedInsights />}
         </>
     );

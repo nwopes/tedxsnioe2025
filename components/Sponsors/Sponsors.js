@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import './Sponsors.scss'
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 export default function Sponsors() {
@@ -50,7 +51,12 @@ export default function Sponsors() {
                                 key={index}
                             >
                                 <div style={{ backgroundColor: "white" }} className='Sponsors__past--cards__image' >
-                                    <img src={item.url} />
+                                    <Image
+                                        src={item.url}
+                                        alt={`Sponsor ${index + 1}`}
+                                        width={150}
+                                        height={150}
+                                    />
                                 </div>
                             </motion.div>
                         )

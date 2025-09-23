@@ -1,4 +1,5 @@
 import './Speakers.scss';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 function Speakers({ speakers }) {
@@ -17,7 +18,14 @@ function Speakers({ speakers }) {
                             key={index}
                         >
                             <div onClick={(e) => e.preventDefault()} key={item.name} className='Speakers__content--card'>
-                                <img onClick={(e) => e.preventDefault()} className='Speakers__content--card__image' src={item.image} />
+                                <Image 
+                                    onClick={(e) => e.preventDefault()} 
+                                    className='Speakers__content--card__image' 
+                                    src={item.image}
+                                    alt={`${item.name} - ${item.profession}`}
+                                    width={300}
+                                    height={300} 
+                                />
                                 <div className='Speakers__content--card__details'>
                                     <p className='Speakers__content--card__details__name'>{item.name}</p>
                                     <p className='Speakers__content--card__details__desc'>{item.profession}</p>
