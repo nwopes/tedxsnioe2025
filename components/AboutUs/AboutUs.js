@@ -29,7 +29,7 @@ function AboutUs() {
       <div className='AboutUs__content'>
         <div className='AboutUs__content--text'>
           Join us at TEDxShivNadarUniversity as we explore Simplexity– a theme that challenges us to think deeper, look closer, and appreciate the invisible threads that bind simplicity and complexity. We invite the thinkers, doers, and dreamers who turn the complicated into the doable, and the simple into the extraordinary. Whether you're a seeker of clarity or a lover of layered thinking, TEDxShivNadarUniversity offers a space where we believe ‘Ideas Change Everything’- simple, complex, and the spectrum in between. Just remember that; the most powerful ideas often start with one quiet spark.
- </p>}
+ </p>
         </div>
         <div className='AboutUs__content--carousel'>
           <Carousel>
