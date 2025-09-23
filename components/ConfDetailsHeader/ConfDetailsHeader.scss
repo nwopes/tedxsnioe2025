@@ -1,9 +1,9 @@
 .ConfHeader {
   &__heading {
     @include respondAt(915px) {
-        width: 100%;
-        display: grid;
-        place-items: center;
+      width: 100%;
+      display: grid;
+      place-items: center;
     }
     p {
       background: linear-gradient(rgba(200, 105, 4, 1), rgba(138, 55, 203, 1));
@@ -15,7 +15,6 @@
       margin-bottom: 0;
       margin-top: 0;
       margin-left: 5rem;
-      // width: 15rem;
       span {
         font-size: 4rem;
         font-weight: 600;
@@ -33,25 +32,38 @@
   }
   &__details {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    flex_wrap: wrap;
     justify-content: space-between;
     padding-left: 2rem;
     padding-right: 2rem;
-   // @include respondAt(512px) {
-      //  flex-direction: column;
+    min-width: 0;
+
+    @include respondAt(512px) {
+      flex-direction: column;
+      padding-left: 0;
+      padding-right: 0;
     }
+
     &--divider {
-        @include respondAt(915px) {
-            display: none;
-        }
+      @include respondAt(915px) {
+        display: none;
+      }
     }
+
     &--slider {
-     width: 45%;
-    position: relative;
-     margin-right: 2rem;
-    z-index: 1;
+      width: 45%;
+      position: relative;
+      margin-right: 2rem;
+      z-index: 1;
+      min-width: 0;
+      @include respondAt(512px) {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
     }
+
     &--content {
       color: black;
       display: flex;
@@ -59,10 +71,14 @@
       align-items: flex-end;
       width: 50%;
       padding: 0 4rem 4rem 0rem;
+      z-index: 2;
+      min-width: 0;
       @include respondAt(915px) {
         padding: 0;
         align-items: center;
+        width: 100%;
       }
+
       &__title {
         color: black;
         font-size: 2.5rem;
@@ -70,11 +86,12 @@
         font-weight: 600;
         margin-bottom: 1rem;
         @include respondAt(915px) {
-            font-size: 2rem;
-            margin-top: 3rem;
-            margin-bottom: 0;
+          font-size: 2rem;
+          margin-top: 3rem;
+          margin-bottom: 0;
         }
       }
+
       &__desc {
         color: black;
         text-align: right;
@@ -82,11 +99,12 @@
         width: 34.8125rem;
         font-family: "Poppins", sans-serif;
         @include respondAt(512px) {
-            font-size: 1rem;
-            text-align: center;
-            width: 15rem;
+          font-size: 1rem;
+          text-align: center;
+          width: 15rem;
         }
       }
+
       &__aftermovie {
         padding: 0.7rem 1rem 0.7rem 1rem;
         border-radius: 30px;
@@ -98,7 +116,7 @@
         font-family: "Outfit", sans-serif;
         font-weight: 700;
         @include respondAt(915px) {
-            font-size: 1rem;
+          font-size: 1rem;
         }
       }
     }
