@@ -31,7 +31,7 @@ export default function Register() {
   const [email2, setEmail2] = React.useState("");
   const [phone1, setPhone1] = React.useState("");
   const [phone2, setPhone2] = React.useState("");
-  
+
   // Calculate participants based on current form state
   const participants = React.useMemo(() => {
     const participantList = [];
@@ -46,32 +46,39 @@ export default function Register() {
 
   const calculatePrice = (numberOfPeople = participants.length, isSnuStudent = snu) => {
     // Pricing structure based on your requirements
-    const pricingRules = [
-      { min: 1, max: 2, snu: 375, nonSnu: 650 },
-      { min: 3, max: 4, snu: 350, nonSnu: 600 },
-      { min: 5, max: 20, snu: 325, nonSnu: 550 }
-    ];
+    // const pricingRules = [
+    //   { min: 1, max: 2, snu: 375, nonSnu: 650 },
+    //   { min: 3, max: 4, snu: 350, nonSnu: 600 },
+    //   { min: 5, max: 20, snu: 325, nonSnu: 550 }
+    // ];
 
-    // Find the appropriate pricing rule
-    const rule = pricingRules.find(rule => 
-      numberOfPeople >= rule.min && numberOfPeople <= rule.max
-    );
+    // // Find the appropriate pricing rule
+    // const rule = pricingRules.find(rule => 
+    //   numberOfPeople >= rule.min && numberOfPeople <= rule.max
+    // );
 
-    if (!rule) {
-      // Default to the last rule for large groups
-      const defaultRule = pricingRules[pricingRules.length - 1];
-      return (isSnuStudent ? defaultRule.snu : defaultRule.nonSnu) * numberOfPeople;
+    // if (!rule) {
+    //   // Default to the last rule for large groups
+    //   const defaultRule = pricingRules[pricingRules.length - 1];
+    //   return (isSnuStudent ? defaultRule.snu : defaultRule.nonSnu) * numberOfPeople;
+    // }
+
+    // const pricePerPerson = isSnuStudent ? rule.snu : rule.nonSnu;
+    // return pricePerPerson * numberOfPeople;
+
+    if (isSnuStudent) {
+      return numberOfPeople === 1 ? 599 : 1099;
+    } else {
+      return numberOfPeople === 1 ? 649 : 1199;
     }
 
-    const pricePerPerson = isSnuStudent ? rule.snu : rule.nonSnu;
-    return pricePerPerson * numberOfPeople;
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     const emailRegex = /^[\w-\.]+@snu\.edu\.in$/;
     const emailRegex2 = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const phoneRegex = /^(?:\d{10}|\+\d{1,3}\s?\d{10})$/;
-    
+
     // Validate required fields
     if (noOfPeople) {
       if (name1 === '' || email1 === '' || phone1 === '') {
@@ -84,7 +91,7 @@ export default function Register() {
         return;
       }
     }
-    
+
     if (snu) {
       if (noOfPeople) {
         if (emailRegex.test(email1) && phoneRegex.test(phone1)) {
@@ -355,13 +362,28 @@ export default function Register() {
             </div>
             <div className="RegisterSection__amount--priceDetails__ticket">
               <p>Ticket Price (per person)</p>
-              <p>₹{participants.length > 0 ? Math.round(calculatePrice() / participants.length) : (snu ? 375 : 650)}</p>
+              <p>₹{snu ?
+                (noOfPeople ? '599' : '549.50') :
+                (noOfPeople ? '649' : '599.50')
+              }</p>
+            </div>
+            <hr />
+            <div className="RegisterSection__amount--priceDetails__total">
+              <p>Total Amount</p>
+              <p>₹{snu ?
+                (noOfPeople ? '599' : '1099') :
+                (noOfPeople ? '649' : '1199')
+              }</p>
+            </div>
+            {/* <div className="RegisterSection__amount--priceDetails__ticket">
+              <p>Ticket Price (per person)</p>
+              <p>₹{participants.length > 0 ? Math.round(calculatePrice() / participants.length) : (snu ? 599 : 650)}</p>
             </div>
             <hr />
             <div className="RegisterSection__amount--priceDetails__total">
               <p>Total Amount</p>
               <p>₹{participants.length > 0 ? calculatePrice() : (noOfPeople ? (snu ? 375 : 650) : (snu ? 750 : 1300))}</p>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

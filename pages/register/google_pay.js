@@ -32,14 +32,10 @@ export default function GooglePay() {
             return paymentData.total_amount.toString();
         }
         // Fallback to old logic
-        if (snu && noOfPeople) {
-            return '750';
-        } else if (snu && !noOfPeople) {
-            return '1300';
-        } else if (!snu && noOfPeople) {
-            return '750';
+        if (snu) {
+            return noOfPeople ? '599' : '1099';
         } else {
-            return '1300';
+            return noOfPeople ? '649' : '1199';
         }
     };
 
@@ -62,10 +58,10 @@ export default function GooglePay() {
         try {
             console.log('Starting screenshot upload for payment:', paymentId);
             console.log('File details:', { name: file.name, size: file.size, type: file.type });
-            
+
             const fileName = `${paymentId}_${Date.now()}.${file.name.split('.').pop()}`;
             console.log('Generated filename:', fileName);
-            
+
             const { data, error } = await supabase.storage
                 .from('payment-screenshots')
                 .upload(fileName, file);
@@ -95,7 +91,7 @@ export default function GooglePay() {
             alert('Please enter a valid transaction id');
             return;
         }
-        
+
         if (!screenshot) {
             alert('Please upload the payment screenshot');
             return;
@@ -125,10 +121,10 @@ export default function GooglePay() {
                     transaction_id: tid.trim(),
                     payment_method: 'upi',
                     status: 'pending',
-                    
+
                     // Legacy fields for backward compatibility
                     name_one: paymentData.participants[0]?.name || '',
-                    email_one: paymentData.participants[0]?.email || '', 
+                    email_one: paymentData.participants[0]?.email || '',
                     phone_one: paymentData.participants[0]?.phone || '',
                     name_two: paymentData.participants[1]?.name || null,
                     email_two: paymentData.participants[1]?.email || null,
@@ -152,7 +148,7 @@ export default function GooglePay() {
 
             // Clear localStorage
             localStorage.removeItem('paymentData');
-            
+
             // Redirect to success page with payment details
             const queryParams = new URLSearchParams({
                 receiptNumber: `TXR${paymentRecord.id.slice(-8)}`,
@@ -160,7 +156,7 @@ export default function GooglePay() {
                 amount: paymentData.total_amount,
                 participants: paymentData.participants.length
             });
-            
+
             const redirectUrl = `/register/success?${queryParams.toString()}`;
             await router.push(redirectUrl);
 
@@ -177,20 +173,20 @@ export default function GooglePay() {
             <div className='GooglePay'>
                 <div className='GooglePay__qr'>
                     <p className='GooglePay__qr--text'>Scan the QR to Pay</p>
-                    <p style={{ fontSize: "1rem", marginTop: "0", marginBottom: ".5rem" }} className='GooglePay__qr--text'>Aditi Mohapatra</p>
+                    <p style={{ fontSize: "1rem", marginTop: "0", marginBottom: ".5rem" }} className='GooglePay__qr--text'>Mithreyi SR</p>
                     <img className='GooglePay__qr--image' src='/Images/Assets/google_pay.png' />
                     <div className='GooglePay__qr--TID'>
-                        <input 
-                            onChange={(e) => setTid(e.target.value)} 
-                            type='text' 
-                            placeholder='Transaction ID' 
-                            required 
+                        <input
+                            onChange={(e) => setTid(e.target.value)}
+                            type='text'
+                            placeholder='Transaction ID'
+                            required
                         />
                     </div>
                     <div className='GooglePay__qr--screenshot'>
-                        <label htmlFor="screenshot" style={{ 
-                            display: 'block', 
-                            marginTop: '1rem', 
+                        <label htmlFor="screenshot" style={{
+                            display: 'block',
+                            marginTop: '1rem',
                             marginBottom: '0.5rem',
                             fontSize: '0.9rem',
                             color: '#333'
@@ -231,7 +227,13 @@ export default function GooglePay() {
                         </div>
                         <div className='GooglePay__details--priceDetails__ticket'>
                             <p>Ticket Price (per person)</p>
-                            <p>{paymentData ? (paymentData.is_snu_student ? '750' : '1300') : (noOfPeople ? '750' : '650')}</p>
+                            <p>{paymentData ?
+                                (paymentData.total_amount / paymentData.number_of_people).toString() :
+                                (snu ?
+                                    (noOfPeople ? '599' : '549.50') : // 1099/2 for 2 tickets
+                                    (noOfPeople ? '649' : '599.50')   // 1199/2 for 2 tickets
+                                )
+                            }</p>
                         </div>
                         <hr />
                         <div className='GooglePay__details--priceDetails__total'>
