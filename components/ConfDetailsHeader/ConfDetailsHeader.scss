@@ -39,10 +39,12 @@
     padding-right: 2rem;
     min-width: 0;
 
-    @include respondAt(512px) {
-      flex-direction: column;
-      padding-left: 0;
-      padding-right: 0;
+    // Default: stacked vertically
+    flex-direction: column;
+
+    // Large screens: side by side horizontally
+    @include respondAt(915px) {
+      flex-direction: row;
     }
 
     &--divider {
@@ -52,15 +54,14 @@
     }
 
     &--slider {
-      width: 45%;
-      position: relative;
-      margin-right: 2rem;
-      z-index: 1;
+      width: 100%;
+      margin-bottom: 1rem;
       min-width: 0;
-      @include respondAt(512px) {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 1rem;
+
+      @include respondAt(915px) {
+        width: 45%;
+        margin-right: 2rem;
+        margin-bottom: 0;
       }
     }
 
@@ -68,15 +69,16 @@
       color: black;
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
-      width: 50%;
-      padding: 0 4rem 4rem 0rem;
-      z-index: 2;
+      align-items: center;
+      width: 100%;
       min-width: 0;
+      padding: 0;
+      z-index: 2;
+
       @include respondAt(915px) {
-        padding: 0;
-        align-items: center;
-        width: 100%;
+        width: 50%;
+        padding: 0 4rem 4rem 0rem;
+        align-items: flex-end;
       }
 
       &__title {
@@ -94,14 +96,19 @@
 
       &__desc {
         color: black;
-        text-align: right;
+        text-align: center;
         font-size: 1.5rem;
         width: 34.8125rem;
         font-family: "Poppins", sans-serif;
+
         @include respondAt(512px) {
           font-size: 1rem;
           text-align: center;
           width: 15rem;
+        }
+
+        @include respondAt(915px) {
+          text-align: right;
         }
       }
 
