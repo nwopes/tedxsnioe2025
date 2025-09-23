@@ -37,7 +37,7 @@
     justify-content: space-between;
     padding-left: 5rem;
     padding-right: 5rem;
-    @include respondAt(915px) {
+    @include respondAt(512px) {
         flex-direction: column;
     }
     &--divider {
