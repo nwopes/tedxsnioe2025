@@ -31,16 +31,15 @@
     }
   }
   &__details {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    min-width: 0;
+   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  min-width: 0;
 
-    // Default: stacked vertically
-    flex-direction: column;
+  flex-direction: column;
 
     // Large screens: side by side horizontally
     @include respondAt(915px) {
