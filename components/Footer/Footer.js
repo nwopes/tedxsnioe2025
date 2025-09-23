@@ -42,7 +42,7 @@ export default function Footer() {
           <img className="Footer__below--sections__divider" src="/Images/Footer/circle.png" />
           <p onClick={() => scrollTo("about")} className="Footer__below--sections__item">About Us</p>
           <img className="Footer__below--sections__divider" src="/Images/Footer/circle.png" />
-          <Link href='/'><img className="Footer__below--sections__logo" src="/Images/Footer/logo.png" /></Link>
+          <Link href='/'><img className="Footer__below--sections__logo" src="/Images/Assets/image 2.png" /></Link>
           <img className="Footer__below--sections__divider" src="/Images/Footer/circle.png" />
           <Link href='/pastConferences'><p className="Footer__below--sections__item">Past Conferences</p></Link>
           <img className="Footer__below--sections__divider" src="/Images/Footer/circle.png" />

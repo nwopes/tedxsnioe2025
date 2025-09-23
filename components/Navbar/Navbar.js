@@ -60,7 +60,7 @@ function Navbar({ isSmall = false }) {
                         <Link href="/" aria-label="Go to Home Page">
                             <Image
                                 src='/Images/TEDx logo - White.png'
-                                alt="TedX Logo"
+                                alt="TEDx Logo"
                                 width={isSmall ? 50 : 250}
                                 height={isSmall ? 40 : 40}
                                 priority
@@ -165,10 +165,10 @@ function Navbar({ isSmall = false }) {
                 <div className="NavbarContainer__topRightLogo">
                     <Link href="/" aria-label="Go to Home Page">
                         <Image
-                            src='/Images/kSmall.png'
-                            alt="kSmall Logo"
-                            width={isSmall ? 90 : 70}
-                            height={isSmall ? 40 : 60}
+                            src='/Images/sSmall.png'
+                            alt="sSmall Logo"
+                            width={isSmall ? 20 : 40}
+                            height={isSmall ? 20 : 40}
                             priority
                         />
                     </Link>

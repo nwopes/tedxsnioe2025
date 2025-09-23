@@ -173,7 +173,7 @@ function ConfDetails() {
         },
         {
             title: "Misfits",
-            desc: "Misfits are people whose ideas and initiatives set them apart from the crowd, and they have the courage to do something different and make a difference. For the 2022 conference, TedxShivNadarUniversity brought together 13 people who embody this definition.",
+            desc: "Misfits are people whose ideas and initiatives set them apart from the crowd, and they have the courage to do something different and make a difference. For the 2022 conference, TEDxShivNadarUniversity brought together 13 people who embody this definition.",
             year: "2022",
             url: "placeholder insert yt link",
             speakers: [
@@ -583,7 +583,7 @@ function ConfDetails() {
         },
         {
             title: "Conference",
-            desc: "TedXSNIoE 2016 conference hosted 13 speakers and artists from various professional and social fields. This conference was nothing short of a spectacle of stories and lessons from exceptional people which inspired and captivated everyone who witnessed it.",
+            desc: "TEDxSNIoE 2016 conference hosted 13 speakers and artists from various professional and social fields. This conference was nothing short of a spectacle of stories and lessons from exceptional people which inspired and captivated everyone who witnessed it.",
             year: "2016",
             speakers: [
                 {

@@ -27,32 +27,32 @@ export default function PastSpeakers() {
                 </div>
                 <div className='PastSpeakers__cards'>
                     <div className="container">
-                        <h3 className="title">Debojyoti Chakraborty</h3>
+                        <h3 className="title">Prayag Shukla</h3>
                         <div className="content">
                             <div>
                                 <div className="content-overlay"></div>
-                                <img className="content-image" src="/Images/CurrentSpeakers/deb.jpg" alt="" />
+                                <img className="content-image" src="/Images/CurrentSpeakers/prayag.png" alt="" />
                                 <div className="content-details fadeIn-bottom">
-                                    <h3 className="content-title">Debojyoti Chakraborty</h3>
-                                    <p className="content-text">Debojyoti Chakraborty is a principal scientist at the Institute of Genomics and Integrative Biology. From inventing the world&apos;s first paper strip COVID-19 test, to working on an accessible cure for sickle celled anemia, Dr. Debjyoti definitely has done the unimaginable and brought a new perspective to all things science.</p>
+                                    <h3 className="content-title">Prayag Shukla</h3>
+                                    <p className="content-text">Poet, Author, Art Curator, truly a luminary of the Indian traditional soul, works spanning decades. He reveals poetry in the subtleties of everyday life and to appreciate it in a way that matters, and strengthens the enduring power of language and media in the world around us.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="container">
-                        <h3 className="title">Gursakhi Lugani</h3>
+                        <h3 className="title">Anirban Bhattacharya</h3>
                         <div className="content">
                             <div>
                                 <div className="content-overlay"></div>
-                                <img className="content-image" src="/Images/CurrentSpeakers/gursakhi.jpg" alt="" />
+                                <img className="content-image" src="/Images/CurrentSpeakers/anirban.png" alt="" />
                                 <div className="content-details fadeIn-bottom">
-                                    <h3 className="content-title">Gursakhi Lugani</h3>
-                                    <p className="content-text">Gursakhi Lugani, is the founder of NakhreWaali, a fashion brand with millions of customers. Through this, she has created a category of fashion that fuses traditional ethnic Indian textiles with modern sensibilities and sustainable practices that has acquired a widespread appeal and reverence. </p>
+                                    <h3 className="content-title">Anirban Bhattacharya</h3>
+                                    <p className="content-text">Creator of a show running on every TV since 2012, Savdhaan India. True Crime aficionado and author of books that range from serial killers to the Indian Money Heist. Through his creative mind, he creates and shows you a world through his words alone instantly. </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className="container">
+                    {/* <div className="container">
                         <h3 className="title">Rishabh Jain</h3>
                            <div className="content">
                               <div>
@@ -64,14 +64,14 @@ export default function PastSpeakers() {
                                 </div>
                              </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <div className='PastSpeakers'>
                 <div className='PastSpeakers__heading'>
-                    OUR PERFORMERS
+                    ..stay tuned
                 </div>
-                <div className='PastSpeakers__cards'>
+                {/* <div className='PastSpeakers__cards'>
                     <div className="container">
                         <h3 className="title">Anubha Bajaj</h3>
                         <div className="content">
@@ -98,7 +98,7 @@ export default function PastSpeakers() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         </>
     )

@@ -1,5 +1,6 @@
 import React from 'react';
 import './LandingSection.scss'
+import Image from 'next/image';
 export default function LandingSection() {
     const targetDate = new Date('2025-11-16T00:00:00'); // November 16, 2025
 
@@ -34,10 +35,27 @@ export default function LandingSection() {
     return (
         <div className='LandingPageContainer'>
             <div className='LandingPageContainer__logo'>
-                <img src='/Images/Assets/conf_logo.png' className='LandingPageContainer__logo--image' />
+                <Image 
+                src='/Images/Assets/image 2.png' 
+                className='LandingPageContainer__logo--image' 
+                width={100}
+                height={100}
+                    alt="TEDx Logo"
+                
+                />
+            </div>
+        
+            <div className='LandingPageContainer__logo__text' style={{ marginTop: '2rem' }}>
+                <Image 
+                src='/Images/Assets/simplexity.png' 
+                className='LandingPageContainer__logo--text--image' 
+                width={300}
+                height={50}
+                alt="Simplexity Logo"
+                />
             </div>
             <div className='LandingPageContainer__desc'>
-                Every turn tells a different story.
+                Rethink the Simple. Rediscover the Complex. {'\n'}Delve into the amalgam of both.
             </div>
             <div className='LandingPageContainer__details'>
                 <div className='LandingPageContainer__details--date'>
