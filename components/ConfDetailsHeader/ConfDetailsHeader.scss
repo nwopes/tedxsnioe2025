@@ -34,11 +34,12 @@
   &__details {
     display: flex;
     align-items: center;
+    flex_wrap: wrap;
     justify-content: space-between;
-    padding-left: 5rem;
-    padding-right: 5rem;
-    @include respondAt(512px) {
-        flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+   // @include respondAt(512px) {
+      //  flex-direction: column;
     }
     &--divider {
         @include respondAt(915px) {
@@ -46,8 +47,10 @@
         }
     }
     &--slider {
-    //  width: 60%;
-     // margin-right: 3rem;
+     width: 45%;
+    position: relative;
+     margin-right: 2rem;
+    z-index: 1;
     }
     &--content {
       color: black;
