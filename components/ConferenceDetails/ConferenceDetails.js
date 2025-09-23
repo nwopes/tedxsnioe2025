@@ -10,6 +10,168 @@ function ConfDetails() {
 
     const details = [
         {
+            title: "Through The Looking Glass",
+            // TODO: Update the description and year and the image paths
+            desc: "Lorem Ipsum Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah",
+            year: "2024",
+            url: "placeholder insert yt link",
+            speakers: [
+                {
+                    name: 'Kavitha Emmanuel',
+                    profession: 'Anti-colourism activist',
+                    image: './Images/2022_speakers/kavitha.jpg'
+                },
+                {
+                    name: 'Vanika Sangtani',
+                    profession: 'Storyteller',
+                    image: './Images/2022_speakers/vanika.jpg'
+                },
+                {
+                    name: 'Chinab',
+                    profession: 'Illustrator, political artist',
+                    image: './Images/2022_speakers/chinab.jpg'
+                },
+                {
+                    name: 'Anurag Vashisht',
+                    profession: 'Singer',
+                    image: './Images/2022_speakers/anurag123.jpg'
+                },
+                {
+                    name: 'Prachi Thakur',
+                    profession: 'Diversity strategist',
+                    image: './Images/2022_speakers/prachi.jpg'
+                },
+                {
+                    name: 'Ritika Khatnani',
+                    profession: 'Miss Supernational Asia 2022',
+                    image: './Images/2022_speakers/ritika.jpg'
+                },
+                {
+                    name: 'Himanshu Rai',
+                    profession: 'Author',
+                    image: './Images/2022_speakers/himanshu.jpg'
+                },
+                {
+                    name: 'Sudhir R',
+                    profession: 'Fluteboxer',
+                    image: './Images/2022_speakers/sudhir.jpg'
+                },
+                {
+                    name: 'Brindali Patel',
+                    profession: 'Dancer',
+                    image: './Images/2022_speakers/brindali.jpg'
+                },
+                {
+                    name: 'Dr. Sanjeev Bagai',
+                    profession: 'Doctor, Padma Bhushan',
+                    image: './Images/2022_speakers/sanjeev.jpg'
+                },
+                {
+                    name: 'Priyanshu Grover',
+                    profession: 'Lawyer',
+                    image: './Images/2022_speakers/priyanshu.jpg'
+                },
+                {
+                    name: 'Nafisa Rachel William',
+                    profession: 'Celebrity designer',
+                    image: './Images/2022_speakers/nafisa.jpg'
+                },
+                {
+                    name: 'Vineet Panchhi',
+                    profession: 'Poet and filmmaker',
+                    image: './Images/2022_speakers/vineet.jpg'
+                }
+            ],
+            images: [
+                {url : '/Images/2022/2022_1.jpg'},
+                {url : '/Images/2022/2022_2.jpg'},
+                {url : '/Images/2022/2022_3.jpg'},
+                {url : '/Images/2022/2022_4.jpg'},
+                {url : '/Images/2022/2022_5.jpg'},
+            ]
+        },
+        {
+            title: "Kaleidoscope",
+            // TODO: Update the description and year and the image paths
+            desc: "Lorem Ipsum Dora lora Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah",
+            year: "2023",
+            url: "placeholder insert yt link",
+            speakers: [
+                {
+                    name: 'Kavitha Emmanuel',
+                    profession: 'Anti-colourism activist',
+                    image: './Images/2022_speakers/kavitha.jpg'
+                },
+                {
+                    name: 'Vanika Sangtani',
+                    profession: 'Storyteller',
+                    image: './Images/2022_speakers/vanika.jpg'
+                },
+                {
+                    name: 'Chinab',
+                    profession: 'Illustrator, political artist',
+                    image: './Images/2022_speakers/chinab.jpg'
+                },
+                {
+                    name: 'Anurag Vashisht',
+                    profession: 'Singer',
+                    image: './Images/2022_speakers/anurag123.jpg'
+                },
+                {
+                    name: 'Prachi Thakur',
+                    profession: 'Diversity strategist',
+                    image: './Images/2022_speakers/prachi.jpg'
+                },
+                {
+                    name: 'Ritika Khatnani',
+                    profession: 'Miss Supernational Asia 2022',
+                    image: './Images/2022_speakers/ritika.jpg'
+                },
+                {
+                    name: 'Himanshu Rai',
+                    profession: 'Author',
+                    image: './Images/2022_speakers/himanshu.jpg'
+                },
+                {
+                    name: 'Sudhir R',
+                    profession: 'Fluteboxer',
+                    image: './Images/2022_speakers/sudhir.jpg'
+                },
+                {
+                    name: 'Brindali Patel',
+                    profession: 'Dancer',
+                    image: './Images/2022_speakers/brindali.jpg'
+                },
+                {
+                    name: 'Dr. Sanjeev Bagai',
+                    profession: 'Doctor, Padma Bhushan',
+                    image: './Images/2022_speakers/sanjeev.jpg'
+                },
+                {
+                    name: 'Priyanshu Grover',
+                    profession: 'Lawyer',
+                    image: './Images/2022_speakers/priyanshu.jpg'
+                },
+                {
+                    name: 'Nafisa Rachel William',
+                    profession: 'Celebrity designer',
+                    image: './Images/2022_speakers/nafisa.jpg'
+                },
+                {
+                    name: 'Vineet Panchhi',
+                    profession: 'Poet and filmmaker',
+                    image: './Images/2022_speakers/vineet.jpg'
+                }
+            ],
+            images: [
+                {url : '/Images/2022/2022_1.jpg'},
+                {url : '/Images/2022/2022_2.jpg'},
+                {url : '/Images/2022/2022_3.jpg'},
+                {url : '/Images/2022/2022_4.jpg'},
+                {url : '/Images/2022/2022_5.jpg'},
+            ]
+        },
+        {
             title: "Misfits",
             desc: "Misfits are people whose ideas and initiatives set them apart from the crowd, and they have the courage to do something different and make a difference. For the 2022 conference, TedxShivNadarUniversity brought together 13 people who embody this definition.",
             year: "2022",
