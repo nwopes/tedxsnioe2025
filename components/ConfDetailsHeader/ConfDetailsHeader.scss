@@ -46,8 +46,8 @@
         }
     }
     &--slider {
-      width: 60%;
-      margin-right: 3rem;
+    //  width: 60%;
+     // margin-right: 3rem;
     }
     &--content {
       color: black;
@@ -78,7 +78,7 @@
         font-size: 1.5rem;
         width: 34.8125rem;
         font-family: "Poppins", sans-serif;
-        @include respondAt(915px) {
+        @include respondAt(512px) {
             font-size: 1rem;
             text-align: center;
             width: 15rem;
