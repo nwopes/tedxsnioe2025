@@ -12,7 +12,7 @@ function ConfDetails() {
         {
             title: "Through The Looking Glass",
             // TODO: Update the description and year and the image paths
-            desc: "Lorem Ipsum Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah",
+            desc: "Step Through The Looking Glass, invert your senses, question your minds, bring what's dark into the light. The Conference forces you to look into the world unknown and find the new you, and change everything.",
             year: "2024",
             url: "placeholder insert yt link",
             speakers: [
@@ -93,7 +93,7 @@ function ConfDetails() {
         {
             title: "Kaleidoscope",
             // TODO: Update the description and year and the image paths
-            desc: "Lorem Ipsum Dora lora Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah Blah",
+            desc: "Kaleidoscope- Capturing the beauty of shifting perspectives, the ones that are close to us and the ones far away. A small change in angles of perspective changes what we see, what we feel, what we think. We learn to understand there's no such thing as an objective truth, objective right or wrong, only how we see things or how they are shown to us.",
             year: "2023",
             url: "placeholder insert yt link",
             speakers: [
