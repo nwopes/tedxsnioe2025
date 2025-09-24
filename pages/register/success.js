@@ -2,13 +2,19 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
-export default function PaymentSuccess() {
+export default function PaymentSuccess({initialData}) {
     const router = useRouter();
     const [paymentInfo, setPaymentInfo] = useState(null);
 
     useEffect(() => {
+        console.log('Router query:', router.query);
+        console.log('Initial data:', initialData);
+
+        if (!router.isReady) return; // Wait for router to be ready
+
         // Get payment info from URL query parameters
         const { receiptNumber, transactionId, amount, participants } = router.query;
+        console.log('Query parameters:', router.query); // Debug log
         
         if (receiptNumber && transactionId && amount) {
             setPaymentInfo({
@@ -17,13 +23,18 @@ export default function PaymentSuccess() {
                 amount,
                 participantCount: participants || '1'
             });
-        } else {
+
+            localStorage.removeItem('paymentData'); // Clear localStorage on successful load
+            
+        } else if (router.isReady) {
             // If no payment info, redirect to register page
-            setTimeout(() => {
-                router.push('/register');
-            }, 3000);
+            const timer = setTimeout(() => {
+            router.replace('/register');
+        }, 3000);
+        
+        return () => clearTimeout(timer);
         }
-    }, [router.query, router]);
+    }, [router.isReady, router.query]);
 
     if (!paymentInfo) {
         return (
@@ -241,9 +252,19 @@ const styles = {
 
 
 export async function getServerSideProps(context) {
-    return {
-        props: {
-            query: context.query
-        }
+    const { query } = context;
+    
+    // Redirect if no query parameters
+    if (!query.receiptNumber || !query.transactionId || !query.amount) {
+        return {
+            redirect: {
+                destination: '/register',
+                permanent: false,
+            },
+        };
     }
+
+    return {
+        props: { query }
+    };
 }

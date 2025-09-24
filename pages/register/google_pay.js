@@ -141,24 +141,41 @@ export default function GooglePay() {
                 throw paymentError;
             }
 
+            // // Upload screenshot after payment record is created
+            // const screenshotUrl = await uploadScreenshot(screenshot, paymentRecord.id);
+            // console.log('Screenshot uploaded, URL:', screenshotUrl);
+            // console.log("Payment record ID:", paymentRecord.id);
+            // // Update payment record with screenshot URL
+            // const { error: updateError } = await supabase
+            //     .from('payments')
+            //     .update({ transaction_screenshot_url: screenshotUrl })
+            //     .eq('id', paymentRecord.id);
+
+            // if (updateError) {
+            //     throw updateError;
+            // }
+
             console.log('Payment record created successfully:', paymentRecord);
 
             // Skip screenshot upload for now - just save the payment
             console.log('Payment submitted successfully, skipping screenshot upload');
 
             // Clear localStorage
-            localStorage.removeItem('paymentData');
-
+            
             // Redirect to success page with payment details
             const queryParams = new URLSearchParams({
                 receiptNumber: `TXR${paymentRecord.id.slice(-8)}`,
-                transactionId: tid,
+                transactionId: tid.trim(),
                 amount: paymentData.total_amount,
                 participants: paymentData.participants.length
             });
 
-            const redirectUrl = `/register/success?${queryParams.toString()}`;
-            await router.push(redirectUrl);
+            // localStorage.removeItem('paymentData');  
+
+            await router.push({
+                pathname: '/register/success',
+                query: queryParams.toString()
+            });
 
         } catch (error) {
             console.error('Error submitting payment:', error);
