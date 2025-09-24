@@ -62,19 +62,20 @@ export default function GooglePay() {
             const fileName = `${paymentId}_${Date.now()}.${file.name.split('.').pop()}`;
             console.log('Generated filename:', fileName);
 
-            const { data, error } = await supabase.storage
+            // Upload the file
+            const { data: uploadData, error: uploadError } = await supabase.storage
                 .from('payment-screenshots')
                 .upload(fileName, file);
 
-            if (error) {
-                console.error('Storage upload error:', error);
-                throw error;
+            if (uploadError) {
+                console.error('Storage upload error:', uploadError);
+                throw uploadError;
             }
 
-            console.log('Upload successful:', data);
+            console.log('Upload successful:', uploadData);
 
-            // Get public URL
-            const { data: urlData } = supabase.storage
+            // Get public URL - make sure to await this
+            const { data: urlData } = await supabase.storage
                 .from('payment-screenshots')
                 .getPublicUrl(fileName);
 
@@ -141,24 +142,29 @@ export default function GooglePay() {
                 throw paymentError;
             }
 
-            // // Upload screenshot after payment record is created
-            // const screenshotUrl = await uploadScreenshot(screenshot, paymentRecord.id);
-            // console.log('Screenshot uploaded, URL:', screenshotUrl);
-            // console.log("Payment record ID:", paymentRecord.id);
-            // // Update payment record with screenshot URL
-            // const { error: updateError } = await supabase
-            //     .from('payments')
-            //     .update({ transaction_screenshot_url: screenshotUrl })
-            //     .eq('id', paymentRecord.id);
+            const screenshotUrl = await uploadScreenshot(screenshot, paymentRecord.id);
+            console.log('SCREENSHOT URL , URL:', screenshotUrl);
+            // Upload screenshot after payment record is created
+            const { data: updateData, error: updateError } = await supabase
+            .from('payments')
+            .update({ 
+                transaction_screenshot_url: screenshotUrl  // Match the exact column name
+            })
+            .eq('id', paymentRecord.id)
+            .select();
 
-            // if (updateError) {
-            //     throw updateError;
-            // }
+            if (updateError) {
+                console.error('Failed to update screenshot URL:', updateError);
+                throw updateError;
+            } else {
+                console.log('Screenshot URL updated successfully:', updateData);
+            }
 
-            console.log('Payment record created successfully:', paymentRecord);
+            // console.log('Payment record updated with screenshot:', updateData);
+            console.log('Complete payment record:', paymentRecord);
 
             // Skip screenshot upload for now - just save the payment
-            console.log('Payment submitted successfully, skipping screenshot upload');
+            // console.log('Payment submitted successfully, skipping screenshot upload');
 
             // Clear localStorage
             
