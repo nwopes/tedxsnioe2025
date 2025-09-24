@@ -42,7 +42,8 @@ export default function AdminDashboard() {
   const handleLogin = (e) => {
     e.preventDefault();
     // Simple authentication - in production, use proper authentication
-    const validAdmins = ['admin@tedxsnioe.com', 'tedx@snu.edu.in'];
+    // const validAdmins = ['admin@tedxsnioe.com', 'tedx@snu.edu.in'];
+    const validAdmins = ['dorupayeki@pepsidiprobhaiya.sexy'];
     
     if (validAdmins.includes(adminEmail)) {
       localStorage.setItem('adminEmail', adminEmail);
