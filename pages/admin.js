@@ -6,6 +6,7 @@ export default function AdminDashboard() {
   const [payments, setPayments] = useState([]);
   const [loading, setLoading] = useState(true);
   const [filter, setFilter] = useState('all'); // all, pending, approved, declined
+  const [peopleFilter, setPeopleFilter] = useState('all'); // all, 1, 2
   const [selectedPayment, setSelectedPayment] = useState(null);
   const [reviewNotes, setReviewNotes] = useState('');
   const [adminEmail, setAdminEmail] = useState('');
@@ -26,7 +27,9 @@ export default function AdminDashboard() {
     pending: 0,
     approved: 0,
     declined: 0,
-    totalRevenue: 0
+    totalRevenue: 0,
+    onePerson: 0,
+    twoPerson: 0
   });
 
   useEffect(() => {
@@ -96,7 +99,9 @@ export default function AdminDashboard() {
       totalRevenue: paymentData
         .filter(p => p.status === 'approved')
         .reduce((sum, p) => sum + parseFloat(p.total_amount), 0),
-      audience: paymentData.filter(p => p.number_of_people === 1).length + paymentData.filter(p => p.number_of_people === 2).length * 2
+      audience: paymentData.filter(p => p.number_of_people === 1).length + paymentData.filter(p => p.number_of_people === 2).length * 2,
+      onePerson: paymentData.filter(p => p.number_of_people === 1).length,
+      twoPerson: paymentData.filter(p => p.number_of_people === 2).length
     };
     setStats(stats);
   };
@@ -208,8 +213,13 @@ export default function AdminDashboard() {
   };
 
   const filteredPayments = payments.filter(payment => {
-    if (filter === 'all') return true;
-    return payment.status === filter;
+    // Status filter
+    if (filter !== 'all' && payment.status !== filter) return false;
+    
+    // People filter
+    if (peopleFilter !== 'all' && payment.number_of_people !== parseInt(peopleFilter)) return false;
+    
+    return true;
   });
 
   const formatDate = (dateString) => {
@@ -303,6 +313,29 @@ export default function AdminDashboard() {
         >
           Declined ({stats.declined})
         </button>
+        
+        {/* People Filter */}
+        <div style={{ display: 'inline-block', marginLeft: '20px', borderLeft: '1px solid #ccc', paddingLeft: '20px' }}>
+          <button 
+            className={peopleFilter === 'all' ? 'active' : ''}
+            onClick={() => setPeopleFilter('all')}
+          >
+            All People
+          </button>
+          <button 
+            className={peopleFilter === '1' ? 'active' : ''}
+            onClick={() => setPeopleFilter('1')}
+          >
+            1 Person ({stats.onePerson})
+          </button>
+          <button 
+            className={peopleFilter === '2' ? 'active' : ''}
+            onClick={() => setPeopleFilter('2')}
+          >
+            2 People ({stats.twoPerson})
+          </button>
+        </div>
+        
         <button onClick={fetchPayments} className="refresh-btn">
           Refresh
         </button>
