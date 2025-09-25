@@ -95,7 +95,8 @@ export default function AdminDashboard() {
       declined: paymentData.filter(p => p.status === 'declined').length,
       totalRevenue: paymentData
         .filter(p => p.status === 'approved')
-        .reduce((sum, p) => sum + parseFloat(p.total_amount), 0)
+        .reduce((sum, p) => sum + parseFloat(p.total_amount), 0),
+      audience: paymentData.filter(p => p.number_of_people === 1).length + paymentData.filter(p => p.number_of_people === 2).length * 2
     };
     setStats(stats);
   };
@@ -265,6 +266,10 @@ export default function AdminDashboard() {
         <div className="stat-card declined">
           <h3>Declined</h3>
           <div className="stat-number">{stats.declined}</div>
+        </div>
+        <div className="stat-card number">
+          <h3>Audience</h3>
+          <div className="stat-number">{stats.audience}</div>
         </div>
         <div className="stat-card revenue">
           <h3>Total Revenue</h3>
