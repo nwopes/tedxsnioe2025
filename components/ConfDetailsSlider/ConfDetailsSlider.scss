@@ -1,0 +1,22 @@
+.PastConf--carousel {
+  width: 30rem;
+  @include respondAt(915px) {
+    width: 20rem;
+    margin: 0 auto 2rem auto;
+  }
+  @include respondAt(767px) {
+    width: 18rem;
+    margin: 0 auto 2rem auto;
+  }
+  @include respondAt(480px) {
+    width: 16rem;
+    margin: 0 auto 2rem auto;
+  }
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center 10%;
+    border-radius: 0.5rem;
+  }
+}

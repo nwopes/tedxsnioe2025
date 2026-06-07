@@ -1,0 +1,167 @@
+.Sponsors {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  &__our {
+    &--heading {
+      color: white;
+      font-family: "Bebas Neue", serif;
+      font-size: 4rem;
+      font-style: normal;
+      font-weight: 400;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      @include respondAt(767px) {
+        font-size: 4rem;
+      }
+    }
+    &--cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      &__image {
+        margin-right: 2rem;
+        margin-left: 2rem;
+        margin-bottom: 1.5rem;
+        width: 200px;
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        
+        // ctr img within container
+        > div {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+        }
+        
+        img {
+          object-fit: contain !important;
+          object-position: center !important;
+          width: 100% !important;
+          height: 100% !important;
+          position: relative !important;
+        }
+        
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        @include respondAt(767px) {
+          margin-right: 1.5rem;
+          margin-left: 1.5rem;
+          margin-bottom: 1rem;
+          width: 150px;
+          height: 90px;
+        }
+        
+        @include respondAt(480px) {
+          width: 120px;
+          height: 72px;
+        }
+      }
+    }
+  }
+  &__past {
+    &--heading {
+      color: white;
+      font-family: "Bebas Neue", serif;
+      font-size: 4rem;
+      font-style: normal;
+      font-weight: 400;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      @include respondAt(767px) {
+        font-size: 4rem;
+      }
+    }
+    &--button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem;
+      &__content {
+        border-radius: 1.1875rem;
+        border: 2px solid #c7751e;
+        background: #212223;
+        width: 9rem;
+        padding: 0.5625rem 1.1875rem;
+        color: #fff;
+        text-align: center;
+        font-family: "Outfit", sans-serif;
+        font-size: 1rem;
+        font-style: normal;
+        font-weight: 400;
+        margin-right: 2rem;
+        cursor: pointer;
+        @include respondAt(915px) {
+          width: 10rem;
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    &--cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      &__image {
+        margin-right: 2rem;
+        margin-left: 2rem;
+        margin-bottom: 1.5rem;
+        width: 200px;
+        height: 120px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        
+        // ctr img within container
+        > div {
+          display: flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+        }
+        
+        img {
+          object-fit: contain !important;
+          object-position: center !important;
+          width: 100% !important;
+          height: 100% !important;
+          position: relative !important;
+        }
+        
+        &:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        @include respondAt(767px) {
+          margin-right: 1.5rem;
+          margin-left: 1.5rem;
+          margin-bottom: 1rem;
+          width: 150px;
+          height: 90px;
+        }
+        
+        @include respondAt(480px) {
+          width: 120px;
+          height: 72px;
+        }
+      }
+    }
+  }
+}
