@@ -16,6 +16,10 @@ function Contact() {
                         <p className='ContactUsSection__container--details__card--designation'>Co-Lead Organizer</p>
                         <p className='ContactUsSection__container--details__card--phone'>+91-8328251153</p>
                     </div><div className='ContactUsSection__container--details__card'>
+                        <p className='ContactUsSection__container--details__card--name'>Sanyukta Agarwal</p>
+                        <p className='ContactUsSection__container--details__card--designation'>Curator & Licensee</p>
+                        <p className='ContactUsSection__container--details__card--phone'>+91 6396 944 195</p>
+                    </div><div className='ContactUsSection__container--details__card'>
                         <p className='ContactUsSection__container--details__card--name'>Shreyaa Venkataraman</p>
                         <p className='ContactUsSection__container--details__card--designation'>Managing Director</p>
                         <p className='ContactUsSection__container--details__card--phone'>+91-9791185259</p>

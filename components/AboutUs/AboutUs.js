@@ -33,16 +33,16 @@ function AboutUs() {
       <div className='AboutUs__content'>
         <div className='AboutUs__content--text'>
           <p>
-            Join us at TEDxShivNadarUniversity as we explore Mosaic — a celebration of the ideas, experiences, people, and moments that shape who we are.
+            Join us at TEDxShivNadarUniversity as we explore Mosaic—a celebration of the ideas, perspectives, and discoveries that shape the way we understand our world.
           </p>
           <p>
-            Like the pieces of a mosaic, the journeys that define us are built from countless experiences. Individually, these pieces may seem unrelated, but together they create something far greater than the sum of their parts.
+            Like the pieces of a mosaic, great ideas rarely exist in isolation. They emerge from different disciplines, challenge one another, and connect in unexpected ways to reveal a larger picture. Each perspective adds depth, and every conversation has the potential to unlock new ways of thinking.
           </p>
           <p>
-            Through inspiring talks and meaningful conversations, we bring together thinkers, creators, innovators, and changemakers from diverse fields, each sharing a unique part of their story and the lessons they&apos;ve learned along the way.
+            Through thought-provoking talks and engaging discussions, TEDxShivNadarUniversity brings together researchers, entrepreneurs, artists, scientists, innovators, educators, and changemakers whose ideas inspire curiosity, spark dialogue, and encourage fresh approaches to the challenges and opportunities of our time. Alongside voices from across diverse fields, we are committed to celebrating the ideas emerging from our own community, creating a platform where local voices and global perspectives come together in meaningful conversation.
           </p>
           <p>
-            At TEDxShivNadarUniversity, we believe that Ideas Change Everything. Mosaic is an invitation to discover connections, celebrate individuality, and explore how different pieces can come together to create something meaningful. Because every piece has a place, and every story contributes to a larger picture.
+            At TEDxShivNadarUniversity, we believe that Ideas Change Everything. Mosaic celebrates the power of bringing together our community, local voices, and global perspectives to spark conversations that shape the future. Because every idea is a piece of something bigger.
           </p>
         </div>
         <div className='AboutUs__content--carousel'>
