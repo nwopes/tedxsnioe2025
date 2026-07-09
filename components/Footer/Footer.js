@@ -48,7 +48,7 @@ export default function Footer() {
           <Image className="Footer__below--sections__divider" src="/Images/Footer/circle.png" alt="Divider" width={20} height={20} />
           <Link href='/pastConferences'><p className="Footer__below--sections__item">Past Conferences</p></Link>
           <Image className="Footer__below--sections__divider" src="/Images/Footer/circle.png" alt="Divider" width={20} height={20} />
-          <p onClick={() => scrollTo("sponsors")} className="Footer__below--sections__item">Sponsors</p>
+          <Link href='/sponsors'><p className="Footer__below--sections__item">Sponsors</p></Link>
         </div>
         <div className="Footer__below--logo">
           <Image
@@ -72,6 +72,9 @@ export default function Footer() {
             <Image src="/Images/Footer/insta.png" alt="Instagram" width={30} height={30} />
           </a>
         </div>
+        <p style={{ width: "100%", textAlign: "right", paddingRight: "20px", fontSize: "1rem", color: "black", fontFamily: '"Outfit", sans-serif', marginTop: "2rem", marginBottom: "0", alignSelf: "flex-end" }}>
+          This independent TEDx event is operated under license from TED.
+        </p>
       </div>
     </div>
   )
