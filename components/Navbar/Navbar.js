@@ -125,14 +125,14 @@ function Navbar({ isSmall = false }) {
                             >About Us</p>
                         </li>
                         <li
-                            className={`${pathName === "/gallery"
+                            className={`${pathName === "/sponsors"
                                 ? "NavbarContainer__Menu--list-activeItem"
                                 : "NavbarContainer__Menu--list-item"
                                 }`}
                         >
-                            <p style={{ color: "white" }}
-                                onClick={() => scrollTo("sponsors")}
-                            >Sponsors</p>
+                            <p style={{ color: "white" }}>
+                                <Link style={{ color: "white" }} href="/sponsors">Sponsors</Link>
+                            </p>
                         </li>
                         <li
                             className={`${pathName === "/pastConferences"
