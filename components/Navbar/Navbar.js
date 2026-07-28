@@ -60,7 +60,7 @@ function Navbar({ isSmall = false }) {
                         <Link href="/" aria-label="Go to Home Page">
                             <Image
                                 src='/Images/TEDx logo - White.png'
-                                alt="TEDx Logo"
+                                alt="TEDxShivNadarUniversity"
                                 width={isSmall ? 80 : 300}
                                 height={isSmall ? 40 : 60}
                                 priority

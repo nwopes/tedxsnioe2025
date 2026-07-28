@@ -53,7 +53,7 @@ export default function Footer() {
         <div className="Footer__below--logo">
           <Image
             src="/Images/TEDx logo - Black.png"
-            alt="TEDx Logo"
+            alt="TEDxShivNadarUniversity"
             width={200}
             height={100}
             quality={95}
