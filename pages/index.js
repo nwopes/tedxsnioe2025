@@ -8,7 +8,8 @@ function Home() {
         <>
             <section
                 className="LandingPageSection"
-                id="home">
+                id="home"
+                style={{ display: 'none' }}>
                 <LandingSection />
             </section>
 
