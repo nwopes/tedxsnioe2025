@@ -29,13 +29,13 @@ function MyApp({ Component, pageProps, user }) {
                 <ConfProvider>
                     <TicketProvider>
                         <Head>
-                            <title>TEDxShivNadarUniversity</title>
+                            <title>TEDxShiv Nadar University</title>
                             <meta
                                 name="description"
                                 content="TEDx Shiv Nadar Insitute of Eminence Annual Conference"
                             />
-                            <meta property="og:title" content="TEDxShivNadarUniversity" />
-                            <meta property="og:site_name" content="TEDxShivNadarUniversity" />
+                            <meta property="og:title" content="TEDxShiv Nadar University" />
+                            <meta property="og:site_name" content="TEDxShiv Nadar University" />
                             <link rel="icon" href="/favicon.ico" sizes="any" />
                             <link rel="apple-touch-icon" href="/favicon.ico" />
                             <meta name="theme-color" content="#A11D21" />
