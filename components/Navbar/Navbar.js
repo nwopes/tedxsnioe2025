@@ -59,12 +59,13 @@ function Navbar({ isSmall = false }) {
                     <div className="NavbarContainer__Logo">
                         <Link href="/" aria-label="Go to Home Page">
                             <Image
-                                src='/Images/TEDx logo - White.png'
+                                src='/Images/new-logo-white-text.png'
                                 alt="TEDxShiv Nadar University"
-                                width={isSmall ? 80 : 300}
-                                height={isSmall ? 40 : 60}
+                                width={isSmall ? 80 : 220}
+                                height={isSmall ? 40 : 45}
+                                unoptimized={true}
                                 priority
-                                quality={95}
+                                quality={100}
                                 style={{
                                     objectFit: 'contain',
                                     objectPosition: 'center'
